@@ -1,0 +1,33 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--ygm-font-size-m);
+  justify-content: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  .progressVal {
+    text-align: center;
+  }
+  .progressBar {
+    height: 50px;
+    display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    .prev,
+    .next {
+      min-width: 37px;
+    }
+
+    .disable {
+      color: var(--ygm-color-weak);
+    }
+
+    .slider {
+      flex: 1;
+      padding: 0 20px;
+    }
+  }
+}

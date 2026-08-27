@@ -1,0 +1,50 @@
+.searchHistory {
+  font-size: var(--ygm-font-size-m);
+  flex: 1;
+  margin-top: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &.hidden {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  .list {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0 16px 16px;
+
+    .listItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* 关键：让文本和 × 按钮垂直居中对齐 */
+      
+      .name {
+        flex: 1; /* 让左侧文本尽可能占据空间，把按钮挤到最右边 */
+        cursor: pointer;
+      }
+
+      .deleteBtn {
+        cursor: pointer;
+        font-size: 18px; /* × 符号的大小 */
+        color: #999; /* 默认颜色 */
+        padding: 4px 8px; /* 关键：增加点击区域，方便手指点击 */
+        border-radius: 4px; /* 悬停时微微圆角 */
+
+        &:hover {
+          color: #333; /* 鼠标悬停时变深色 */
+          background-color: rgba(0, 0, 0, 0.05); /* 悬停时显示背景提示 */
+        }
+      }
+    }
+  }
+}

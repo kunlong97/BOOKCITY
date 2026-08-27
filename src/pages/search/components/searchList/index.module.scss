@@ -1,0 +1,30 @@
+@import '@/assets/styles/mixin.scss';
+
+.searchList {
+  padding: 16px;
+  overflow: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  &.hidden {
+    display: none;
+  }
+
+  .bookName {
+    font-size: var(--ygm-font-size-x);
+    @include no-wrap();
+  }
+
+  .meta {
+    font-size: var(--ygm-font-size-s);
+    color: #a1aab3;
+    @include no-wrap();
+  }
+
+  .desc {
+    font-size: var(--ygm-font-size-m);
+    line-height: 18px;
+    color: #a1aab3;
+    @include wrap(2);
+    margin-bottom: 7px;
+  }
+}

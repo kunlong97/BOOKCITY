@@ -1,0 +1,44 @@
+@import '@/assets/styles/mixin.scss';
+
+.ranking {
+  padding-bottom: var(--ygm-padding-xl);
+  font-size: var(--ygm-font-size-m);
+
+  .header {
+    background: linear-gradient(180deg, #ffdfd9 0%, rgba(255, 246, 232, 0) 61.54%);
+  }
+
+  .tabList {
+    border-radius: var(--ygm-radius-xl);
+  }
+
+  .tabActive {
+    border-radius: var(--ygm-radius-xl);
+  }
+
+  .tabContent {
+    padding: 0;
+    padding-top: var(--ygm-padding-l);
+  }
+
+  .bookCover {
+    border-radius: var(--ygm-radius-s);
+    width: 47px;
+    height: 66px;
+  }
+
+  .bookInfo {
+    .bookName {
+      margin-top: 8px;
+      line-height: 16px;
+      margin-bottom: var(--ygm-padding-xs);
+      color: var(--ygm-color-text);
+
+      @include wrap(1);
+    }
+    .author {
+      color: #b2b2b2;
+      font-size: var(--ygm-font-size-s);
+    }
+  }
+}

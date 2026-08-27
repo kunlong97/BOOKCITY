@@ -1,0 +1,19 @@
+.searchHot {
+  padding: 6px 16px 0;
+  font-size: var(--ygm-font-size-m);
+
+  &.hidden {
+    display: none;
+  }
+
+  .searchTags {
+    margin-top: 16px;
+    .tag {
+      display: block;
+      background-color: #f5f5f7;
+      padding: 6px 12px;
+      border-radius: 8px;
+      color: var(--ygm-color-text);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.content {
+  height: 100vh;
+  width: 100%;
+  padding: 16px;
+  color: var(--ygm-color-text);
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: auto;
+
+  h1 {
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-size: var(--ygm-font-size-xxl);
+    font-weight: 700;
+  }
+
+  p {
+    display: block;
+    line-height: 33px;
+    text-indent: 2em;
+  }
+
+  .pagination {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

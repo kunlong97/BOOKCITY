@@ -1,0 +1,18 @@
+.header {
+  font-size: var(--ygm-font-size-m);
+  padding: var(--ygm-padding-m) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    font-size: var(--ygm-font-size-xl);
+  }
+
+  .right {
+    font-size: var(--ygm-font-size-xxxl);
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

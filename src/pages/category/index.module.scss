@@ -1,0 +1,31 @@
+.category {
+  overflow: hidden;
+  height: 100vh;
+
+  .categoryContent {
+    padding: 10px 16px 16px 16px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100vh - 45px);
+
+    .categoryItem {
+      background-color: #f6f7fc;
+      height: 75px;
+      padding: 12px;
+      font-size: var(--ygm-font-size-m);
+      overflow: hidden;
+      box-sizing: border-box;
+      border-radius: 6px;
+
+      .name {
+        font-weight: 500;
+      }
+
+      .count {
+        font-size: var(--ygm-font-size-s);
+        color: var(--ygm-color-weak);
+      }
+    }
+  }
+}

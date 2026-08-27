@@ -1,0 +1,17 @@
+.list {
+  padding: var(--ygm-padding-xl);
+  font-size: var(--ygm-font-size-m);
+}
+
+.addBook {
+  width: 96px;
+  height: 130px;
+  border: 1px solid var(--ygm-color-border);
+  color: var(--ygm-color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--ygm-font-size-xxxl);
+  border-radius: var(--ygm-radius-m);
+  box-sizing: border-box;
+}

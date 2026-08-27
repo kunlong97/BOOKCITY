@@ -1,0 +1,56 @@
+@import '@/assets/styles/mixin.scss';
+
+.limited {
+  font-size: var(--ygm-font-size-m);
+  margin-top: -8px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #ffdfd9 0%, rgba(255, 246, 232, 0) 61.54%);
+
+    .headerLeft {
+      display: flex;
+    }
+    .title {
+      font-size: var(--ygm-font-size-l);
+    }
+    .divider {
+      margin: 0 4px;
+      color: #e6ebf2;
+    }
+
+    .num {
+      font-size: var(--ygm-font-size-s);
+      color: var(--ygm-color-white);
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      background: linear-gradient(to right, #000, #3b3f47);
+    }
+    .symbol {
+      color: #3b3f47;
+      height: 14px;
+      margin: 0 2px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+
+  .bookName {
+    margin-top: 5px;
+    width: 69px;
+    line-height: 16px;
+    @include wrap(2);
+  }
+
+  .author {
+    flex: 1;
+    font-size: var(--ygm-font-size-s);
+    color: #969ba3;
+  }
+}

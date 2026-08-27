@@ -1,0 +1,26 @@
+.bookCover {
+  --width: 69px;
+  --height: 95px;
+  --radius: 5px;
+  font-size: var(--ygm-font-size-m);
+  position: relative;
+  
+
+  .coverImg {
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--radius);
+  }
+
+  .icon {
+    font-size: var(--ygm-font-size-xl);
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    color: var(--ygm-color-weak);
+  }
+
+  .active {
+    color: var(--ygm-color-primary);
+  }
+}

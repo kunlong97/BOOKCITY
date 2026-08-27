@@ -1,0 +1,61 @@
+.editBar {
+  font-size: var(--ygm-font-size-m);
+
+  .item {
+    text-align: center;
+    padding: 13px 0;
+    box-sizing: border-box;
+    border-top: 1px solid var(--ygm-color-border);
+  }
+
+  .disabled {
+    color: var(--ygm-color-weak);
+  }
+
+  .group {
+    width: 100%;
+    border-radius: var(--ygm-radius-xl) var(--ygm-radius-xl) 0 0;
+  }
+
+  .groupTitle {
+    text-align: center;
+    margin: var(--ygm-padding-xl) 0;
+    font-weight: bold;
+  }
+
+  .groupItem {
+    display: flex;
+    font-size: var(--ygm-font-size-m);
+    color: var(--ygm-color-text);
+    padding-left: var(--ygm-padding-xl);
+    padding-bottom: var(--ygm-padding-xl);
+    flex: 1;
+  }
+
+  .groupName {
+    margin-left: var(--ygm-padding-s);
+    flex: 1;
+  }
+
+  .groupAdd {
+    display: flex;
+    color: var(--ygm-color-primary);
+    padding-left: var(--ygm-padding-xl);
+    padding-bottom: var(--ygm-padding-xl);
+
+    > div {
+      flex: 1;
+      margin-left: var(--ygm-padding-s);
+    }
+  }
+}
+
+.input {
+  color: var(--ygm-color-text);
+  border: 1px solid var(--ygm-color-light);
+  margin-top: var(--ygm-padding-xxl);
+  padding-left: var(--ygm-padding-s);
+  padding-right: var(--ygm-padding-s);
+  border-radius: var(--ygm-radius-s);
+  width: 200px;
+}

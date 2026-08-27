@@ -1,0 +1,12 @@
+@import '@/assets/styles/mixin.scss';
+
+.bookName {
+  margin-top: 5px;
+  font-size: var(--ygm-font-size-m);
+  @include wrap(1);
+}
+
+.author {
+  font-size: var(--ygm-font-size-s);
+  color: var(--ygm-color-weak);
+}

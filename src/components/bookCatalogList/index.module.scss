@@ -1,0 +1,42 @@
+@import '@/assets/styles/mixin.scss';
+
+.catalogList {
+  padding: 16px 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 80vw;
+  background-color: #222;
+  font-size: var(--ygm-font-size-m);
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .catalogItem {
+      padding: 0 16px;
+      box-sizing: border-box;
+      color: var(--ygm-color-white);
+      display: block;
+      line-height: 50px;
+      font-size: var(--ygm-font-size-m);
+    }
+  }
+
+  .header {
+    padding: 16px;
+    .meta {
+      color: var(--ygm-color-white);
+      .title {
+        font-size: var(--ygm-font-size-l);
+        margin-top: 10px;
+        margin-bottom: 14px;
+      }
+      .author {
+        color: var(--ygm-color-weak);
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "@taoyage/configs/shared-tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "rootDir": "src",
+    "jsx": "react-jsx"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,4 @@
+.ygm-grid-item {
+  grid-column-end: span var(--item-span, 1);
+  // margin-bottom: 10px;
+}

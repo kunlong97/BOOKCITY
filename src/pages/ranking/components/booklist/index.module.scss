@@ -1,0 +1,26 @@
+@import '@/assets/styles/mixin.scss';
+
+.rankingBookList {
+  margin: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .bookName {
+    font-size: var(--ygm-font-size-x);
+    @include no-wrap();
+  }
+
+  .meta {
+    font-size: var(--ygm-font-size-s);
+    color: #a1aab3;
+    @include no-wrap();
+  }
+
+  .desc {
+    font-size: var(--ygm-font-size-m);
+    line-height: 18px;
+    color: #a1aab3;
+    @include wrap(2);
+    margin-bottom: 7px;
+  }
+}

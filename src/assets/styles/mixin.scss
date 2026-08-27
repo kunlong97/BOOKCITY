@@ -1,0 +1,26 @@
+// 定义基础行高变量
+$base-line-height: 1.2;
+$font-size: 14px;
+
+// 多行文本 Mixin
+@mixin wrap($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+
+  // 设置多行文本的总高度
+  height: calc(#{$line} * #{$font-size} * #{$base-line-height});
+}
+
+// 单行文本 Mixin
+@mixin no-wrap() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  // 假设这里要和 3 行文本高度保持一致
+  height: calc(1 * #{$font-size} * #{$base-line-height});
+}

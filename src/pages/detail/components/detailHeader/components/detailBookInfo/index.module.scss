@@ -1,0 +1,16 @@
+.bookInfo {
+  font-size: 13px;
+  margin-bottom: 16px;
+  font-family: sans-serif;
+
+  .bookName {
+    font-size: var(--ygm-font-size-l);
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  .desc {
+    font-size: var(--ygm-font-size-m);
+    margin-top: 32px;
+  }
+}

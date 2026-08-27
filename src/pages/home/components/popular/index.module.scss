@@ -1,0 +1,27 @@
+@import '@/assets/styles/mixin.scss';
+
+.popular {
+  margin-top: 25px;
+  font-size: var(--ygm-font-size-m);
+
+  .header {
+    background: linear-gradient(180deg, #c5f4f3 0%, rgba(255, 246, 232, 0) 61.54%);
+  }
+
+  .bookName {
+    @include no-wrap();
+  }
+
+  .meta {
+    font-size: var(--ygm-font-size-s);
+    color: #969ba3;
+    @include no-wrap();
+  }
+
+  .desc {
+    line-height: 18px;
+    color: #969ba3;
+    @include wrap(2);
+    margin-bottom: 7px;
+  }
+}

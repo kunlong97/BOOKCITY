@@ -1,0 +1,19 @@
+.detailContent {
+  padding: 16px 16px 79px 16px;
+  color: var(--ygm-color-text);
+  box-sizing: border-box;
+
+  h1 {
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-size: var(--ygm-font-size-xl);
+    font-weight: 400;
+  }
+
+  p {
+    font-size: var(--ygm-font-size-m);
+    line-height: 30px;
+    color: var(--ygm-color-weak);
+    text-indent: 2em;
+  }
+}

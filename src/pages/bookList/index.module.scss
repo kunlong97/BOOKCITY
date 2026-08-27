@@ -1,0 +1,32 @@
+@import '@/assets/styles/mixin.scss';
+
+.bookList {
+  overflow: hidden;
+  height: 100vh;
+
+  .content {
+    padding: 16px 16px 0 16px;
+    height: calc(100vh - 45px);
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    .bookName {
+      font-size: var(--ygm-font-size-l);
+      @include no-wrap();
+    }
+
+    .meta {
+      font-size: var(--ygm-font-size-s);
+      color: #a1aab3;
+      @include no-wrap();
+    }
+
+    .desc {
+      font-size: var(--ygm-font-size-m);
+      line-height: 18px;
+      color: #a1aab3;
+      @include wrap(2);
+      margin-bottom: 7px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bookcity-api",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["exec", "--", "json-server", "--watch", "./api-now/db.json", "--static", "./api-now/public", "--port", "3002"],
+      "port": 3002
+    },
+    {
+      "name": "bookcity-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    }
+  ]
+}
