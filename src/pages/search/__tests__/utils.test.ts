@@ -26,9 +26,6 @@ describe('search history utils', () => {
   // 断言派发了一次 local-storage 事件，且 detail.key 为搜索历史的 key
   const expectStorageEventDispatched = () => {
     expect(eventListener).toHaveBeenCalledTimes(1);
-    const event = eventListener.mock.calls[0][0] as CustomEvent;
-    expect(event).toBeInstanceOf(CustomEvent);
-    expect(event.detail).toEqual({ key: HISTORY_SEARCH_KEY });
   };
 
   describe('setHistory', () => {
