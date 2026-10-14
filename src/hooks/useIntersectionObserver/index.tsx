@@ -15,7 +15,7 @@ const useIntersectionObserver = (
     const element = targetRef.current;
     if (!element || frozen) return;
     const observerParams = { threshold, root, rootMargin };
-   const ob = new IntersectionObserver(([entry]: IntersectionObserverEntry[]) => {
+    const ob = new IntersectionObserver(([entry]: IntersectionObserverEntry[]) => {
       setEntry(entry);
     }, observerParams);
     ob.observe(element);

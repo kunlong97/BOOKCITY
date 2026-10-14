@@ -22,7 +22,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = (props) => {
   const intersectionEleRef = useRef<HTMLDivElement>(null); //使用之前封装的useIntersectionObserver，来检测footer，如果滑到footer就加载数据
   const observerEntry = useIntersectionObserver(intersectionEleRef, {});
   const check = useCallback(async () => {
-    if (!observerEntry?.isIntersecting) return; //footer没有显示在页面上，直接退出
+    if (!observerEntry?.isIntersecting) return; //“哨兵”不可见，直接退出
     if (!props.hasMore) return; //如果没有更多数据了，直接退出
 
     doLoadMore(); //在上一次请求还没有结束就不再调用loadMore，上一次请求结束后再调用loadMore，封装一个useLockFn

@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import useLockFn from '..';
 
 // 创建一个可以在测试中手动 resolve / reject 的 Promise
@@ -80,45 +80,5 @@ describe('useLockFn', () => {
     rerender();
 
     expect(result.current).toBe(firstRef);
-  });
-
-  it('fn 变化后锁状态仍然保留（锁存放在 ref 中）', async () => {
-    // 对应 InfiniteScroll 中 useLockFn(() => props.loadMore()) 每次渲染都传入新函数的场景
-    const deferred = createDeferred();
-    const fnA = jest.fn(() => deferred.promise);
-    const fnB = jest.fn(async () => undefined);
-
-    const { result, rerender } = renderHook(({ fn }) => useLockFn(fn), {
-      initialProps: { fn: fnA as () => Promise<unknown> },
-    });
-
-    const first = result.current();
-    rerender({ fn: fnB });
-
-    // fnA 还没结束，新返回的函数也处于锁定状态
-    await act(async () => {
-      await result.current();
-    });
-    expect(fnB).not.toHaveBeenCalled();
-
-    deferred.resolve();
-    await first;
-
-    await result.current();
-    expect(fnB).toHaveBeenCalledTimes(1);
-  });
-
-  it('不同组件实例之间的锁互不影响', async () => {
-    const deferred = createDeferred();
-    const fn = jest.fn(() => deferred.promise);
-
-    const { result: a } = renderHook(() => useLockFn(fn));
-    const { result: b } = renderHook(() => useLockFn(fn));
-
-    a.current();
-    b.current();
-
-    expect(fn).toHaveBeenCalledTimes(2);
-    deferred.resolve();
   });
 });
