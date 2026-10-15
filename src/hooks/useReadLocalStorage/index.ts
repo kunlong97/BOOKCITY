@@ -4,10 +4,6 @@ type Value<T> = T | null;
 const useReadLocalStorage = <T>(key: string): Value<T> => {
   //获取localStorage里的数据
   const readValue = React.useCallback((): Value<T> => {
-    if (typeof window === 'undefined') {
-      //兼容 SSR (服务端渲染) 环境，因为服务端没有 window 对象
-      return null;
-    }
     try {
       const item = window.localStorage.getItem(key); //获取localStorage里的数据。这里是用原生的api来获取，没有用之前封装的storage.get()，是为了解耦，因为这是个自定义hooks，要放在任何地方都能使用，需要独立
       return item ? (JSON.parse(item) as T) : null;
