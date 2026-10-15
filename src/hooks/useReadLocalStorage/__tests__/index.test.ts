@@ -5,8 +5,11 @@ import { clearHistory, deleteHistory, setHistory } from '@/pages/search/utils';
 
 const KEY = 'test_key';
 
+// 派发事件会触发 hook 内的 setState，需要包在 act 中，保证断言前状态已更新
 const dispatchStorageEvent = (detail: Record<string, unknown>) => {
-  window.dispatchEvent(new CustomEvent('local-storage', { detail }));
+  act(() => {
+    window.dispatchEvent(new CustomEvent('local-storage', { detail }));
+  });
 };
 
 describe('useReadLocalStorage', () => {
@@ -29,6 +32,7 @@ describe('useReadLocalStorage', () => {
       const { result } = renderHook(() => useReadLocalStorage(KEY));
       expect(result.current).toBeNull();
     });
+  });
 
   describe('监听 local-storage 事件', () => {
     it('收到当前 key 的事件后重新读取', () => {
@@ -79,7 +83,7 @@ describe('useReadLocalStorage', () => {
       expect(result.current).toEqual(['三体']);
 
       act(() => deleteHistory('三体'));
-      expect(result.current).toEqual(['球状闪电']);
+      expect(result.current).toEqual([]);
 
       act(() => clearHistory());
       expect(result.current).toBeNull();
