@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, renderHook, waitFor } from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 import { SWRConfig } from 'swr';
 import AxiosInstance from '../axiosInstance';
 import useRequest from '../useRequest';
