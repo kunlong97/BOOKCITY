@@ -33,5 +33,7 @@ export type TPageKey =
   | '006'
   | 'finish'
   | 'recommend'
+  | 'hotpicks'
+  | 'todaypicks'
 
 export type TTtileKeyMap = Record<TPageKey, string>;

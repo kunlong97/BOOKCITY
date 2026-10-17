@@ -15,7 +15,7 @@ const Popular: React.FC<IPopularProps> = React.memo(({ books }) => {
   const navigate = useNavigate();
 
   const onHeaderClick = () => {
-    navigate('/book-list/popular');
+    navigate('/book-list/hotpicks');
   };
 
   const renderContent = () => {

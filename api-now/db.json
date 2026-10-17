@@ -287,6 +287,76 @@
       }
     ]
   },
+  "bookList_hotpicks": {
+    "bookList": [
+      {
+        "bookId": "978-0307455895",
+        "author": "Khaled Hosseini",
+        "categoryName": "Historical Fiction",
+        "title": "The Kite Runner",
+        "coverImg": "http://localhost:3002/images/limited/limited4.png",
+        "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
+      },
+      {
+        "author": "Jane Austen",
+        "bookId": "978-0141439511",
+        "categoryName": "Classic Romance",
+        "coverImg": "http://localhost:3002/images/popular/popular3.png",
+        "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
+        "title": "Pride and Prejudice"
+      },
+      {
+        "bookId": "978-0062315007",
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+        "desc": "A notable literary work by Paulo Coelho."
+      },
+      {
+        "bookId": "978-0026085052",
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+        "desc": "A notable literary work by Aldous Huxley."
+      },
+      {
+        "bookId": "978-0142037230",
+        "title": "Of Mice and Men",
+        "author": "John Steinbeck",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+        "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
+      },
+      {
+        "bookId": "978-0060254956",
+        "title": "Where the Wild Things Are",
+        "author": "Maurice Sendak",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+        "desc": "A young boy named Max sails to an island inhabited by mysterious creatures and becomes their king, exploring the world of his imagination."
+      },
+      {
+        "bookId": "978-0307277671",
+        "title": "The Road",
+        "author": "Cormac McCarthy",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
+      },
+      {
+        "bookId": "978-0141182636",
+        "title": "The Grapes of Wrath",
+        "author": "John Steinbeck",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
+      },
+      {
+        "bookId": "978-0060935467",
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+        "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
+      }
+    ],
+    "isLast": true
+  },
   "bookList": [
     {
       "bookId": "978-0142437230",
@@ -1541,8 +1611,8 @@
       ]
     },
     {
-      "author": "George Orwell",
       "bookId": "978-0451524335",
+      "author": "George Orwell",
       "categoryName": "Dystopian Fiction",
       "coverImg": "http://localhost:3002/images/popular/popular1.png",
       "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought.",
@@ -6621,6 +6691,90 @@
         "categoryName": "Science Fiction / War",
         "coverImg": "http://localhost:3002/images/rank/rank2.png",
         "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden."
+      }
+    ],
+    "isLast": true
+  },
+  "bookList_todaypicks": {
+    "bookList": [
+      {
+        "bookId": "978-0140280098",
+        "title": "Lord of the Flies",
+        "author": "William Golding",
+        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+        "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
+      },
+      {
+        "author": "Paulo Coelho",
+        "bookId": "978-0062315007",
+        "categoryName": "Philosophical Fiction",
+        "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+        "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny.",
+        "title": "The Alchemist"
+      },
+      {
+        "author": "Ray Bradbury",
+        "bookId": "1451673319",
+        "categoryName": "Science Fiction",
+        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
+        "title": "Fahrenheit 451"
+      },
+      {
+        "author": "Emily Brontë",
+        "bookId": "978-0131182636",
+        "categoryName": "Gothic Fiction / Romance",
+        "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+        "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
+        "title": "Wuthering Heights"
+      },
+      {
+        "bookId": "978-0060852001",
+        "title": "The Picture of Dorian Gray",
+        "author": "Oscar Wilde",
+        "categoryName": "Philosophical Fiction",
+        "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+        "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
+      },
+      {
+        "bookId": "978-0131182636",
+        "title": "Wuthering Heights",
+        "author": "Emily Brontë",
+        "categoryName": "Tragic Fiction",
+        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+        "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
+      },
+      {
+        "bookId": "978-0141439709",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "categoryName": "Gothic Fiction",
+        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+        "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
+      },
+      {
+        "bookId": "978-0451524935",
+        "title": "Animal Farm",
+        "author": "George Orwell",
+        "categoryName": "Political Satire",
+        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+        "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
+      },
+      {
+        "bookId": "978-0147514011",
+        "title": "Little Women",
+        "author": "Louisa May Alcott",
+        "categoryName": "Family Drama",
+        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity."
+      },
+      {
+        "bookId": "978-0141182636",
+        "title": "The Grapes of Wrath",
+        "author": "John Steinbeck",
+        "categoryName": "Historical Fiction",
+        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       }
     ],
     "isLast": true

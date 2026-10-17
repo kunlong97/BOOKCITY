@@ -15,7 +15,7 @@ const Recommend: React.FC<IRecommendProps> = React.memo(({ books }) => {
   const navigate = useNavigate();
 
   const onHeaderClick = () => {
-    navigate('/book-list/popular');
+    navigate('/book-list/todaypicks');
   };
 
   const renderContent = () => {

@@ -18,7 +18,7 @@ function useBookDetail(id: string): IUseBookDetailResult {
   const { data, error } = useRequest<TBookDetailDTO, TBookDetailVM>(
     { url: api.getBook(id) },
     undefined,
-    api.transformBookDetail
+    api.transformBookDetail,
   );
 
   return {
