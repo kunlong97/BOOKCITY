@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import useInfiniteRequest from '@/hooks/useRequest/useInfiniteRequest';
 import api from '../api';
 import { IBookListDTO, IBookListVM, TPageKey } from '../types';
@@ -21,15 +20,15 @@ function useBookList(pageKey: TPageKey): IUseBookListResult {
   const { data, error, size, setSize, isValidating } = useInfiniteRequest<IBookListDTO, IBookListVM>(
     { url: api.getBookList(pageKey) },
     undefined,
-    api.transformBookListPage
+    api.transformBookListPage,
   );
 
   // 取最后一页的 isLast 标记，判断是否还有下一页
-  const hasMore = useMemo(() => !data?.at(-1)?.isLast, [data]);
+  const hasMore = data?.at(-1)?.isLast === false;
 
   const loadMore = async () => {
     // isValidating 为 true 说明上一页还在请求中，直接复用它做防重入，不需要额外加锁
-    if (isValidating) return;
+    if (isValidating || !hasMore) return;
     await setSize(size + 1);
   };
 

@@ -48,7 +48,7 @@ function useInfiniteRequest<Data = unknown, VM = Data>(
   } = useSWRInfinite<Response<Data>, INormalizedError>(
     (pageIndex: number) => getKey(pageIndex, request.url!),   //这里写成箭头函数是为了拿到request.url的值(因为request.url在useInfiniteRequest函数里,getKey函数是在外面定义的,直接拿拿不到useInfiniteRequest里的值)
     (url: string) => AxiosInstance.request({ url }),
-    { ...config, revalidateFirstPage: false }
+    { ...config}
   );
 
   return {

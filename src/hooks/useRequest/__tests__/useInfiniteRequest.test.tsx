@@ -56,8 +56,28 @@ describe('useInfiniteRequest', () => {
     expect(requestSpy).toHaveBeenLastCalledWith({ url: '/bookList_001?pageIndex=2' });
   });
 
-  it('加载下一页时不会重新请求第 1 页（revalidateFirstPage: false）', async () => {
+  it('加载下一页时会先重新请求第 1 页（使用 SWR 默认的 revalidateFirstPage: true）', async () => {
     const { result } = renderHook(() => useInfiniteRequest({ url: '/bookList_001' }), { wrapper });
+    await waitFor(() => expect(result.current.data).toHaveLength(1));
+
+    await act(async () => {
+      await result.current.setSize(2);
+    });
+    await waitFor(() => expect(result.current.data).toHaveLength(2));
+
+    const requestedUrls = requestSpy.mock.calls.map(([config]) => config.url);
+    expect(requestedUrls).toEqual([
+      '/bookList_001?pageIndex=1',
+      '/bookList_001?pageIndex=1',
+      '/bookList_001?pageIndex=2',
+    ]);
+  });
+
+  it('传入 revalidateFirstPage: false 时加载下一页不再重新请求第 1 页', async () => {
+    const { result } = renderHook(
+      () => useInfiniteRequest({ url: '/bookList_001' }, { revalidateFirstPage: false }),
+      { wrapper },
+    );
     await waitFor(() => expect(result.current.data).toHaveLength(1));
 
     await act(async () => {
