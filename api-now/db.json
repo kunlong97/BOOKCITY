@@ -684,48 +684,37 @@
     "The Old Man and the Sea",
     "Moby-Dick"
   ],
-  "ranking": {
-    "male": [
-      {
-        "id": 1,
-        "key": "001",
-        "title": "最热榜",
-        "cover": "",
-        "shortTitle": "Popular List"
-      },
-      {
-        "id": 2,
-        "key": "002",
-        "title": "畅销榜",
-        "cover": "",
-        "shortTitle": "Bestseller list"
-      },
-      {
-        "id": 3,
-        "key": "003",
-        "title": "热搜榜",
-        "cover": "",
-        "shortTitle": "Trending List"
-      },
-      {
-        "id": 4,
-        "key": "004",
-        "title": "潜力榜",
-        "cover": "",
-        "shortTitle": "Potential List"
-      }
-    ],
-    "female": [
-      {
-        "id": 1,
-        "key": "001",
-        "title": "最热榜",
-        "cover": "",
-        "shortTitle": "最热榜"
-      }
-    ]
-  },
-  "rank_male_001": [
+  "ranking": [
+    {
+      "id": 1,
+      "key": "001",
+      "title": "最热榜",
+      "cover": "",
+      "shortTitle": "Popular List"
+    },
+    {
+      "id": 2,
+      "key": "002",
+      "title": "畅销榜",
+      "cover": "",
+      "shortTitle": "Bestseller list"
+    },
+    {
+      "id": 3,
+      "key": "003",
+      "title": "热搜榜",
+      "cover": "",
+      "shortTitle": "Trending List"
+    },
+    {
+      "id": 4,
+      "key": "004",
+      "title": "潜力榜",
+      "cover": "",
+      "shortTitle": "Potential List"
+    }
+  ],
+  "rank_001": [
     {
       "bookId": "978-0142437230",
       "author": "Ernest Hemingway",
@@ -804,7 +793,7 @@
       "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
     }
   ],
-  "rank_male_002": [
+  "rank_002": [
     {
       "bookId": "978-0060254956",
       "title": "Where the Wild Things Are",
@@ -876,7 +865,7 @@
       "desc": "A notable literary work by J.D. Salinger."
     }
   ],
-  "rank_male_003": [
+  "rank_003": [
     {
       "bookId": "978-0553573404",
       "title": "A Game of Thrones",
@@ -954,7 +943,7 @@
       "title": "Little Women"
     }
   ],
-  "rank_male_004": [
+  "rank_004": [
     {
       "author": "Herman Melville",
       "bookId": "978-1503280788",
@@ -1550,32 +1539,6 @@
     ],
     "isLast": true
   },
-  "rank_female_001": [
-    {
-      "author": "Jane Austen",
-      "bookId": "978-0141439511",
-      "categoryName": "Classic Romance",
-      "coverImg": "http://localhost:3002/images/popular/popular3.png",
-      "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
-      "title": "Pride and Prejudice"
-    },
-    {
-      "author": "Emily Brontë",
-      "bookId": "978-0131182636",
-      "categoryName": "Gothic Fiction / Romance",
-      "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
-      "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
-      "title": "Wuthering Heights"
-    },
-    {
-      "author": "Louisa May Alcott",
-      "bookId": "978-0147514011",
-      "categoryName": "Classic / Family Drama",
-      "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
-      "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
-      "title": "Little Women"
-    }
-  ],
   "book": [
     {
       "bookId": "978-0142437230",

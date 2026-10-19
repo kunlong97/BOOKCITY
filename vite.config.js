@@ -32,7 +32,7 @@ export default defineConfig({
         target: 'http://localhost:3002',
         changeOrigin: true,
       },
-      '^/rank_male_00[1-4]': {
+      '^/rank_00[1-4]': {
         target: 'http://localhost:3002',
         changeOrigin: true,
       },

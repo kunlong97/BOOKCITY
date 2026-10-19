@@ -8,13 +8,12 @@ import { px2rem } from '@/utils/unit';
 import BookCover from '@/components/bookCover/bookCover';
 
 export interface BookListProps {
-  gender: 'male' | 'female';
   id: string;
 }
 
 const BookList: React.FC<BookListProps> = (props) => {
   const { data } = useRequest<IBookInfo[]>({
-    url: api.getBookList({ gender: props.gender, key: props.id }),
+    url: api.getBookList(props.id),
   });
 
   const navigate = useNavigate();

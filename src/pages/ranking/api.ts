@@ -1,7 +1,6 @@
 const api = {
   ranking: '/ranking',
-  getBookList: ({ gender, key }: { gender: 'male' | 'female'; key: string }) =>
-    `/rank_${gender}_${key}`,
+  getBookList: (key: string) => `/rank_${key}`,
 };
 
 export default api;
