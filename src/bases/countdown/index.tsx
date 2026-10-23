@@ -1,6 +1,6 @@
 import React from 'react';
-import cx from 'classnames'; 
-import { getTimeItems } from '@/bases/countdown/utils'; 
+import cx from 'classnames';
+import { getTimeItems } from '@/bases/countdown/utils';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayout'; // 同构布局效果hook（兼容SSR）
 import './styles/index.scss'; // 组件样式
 
@@ -35,16 +35,23 @@ type timeItemType = { num: string; symbol: string | undefined }[];
  * 2. 将总时长拆分为按格式要求的时间片段数组
  * 3. 每秒更新一次UI，直到倒计时结束
  */
-const Countdown: React.FC<CountdownProps> = (props) => {
+const Countdown: React.FC<CountdownProps> = ({
+  time,
+  format = 'hh:mm:ss',
+  endText,
+  numberClassName,
+  symbolClassName,
+  endTextClassName,
+}) => {
   // 状态管理
   const [timeItems, setTimeItems] = React.useState<timeItemType>([]); // 存储格式化后的时间片段
   const [timeEnd, setTimeEnd] = React.useState<boolean>(false); // 标记倒计时是否已结束
 
   // 引用管理（避免重复创建）
-  const computeTimeRef = React.useRef<number>(props.time); // 当前剩余时间（毫秒），使用ref保证定时器中能获取最新值
+  const computeTimeRef = React.useRef<number>(time); // 当前剩余时间（毫秒），使用ref保证定时器中能获取最新值
   const timerRef = React.useRef<number>(0); // 定时器ID引用
   // 计算倒计时结束的绝对时间戳（组件挂载时确定，后续不变）
-  const endTimeMs = React.useMemo(() => Date.now() + props.time, [props.time]);
+  const endTimeMs = React.useMemo(() => Date.now() + time, [time]);
 
   /**
    * 更新倒计时UI
@@ -59,9 +66,9 @@ const Countdown: React.FC<CountdownProps> = (props) => {
     }
 
     // 使用工具函数将剩余时间按格式拆分为时间片段数组
-    const items = getTimeItems(props.format || 'hh:mm:ss', computeTimeRef.current);
+    const items = getTimeItems(format || 'hh:mm:ss', computeTimeRef.current);
     setTimeItems(items);
-  }, [props.format]);
+  }, [format]);
 
   /**
    * 初始化倒计时逻辑
@@ -97,16 +104,16 @@ const Countdown: React.FC<CountdownProps> = (props) => {
 
   return (
     <div className={classPrefix}>
-      {timeEnd && props.endText ? (
+      {timeEnd && endText ? (
         // 倒计时结束时显示结束文案
-        <div className={props.endTextClassName}>{props.endText}</div>
+        <div className={endTextClassName}>{endText}</div>
       ) : (
         // 渲染时间片段
         timeItems.map((item, index) => (
           <div className={`${classPrefix}-item`} key={index}>
-            <div className={cx(`${classPrefix}-item-num`, props.numberClassName)}>{item.num}</div>
+            <div className={cx(`${classPrefix}-item-num`, numberClassName)}>{item.num}</div>
             {item.symbol && ( // 只有存在分隔符时才渲染
-              <div className={cx(`${classPrefix}-symbol`, props.symbolClassName)}>{item.symbol}</div>
+              <div className={cx(`${classPrefix}-symbol`, symbolClassName)}>{item.symbol}</div>
             )}
           </div>
         ))
@@ -117,10 +124,5 @@ const Countdown: React.FC<CountdownProps> = (props) => {
 
 // 设置组件显示名称（便于调试）
 Countdown.displayName = 'Countdown';
-
-// 设置默认属性
-Countdown.defaultProps = {
-  format: 'hh:mm:ss', // 默认显示时:分:秒格式
-};
 
 export default Countdown;
