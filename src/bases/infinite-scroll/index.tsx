@@ -3,7 +3,6 @@ import useLockFn from '@/hooks/useLockFn';
 import { useCallback, useEffect, useRef } from 'react';
 import SpinnerLoading from '../spinner-loading';
 
-
 export interface InfiniteScrollProps {
   /** 是否加载更多 */
   hasMore: boolean;
@@ -14,19 +13,18 @@ export interface InfiniteScrollProps {
   children: React.ReactNode;
 }
 
-
 const classPrefix = 'ygm-infinite-scroll';
 
-const InfiniteScroll: React.FC<InfiniteScrollProps> = (props) => {
-  const doLoadMore = useLockFn(() => props.loadMore());
+const InfiniteScroll: React.FC<InfiniteScrollProps> = ({ hasMore, loadMore, footer, children }) => {
+  const doLoadMore = useLockFn(() => loadMore());
   const intersectionEleRef = useRef<HTMLDivElement>(null); //使用之前封装的useIntersectionObserver，来检测footer，如果滑到footer就加载数据
   const observerEntry = useIntersectionObserver(intersectionEleRef, {});
   const check = useCallback(async () => {
     if (!observerEntry?.isIntersecting) return; //“哨兵”不可见，直接退出
-    if (!props.hasMore) return; //如果没有更多数据了，直接退出
+    if (!hasMore) return; //如果没有更多数据了，直接退出
 
     doLoadMore(); //在上一次请求还没有结束就不再调用loadMore，上一次请求结束后再调用loadMore，封装一个useLockFn
-  }, [doLoadMore, observerEntry?.isIntersecting, props]);
+  }, [doLoadMore, observerEntry?.isIntersecting, hasMore]);
 
   useEffect(() => {
     check();
@@ -34,10 +32,10 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = (props) => {
 
   return (
     <div className={classPrefix}>
-      {props.children}
-      <div className={'${classPrefix}-load'} ref={intersectionEleRef}>
-        {props.footer && props.footer} 
-        {!props.footer && (props.hasMore ? <SpinnerLoading size={16} /> : '')}
+      {children}
+      <div className={`${classPrefix}-load`} ref={intersectionEleRef}>
+        {footer && footer}
+        {!footer && (hasMore ? <SpinnerLoading size={16} /> : '')}
       </div>
     </div>
   );
