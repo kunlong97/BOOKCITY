@@ -29,7 +29,7 @@ const ChapterFooterCatalog: React.FC = React.memo(() => {
   }
 
   return (
-    <Popup visible={catalogVisible} position="left" onMaskClick={onMaskClick}>
+    <Popup mask visible={catalogVisible} position="left" onMaskClick={onMaskClick}>
       {book && (
         <BookCatalogList
           catalogList={book.chapters!}

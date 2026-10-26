@@ -1,4 +1,34 @@
-import useIsomorphicLayoutEffect from "../useIsomorphicLayout";
+import useIsomorphicLayoutEffect from '../useIsomorphicLayout';
+
+/**
+ * 全局的锁定计数。
+ * Popup 和它内部的 Mask 会同时调用 useScrollLock，页面上也可能同时打开多个浮层。
+ * 如果每个调用方各自保存、各自恢复 overflow，后锁定的一方保存到的"原始值"其实是
+ * 前一方设置的 'hidden'，关闭顺序一乱就会把页面永久恢复成 'hidden'。
+ * 所以这里统一计数：只有第一个锁定时保存原始值，最后一个解除时才恢复。
+ */
+let lockCount = 0;
+let originalOverflow = '';
+
+// 锁定 html 而非 body，是为了兼容 iOS Safari 等浏览器的滚动行为差异
+const getLockTarget = () => document.documentElement;
+
+const lock = () => {
+  if (lockCount === 0) {
+    const el = getLockTarget();
+    // 保存锁定前的原始 overflow 值，避免覆盖页面原有的样式
+    originalOverflow = el.style.overflow;
+    el.style.overflow = 'hidden';
+  }
+  lockCount += 1;
+};
+
+const unlock = () => {
+  lockCount = Math.max(0, lockCount - 1);
+  if (lockCount === 0) {
+    getLockTarget().style.overflow = originalOverflow;
+  }
+};
 
 /**
  * 页面滚动锁定 Hook
@@ -13,21 +43,11 @@ const useScrollLock = (visible: boolean) => {
     // 当浮层不可见时，直接跳过，不执行任何 DOM 操作
     if (!visible) return;
 
-    // 获取 <html> 根元素
-    // 锁定 html 而非 body，是为了兼容 iOS Safari 等浏览器的滚动行为差异
-    const el = document.getElementsByTagName('html')[0];
-
-    // 保存锁定前的原始 overflow 值，避免覆盖父组件设置的样式
-    const originalOverflow = el.style.overflow;
-
-    // 设置 overflow: hidden 锁定页面滚动
-    el.style.overflow = 'hidden';
+    lock();
 
     // 返回清理函数：组件卸载或 visible 变为 false 时自动执行
     return () => {
-      // 恢复为原始 overflow 值，而非直接设为空字符串
-      // 这样能避免破坏页面原有的滚动样式
-      el.style.overflow = originalOverflow;
+      unlock;
     };
   }, [visible]); // 依赖 visible 变化，visible 切换时自动锁定/解锁
 };

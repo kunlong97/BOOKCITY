@@ -21,7 +21,7 @@ const Mask: React.FC<MaskProps> = (props) => {
 
    const [active, setActive] = useState<boolean>(props.visible)
 
-   useScrollLock(props.visible);   //用于滚动条滚动，在下面封装
+   useScrollLock(props.visible);
 
    const {opacity} = useSpring({
       opacity: props.visible? 1 : 0,

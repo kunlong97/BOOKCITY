@@ -13,7 +13,7 @@ export interface PopupProps {
   /** 内容区域类名 */
   className?: string;
   /** 当前是否可见 */
-  visible: boolean;
+  visible?: boolean;
   children?: React.ReactNode;
   /** 是否展示蒙层 */
   mask?: boolean;
@@ -38,7 +38,8 @@ const Popup: React.FC<PopupProps> = ({
   afterShow,
   afterClose,
 }) => {
-  useScrollLock(visible); //用于滚动条滚动，在下面封装
+
+  useScrollLock(visible); 
 
   const { percent } = useSpring({
     percent: visible ? 0 : 100,

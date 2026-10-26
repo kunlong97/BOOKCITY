@@ -113,7 +113,7 @@ const Dialog: React.FC<DialogProps> = ({
 
   return (
     <div className={classPrefix} style={{ display: active ? undefined : 'none' }}>
-      <Mask visible={visible!} style={maskStyle} onMaskClick={onClose} />
+      <Mask visible={visible} style={maskStyle} onMaskClick={onClose} />
       <div className={`${classPrefix}-wrap`}>
         <animated.div style={style}>
           <div className={`${classPrefix}-body`}>
