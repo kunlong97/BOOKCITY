@@ -16,20 +16,20 @@ interface DialogActionButtonProps {
 
 const classPrefix = 'ygm-dialog-button';
 
-const DialogActionButton: React.FC<DialogActionButtonProps> = (props) => {
+const DialogActionButton: React.FC<DialogActionButtonProps> = ({ action, onAction }) => {
   return (
     <Button
-      key={props.action.key}
+      key={action.key}
       className={classPrefix}
-      onClick={props.onAction}
-      color={props.action.color}
-      disabled={props.action.disabled}
+      onClick={onAction}
+      color={action.color}
+      disabled={action.disabled}
       block
       shape="rectangular"
       fill="none"
       loading="auto"
     >
-      {props.action.text}
+      {action.text}
     </Button>
   );
 };

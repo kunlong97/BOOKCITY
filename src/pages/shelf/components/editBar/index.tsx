@@ -56,7 +56,7 @@ const EditBar: React.FC = memo(() => {
   // 分组
   const onGroup = (name: string) => {
     if (selectedBook.length === 0 && selectedGroup.length === 0) {
-      Toast.show('请选择书籍或分组');
+      Toast.show('Please choose a book or a group');
     } else {
       const result = moveToGroup(name, selectedBook, selectedGroup);
       Toast.show(result.msg);
