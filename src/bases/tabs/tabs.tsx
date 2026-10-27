@@ -36,9 +36,6 @@ const Tabs: React.FC<TabsProps> = (props) => {
     setActiveKey(props.activeKey);
   }, [props.activeKey]);
 
-  // 记录 key 到索引的映射关系（用于后续可能的性能优化或逻辑处理）
-  const keyToIndexRecord: Record<string, number> = React.useMemo(() => ({}), []);
-
   // 提取出合法的 Tab 面板子组件
   const panes: React.ReactElement<React.ComponentProps<typeof Tab>>[] = [];
 
@@ -50,8 +47,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
     if (!child.key) return;
 
     // 将合法的子组件推入 panes 数组，并记录其索引
-    const length = panes.push(child as React.ReactElement<React.ComponentProps<typeof Tab>>);
-    keyToIndexRecord[child.key as string] = length - 1;
+    panes.push(child as React.ReactElement<React.ComponentProps<typeof Tab>>);
   });
 
   // 处理 tab 点击事件
@@ -115,12 +111,6 @@ const Tabs: React.FC<TabsProps> = (props) => {
       })}
     </div>
   );
-};
-
-// 设置组件的默认 Props
-Tabs.defaultProps = {
-  showTabLine: true,
-  type: 'line',
 };
 
 // 设置组件的 displayName，方便在 React DevTools 中调试

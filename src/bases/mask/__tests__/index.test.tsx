@@ -56,6 +56,7 @@ describe('Mask', () => {
       fireEvent.click(getMask(container));
 
       expect(onMaskClick).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('锁定页面滚动', () => {

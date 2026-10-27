@@ -9,19 +9,19 @@ import './styles/index.scss';
 
 export interface SidebarProps {
   /** 当前激活side item面板的key */
-    activeKey: string;
-  
-    /** 点击side item切换后回调 */
-    onChange?: (key: string) => void;
-  
-    /** 子元素 */
-    children?: React.ReactNode;
-  
-    /** 基本样式 */
-    style?: React.CSSProperties &
-      Partial<
-        Record<'--width' | '--height' | '--background-color' | '--content-padding' | '--sidebar-item-padding', string>
-      >;
+  activeKey: string;
+
+  /** 点击side item切换后回调 */
+  onChange?: (key: string) => void;
+
+  /** 子元素 */
+  children?: React.ReactNode;
+
+  /** 基本样式 */
+  style?: React.CSSProperties &
+    Partial<
+      Record<'--width' | '--height' | '--background-color' | '--content-padding' | '--sidebar-item-padding', string>
+    >;
 }
 
 const classPrefix = `ygm-sidebar`;
@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
     <div className={classPrefix}>
       <div className={`${classPrefix}-items`} style={props.style}>
         {items.map((item) => {
-          const active = item.key === props.activeKey;   //是当前激活的SidebarItem的key,值为true
+          const active = item.key === props.activeKey; //是当前激活的SidebarItem的key,值为true
           return (
             <div
               className={cx(`${classPrefix}-item`, {

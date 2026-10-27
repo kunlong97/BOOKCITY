@@ -47,7 +47,7 @@ const useScrollLock = (visible: boolean) => {
 
     // 返回清理函数：组件卸载或 visible 变为 false 时自动执行
     return () => {
-      unlock;
+      unlock();
     };
   }, [visible]); // 依赖 visible 变化，visible 切换时自动锁定/解锁
 };
