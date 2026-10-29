@@ -24,7 +24,7 @@ const SwiperPageIndicator: React.FC<SwiperPageIndicatorProps> = (props) => {
       });
   }, [props]);
 
-  return <div className={classPrefix}>{dots}</div>; //渲染最外层容器，并将生成的小圆点数组渲染到页面中
+  return <div className={cx(classPrefix, props.indicatorClassName)}>{dots}</div>; //渲染最外层容器，并将生成的小圆点数组渲染到页面中
 };
 
 export default SwiperPageIndicator;

@@ -34,29 +34,11 @@ export default function Home() {
     <div className={styles.home}>
       <Header />
       <Space direction="vertical" gap={px2rem(20)}>
-        <Swiper autoplay loop style={{ '--border-radius': '12px', '--height': '200px' }}>
+        <Swiper autoplay loop style={{ '--border-radius': px2rem(12), '--height': px2rem(200) }}>
           {data.banner.map((item, index) => {
             return (
               <Swiper.Item key={index}>
-                <div
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    overflow: 'hidden',
-                    position: 'relative',
-                  }}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center center', // 居中裁剪
-                    }}
-                  />
-                </div>
+                <Image src={item.src} alt={item.alt} fit="cover" />
               </Swiper.Item>
             );
           })}

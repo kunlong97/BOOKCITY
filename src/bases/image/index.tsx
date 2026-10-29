@@ -36,7 +36,8 @@ const Image: React.FC<ImageProps> = (props) => {
       ref={imageRef}
       src={observerEntry?.isIntersecting || !props.lazy ? props.src : props.loading}
       alt={props.alt}
-      style={{ ...props.style, objectFit: props.fit }}
+      // fit 放在前面作为默认值，调用方在 style 里显式写的 objectFit 优先生效
+      style={{ objectFit: props.fit, ...props.style }}
       width={props.width}
       height={props.height}
       onClick={props.onClick}
