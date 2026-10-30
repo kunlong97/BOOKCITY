@@ -54,7 +54,7 @@ const ChapterFooterProgressBar: React.FC = React.memo(() => {
         <div className={styles.progressVal}>{`chapter ${currentPageIndex}`}</div>
         <div className={styles.progressBar}>
           <div className={cx(styles.prev, { [styles.disable]: isFirst })} onClick={onPrev}>
-            上一章
+            Prev Chapter
           </div>
           <div className={styles.slider}>
             <Slider
@@ -67,7 +67,7 @@ const ChapterFooterProgressBar: React.FC = React.memo(() => {
             />
           </div>
           <div className={cx(styles.next, { [styles.disable]: isLast })} onClick={onNext}>
-            下一章
+            Next Chapter
           </div>
         </div>
       </div>

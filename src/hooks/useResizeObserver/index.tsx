@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import useIsomorphicLayoutEffect from '../useIsomorphicLayout';
 
 /**
@@ -7,6 +8,10 @@ import useIsomorphicLayoutEffect from '../useIsomorphicLayout';
  * @param targetRef - React ref 对象，指向需要监听的 DOM 元素
  */
 const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void, targetRef: React.RefObject<T>) => {
+  // 观察器只在挂载时创建一次，把 callback 存进 ref，触发时才能调用到最新的那一份
+  const callbackRef = useRef(callback);
+  callbackRef.current = callback;
+
   useIsomorphicLayoutEffect(() => {
     // 使用 layout effect 确保在 DOM 布局完成后(浏览器绘制之前)执行，避免闪烁
 
@@ -14,10 +19,10 @@ const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void,
     if (!element) return;
 
     //检查浏览器是否原生支持 ResizeObserver API
-    if (window.ResizeObserver) {  
-      
+    if (window.ResizeObserver) {
+
       const observer = new ResizeObserver(() => {
-        callback(element);
+        callbackRef.current(element);
       });
       observer.observe(element); //开始监听目标元素
       return () => {
@@ -27,7 +32,7 @@ const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void,
     }
 
     //降级方案：不支持 ResizeObserver 时，初始化时手动执行一次回调
-    callback(element);
+    callbackRef.current(element);
     return () => null;
   }, []);
 };

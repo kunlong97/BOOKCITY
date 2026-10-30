@@ -28,7 +28,7 @@ const DetailBookInfo: React.FC = React.memo(() => {
         </Space>
       </Space>
       <div className={styles.desc}>
-        <Ellipsis text={book.desc} rows={2} expand="展开" collapse="收起" />
+        <Ellipsis text={book.desc} rows={2} expand="【expand】" collapse="【collapse】" />
       </div>
     </div>
   );

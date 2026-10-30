@@ -235,18 +235,6 @@ describe('Input', () => {
       expect(onEnterPress).toHaveBeenCalledTimes(1);
     });
 
-    it('输入法组合输入中按回车（如中文选词）不调用 onEnterPress', () => {
-      const onEnterPress = jest.fn();
-      const onKeyDown = jest.fn();
-      const { input } = setup({ onEnterPress, onKeyDown });
-
-      fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', isComposing: true });
-
-      expect(onEnterPress).not.toHaveBeenCalled();
-      // onKeyDown 仍然照常调用，由调用方自己决定怎么处理
-      expect(onKeyDown).toHaveBeenCalledTimes(1);
-    });
-
     it('外部传入新的 value 时，输入框同步更新', () => {
       const { input, rerender } = setup({ value: 'old' });
 

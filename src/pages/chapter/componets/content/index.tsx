@@ -94,8 +94,8 @@ const ChapterContent: React.FC = React.memo(() => {
       {chapters.map((chapterInfo) => renderChapter(chapterInfo, data as IChapterContent[]))}
 
       <div className={styles.pagination}>
-        <Button onClick={onPrev}>上一章</Button>
-        <Button onClick={onNext}>下一章</Button>
+        <Button onClick={onPrev}>Prev Chapter</Button>
+        <Button onClick={onNext}>Next Chapter</Button>
       </div>
     </div>
   );

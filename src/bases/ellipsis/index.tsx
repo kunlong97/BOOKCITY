@@ -16,10 +16,13 @@ export interface EllipsisProps {
 
 const classPrefix = 'ygm-ellipsis';
 const ellipsisTailing = '...';
+// rem 布局下行高是小数，浏览器渲染出的行盒高度会有亚像素误差（如 14.0168 渲染成 14.0199），
+// 比较高度时要留出容差，否则刚好占满 rows 行的文本也会被判定为超出
+const heightTolerance = 1;
 
 const Ellipsis: React.FC<EllipsisProps> = ({ text = '', rows = 1, collapse, expand }) => {
   const [exceeded, setExceeded] = useState<boolean>(false); //控制文本是否溢出，决定是否需要截断
-  const [expanded, setExpanded] = useState<boolean>(true); //控制当前是展开还是收起状态
+  const [expanded, setExpanded] = useState<boolean>(false); //控制当前是展开还是收起状态，默认收起，按 rows 显示
   const [ellpsised, setEllpsised] = useState<string>(''); //存储经过二分查找计算后，需要展示的截断文本
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,42 +52,39 @@ const Ellipsis: React.FC<EllipsisProps> = ({ text = '', rows = 1, collapse, expa
     document.body.appendChild(container);
 
     const lineHeight = pxToNumber(originStyle.lineHeight);
-    const maxHeight = lineHeight! * rows!;
+    const maxHeight = lineHeight * rows + heightTolerance;
     const height = container.getBoundingClientRect().height; //Element.getBoundingClientRect()?方法用于获取元素的大小及其相对于视口的位置，返回一个?DOMRect?对象，包含?x,?y,?width,?height,?top,?right,?bottom,?left?等只读属性。
 
-    const check = (left: number, right: number) => {
-      //二分法
-      let l = left;
-      let r = right;
-      let text = '';
+    // 展开文字只有是字符串时才能放进影子容器测量
+    const expandText = typeof expand === 'string' ? ` ${expand}` : '';
 
-      //找到能放入省略号和展开字符且不超限的最大文本长度
-      while (l < r) {
-        const m = Math.floor((l + r) / 2);
-        if (l === m) {
-          break;
-        }
-        const tempText = text.slice(l, m);
-        container.innerText = `${text}${tempText}${ellipsisTailing}${expand}`;
-        const height = container.getBoundingClientRect().height;
+    //二分法：找到能放入省略号和展开文字且不超过限制高度的最大文本长度
+    const findMaxLength = () => {
+      let low = 0;
+      let high = text.length;
 
-        if (height > maxHeight) {
-          r = m;
+      while (low < high) {
+        const mid = Math.ceil((low + high) / 2);
+        container.innerText = `${text.slice(0, mid)}${ellipsisTailing}${expandText}`;
+
+        if (container.getBoundingClientRect().height > maxHeight) {
+          high = mid - 1;
         } else {
-          l = m;
-          text = `${text}${tempText}`;
+          low = mid;
         }
       }
-      return text;
+      return low;
     };
 
     if (maxHeight >= height) {
       setExceeded(false);
     } else {
       setExceeded(true);
-      const ellipsisedValue = check(0, text.length);
-      setEllpsised(ellipsisedValue);
+      setEllpsised(text.slice(0, findMaxLength()));
     }
+
+    // 测量完移除影子容器，否则每次计算都会在 body 里多留一个节点
+    document.body.removeChild(container);
   }, [expand, rows, text]);
 
   useIsomorphicLayoutEffect(() => {
@@ -102,7 +102,8 @@ const Ellipsis: React.FC<EllipsisProps> = ({ text = '', rows = 1, collapse, expa
       if (expanded) {
         return (
           <>
-            {text};{collapse && <a> collapse</a>}
+            {text}
+            {collapse && <a> {collapse}</a>}
           </>
         );
 
@@ -112,7 +113,7 @@ const Ellipsis: React.FC<EllipsisProps> = ({ text = '', rows = 1, collapse, expa
           <>
             {ellpsised}
             {ellipsisTailing}
-            {expand && <a> expand</a>}
+            {expand && <a> {expand}</a>}
           </>
         );
       }

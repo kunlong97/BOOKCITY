@@ -34,28 +34,28 @@ const NavBar: React.FC = React.memo(() => {
             <div className={styles.icon}>
               <i className="icon-catalog" />
             </div>
-            <div className={styles.name}>目录</div>
+            <div className={styles.name}>Contents</div>
           </div>
 
           <div className={styles.item} onClick={onProgress}>
             <div className={styles.icon}>
               <i className="icon-progress" />
             </div>
-            <div className={styles.name}>进度</div>
+            <div className={styles.name}>Progress</div>
           </div>
 
           <div className={styles.item} onClick={onSetting}>
             <div className={styles.icon}>
               <i className="icon-setting" />
             </div>
-            <div className={styles.name}>设置</div>
+            <div className={styles.name}>Settings</div>
           </div>
 
           <div className={styles.item} onClick={onNightTheme}>
             <div className={styles.icon}>
               {nightTheme ? <i className="icon-daytime" /> : <i className="icon-night" />}
             </div>
-            <div className={styles.name}>{nightTheme ? '日间' : '夜间'}</div>
+            <div className={styles.name}>{nightTheme ? 'Light Mode' : 'Night Mode'}</div>
           </div>
         </Grid>
       </div>
