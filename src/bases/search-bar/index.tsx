@@ -41,70 +41,82 @@ export interface SearchBarProps {
 
 const classPrefix = 'ygm-search-bar';
 
-const SearchBar = React.forwardRef<SearchBarRef, SearchBarProps>((props, ref) => {
-  const [value, setValue] = React.useState<string>(props.value!);
-  const inputRef = React.useRef<SearchBarRef>(null);
-  const composingRef = React.useRef<boolean>(false);
+const SearchBar = React.forwardRef<SearchBarRef, SearchBarProps>(
+  (
+    {
+      value = '',
+      icon = <SearchOutline />,
+      clearable = true,
+      cancelText = 'Cancel',
+      placeholder,
+      maxLength,
+      disabled,
+      style,
+      showCancel,
+      onCancel,
+      onSearch,
+      onChange,
+      onClear,
+    },
+    ref,
+  ) => {
+    const [innerValue, setInnerValue] = React.useState<string>(value);
+    const inputRef = React.useRef<SearchBarRef>(null);
 
-  React.useImperativeHandle(ref, () => ({
-    clear: () => inputRef.current?.clear(),
-    focus: () => inputRef.current?.focus(),
-    blur: () => inputRef.current?.blur(),
-    setValue: (val: string) => inputRef.current?.setValue(val),
-  }));
+    // 外部传入的 value 变化时同步
+    React.useEffect(() => {
+      setInnerValue(value);
+    }, [value]);
 
-  const onChange = (value: string) => {
-    setValue(value);
-    props.onChange?.(value);
-  };
+    React.useImperativeHandle(
+      ref,
+      () => ({
+        clear: () => setInnerValue(''),
+        focus: () => inputRef.current?.focus(),
+        blur: () => inputRef.current?.blur(),
+        setValue: (val: string) => setInnerValue(val),
+      }),
+      [],
+    );
 
-  const onEnterPress = () => {
-    if (!composingRef.current) {
+    const handleChange = (val: string) => {
+      setInnerValue(val);
+      onChange?.(val);
+    };
+
+    const onEnterPress = () => {
       inputRef.current?.blur();
-      props.onSearch?.(value);
-    }
-  };
+      onSearch?.(innerValue);
+    };
 
-  return (
-    <div className={classPrefix} style={props.style}>
-      <div className={`${classPrefix}-content`}>
-        <div className={`${classPrefix}-content-icon`}>{props.icon}</div>
-        <Input
-          ref={inputRef}
-          className={`${classPrefix}-content-input`}
-          style={{ '--placeholder-color': props.style?.['--placeholder-color'] }}
-          placeholder={props.placeholder}
-          value={value}
-          disabled={props.disabled}
-          maxLength={props.maxLength}
-          clearable={props.clearable}
-          type="search"
-          onChange={onChange}
-          onClear={props.onClear}
-          onEnterPress={onEnterPress}
-          onCompositionStart={() => {
-            composingRef.current = true;
-          }}
-          onCompositionEnd={() => {
-            composingRef.current = false;
-          }}
-        />
-      </div>
-      {props.showCancel && (
-        <div className={`${classPrefix}-content-cancel`} role="button" onClick={props.onCancel}>
-          {props.cancelText}
+    return (
+      <div className={classPrefix} style={style}>
+        <div className={`${classPrefix}-content`}>
+          <div className={`${classPrefix}-content-icon`}>{icon}</div>
+          <Input
+            ref={inputRef}
+            className={`${classPrefix}-content-input`}
+            style={{ '--placeholder-color': style?.['--placeholder-color'] }}
+            placeholder={placeholder}
+            value={innerValue}
+            disabled={disabled}
+            maxLength={maxLength}
+            clearable={clearable}
+            type="search"
+            onChange={handleChange}
+            onClear={onClear}
+            onEnterPress={onEnterPress}
+          />
         </div>
-      )}
-    </div>
-  );
-});
-
-SearchBar.defaultProps = {
-  value: '',
-  icon: <SearchOutline />,
-  clearable: true,
-  cancelText: '	Cancel',
-};
+        {showCancel && (
+          <div className={`${classPrefix}-content-cancel`} role="button" onClick={onCancel}>
+            {cancelText}
+          </div>
+        )}
+      </div>
+    );
+  },
+);
 
 SearchBar.displayName = 'SearchBar';
 

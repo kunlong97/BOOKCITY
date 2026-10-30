@@ -74,6 +74,7 @@ const BookSearchBar: React.FC = React.memo(() => {
   return (
     <SearchBar
       value={searchKeyword as string}
+      ref={searchRef}
       placeholder="Search books or authors"
       onSearch={onSearch}
       showCancel={true}
