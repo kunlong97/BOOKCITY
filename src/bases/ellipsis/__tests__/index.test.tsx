@@ -87,15 +87,15 @@ describe('Ellipsis', () => {
     it('默认收起：截断文本，并带上省略号和展开文字', () => {
       const { root } = setup({ rows: 2, expand: '【expand】', collapse: '【collapse】' });
 
-      // 2 行共 20 个字符，要放下 "..." 和 " 展开"（共 6 个字符），正文最多 14 个字符
-      expect(root.textContent).toBe('abcdefghijklmn... 【expand】');
+      // 2 行共 20 个字符，要放下 "..." 和 " 【expand】"（共 12 个字符），正文最多 8 个字符
+      expect(root.textContent).toBe('abcdefgh... 【expand】');
     });
 
     it('rows 决定显示的行数', () => {
-      const { root } = setup({ rows: 1, expand: '【expand】' });
+      const { root } = setup({ rows: 2 });
 
-      // 1 行 10 个字符，正文最多 4 个字符
-      expect(root.textContent).toBe('abcd... 【expand】');
+      // 2 行 20 个字符，放下 "..." 后，正文最多 17 个字符
+      expect(root.textContent).toBe('abcdefghijklmnopq...');
     });
 
     it('rows 默认为 1', () => {
@@ -114,7 +114,7 @@ describe('Ellipsis', () => {
       expect(root.querySelector('a')!.textContent).toBe(' 【collapse】');
 
       fireEvent.click(root);
-      expect(root.textContent).toBe('abcdefghijklmn... 【expand】');
+      expect(root.textContent).toBe('abcdefgh... 【expand】');
     });
 
     it('只有 expand 时，展开后不能再收起', () => {

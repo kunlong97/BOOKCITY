@@ -40,17 +40,17 @@ class ErrorBoundaryImpl extends React.Component<IErrorBoundaryProps, IErrorBound
   };
 
   render() {
-    if (this.state.error) {
+    if (this.state.error) {   //但如果子组件在渲染过程中抛出了未捕获的异常，React 就会调用 getDerivedStateFromError，把错误存进 state，就会走到这个if，渲染这个降级UI
       return (
         <div className={styles.errorBoundary}>
           <ErrorBlock />
           <Button color="primary" onClick={this.onBackHome}>
-            返回首页
+            Back to Homepage
           </Button>
         </div>
       );
     }
-    return this.props.children;
+    return this.props.children;   //正常情况下，ErrorBoundary 会直接渲染 this.props.children
   }
 }
 
