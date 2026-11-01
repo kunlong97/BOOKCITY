@@ -191,7 +191,7 @@ describe('useShelf', () => {
         ret = result.current.moveToGroup('科幻', [A, B], []);
       });
 
-      expect(ret).toEqual({ movedBooks: [A, B], msg: '已添加至分组' });
+      expect(ret).toEqual({ movedBooks: [A, B], msg: 'Added to group' });
       expect(result.current.groups).toEqual({ 科幻: [A, B] });
       expect(ids(result.current.books)).toEqual(['c']);
     });

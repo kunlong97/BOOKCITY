@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useRef } from 'react';
 import cx from 'classnames';
-import { CheckOutline, CloseOutline } from 'antd-mobile-icons';
-import SpinnerLoading from '@/bases/spinner-loading';
+
 import './styles/index.scss';
 
 export interface ToastProps {
@@ -13,27 +12,11 @@ export interface ToastProps {
   afterClose?: () => void;
   /** 卸载当前Toast的DOM */
   unmount?: () => void;
-  /** Toast图标 */
-  icon?: 'success' | 'fail' | 'loading' | React.ReactNode;
 }
 
 const classPrefix = 'ygm-toast';
 
-const Toast: React.FC<ToastProps> = ({ duration = 2000, content, afterClose, unmount, icon }) => {
-  const iconElement = useMemo(() => {
-    if (icon === null || icon === undefined) return null;
-    switch (icon) {
-      case 'success':
-        return <CheckOutline />;
-      case 'fail':
-        return <CloseOutline />;
-      case 'loading':
-        return <SpinnerLoading color="white" />;
-      default:
-        return icon;
-    }
-  }, [icon]);
-
+const Toast: React.FC<ToastProps> = ({ duration = 2000, content, afterClose, unmount }) => {
   /**
    * 自动消失逻辑
    * 组件挂载后设置定时器，到期后调用 unmount 卸载自身
@@ -47,6 +30,10 @@ const Toast: React.FC<ToastProps> = ({ duration = 2000, content, afterClose, unm
     return () => clearTimeout(timer);
   }, [unmount, duration]);
 
+  // afterClose 存进 ref，下面的 effect 不依赖它，重新渲染时传入新函数也不会提前触发
+  const afterCloseRef = useRef(afterClose);
+  afterCloseRef.current = afterClose;   //如果不做这行代码,那么useRef里的内容将永远停留在第一次挂载时的那个旧函数上。
+
   /**
    * 关闭回调逻辑
    * 组件卸载时触发 afterClose，通知外部 Toast 已消失
@@ -54,14 +41,13 @@ const Toast: React.FC<ToastProps> = ({ duration = 2000, content, afterClose, unm
    */
   useEffect(() => {
     return () => {
-      afterClose?.();
+      afterCloseRef.current?.();
     };
-  }, [afterClose]);
+  }, []);
 
   return (
     <div className={classPrefix}>
-      <div className={cx(`${classPrefix}-main`, icon ? `${classPrefix}-main-icon` : `${classPrefix}-main-text`)}>
-        {iconElement && <div className={`${classPrefix}-icon`}>{iconElement}</div>}
+      <div className={cx(`${classPrefix}-main`, `${classPrefix}-main-text`)}>
         <div className={`${classPrefix}-text`}>{content}</div>
       </div>
     </div>

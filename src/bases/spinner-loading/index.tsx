@@ -7,18 +7,13 @@ export interface SpinnerLoadingProps {
   size?: number;
 }
 
-const SpinnerLoading: React.FC<SpinnerLoadingProps> = (props) => {
+const SpinnerLoading: React.FC<SpinnerLoadingProps> = ({ color = 'default', size = 32 }) => {
   return (
     <div
-      className={cx('ygm-spinner-loading', `ygm-spinner-loading-color-${props.color}`)}
-      style={{ width: props.size, height: props.size }}
+      className={cx('ygm-spinner-loading', `ygm-spinner-loading-color-${color}`)}
+      style={{ width: size, height: size }}
     ></div>
   );
-};
-
-SpinnerLoading.defaultProps = {
-  color: 'default',
-  size: 32,
 };
 
 export default SpinnerLoading;

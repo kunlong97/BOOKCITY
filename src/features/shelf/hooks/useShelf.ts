@@ -30,7 +30,7 @@ interface IUseShelfResult {
   moveToGroup: (
     name: string,
     selectedBooks: IBookInfo[],
-    selectedGroupNames: string[]
+    selectedGroupNames: string[],
   ) => { movedBooks: IBookInfo[]; msg: string };
 }
 
@@ -45,7 +45,7 @@ function useShelf(): IUseShelfResult {
       if (books.some((b) => b.bookId === bookId)) return true;
       return Object.values(groups).some((group) => group.some((b) => b.bookId === bookId));
     },
-    [books, groups]
+    [books, groups],
   );
 
   const removeBooks = useCallback((toRemove: IBookInfo[]) => {
@@ -53,7 +53,7 @@ function useShelf(): IUseShelfResult {
     const current: IBookInfo[] = storage.get(SHELF_KEY) || [];
     storage.set(
       SHELF_KEY,
-      current.filter((b) => !ids.has(b.bookId))
+      current.filter((b) => !ids.has(b.bookId)),
     );
     notify(SHELF_KEY);
   }, []);
@@ -100,7 +100,7 @@ function useShelf(): IUseShelfResult {
       notify(SHELF_KEY);
       return 'Added to bookshelf';
     },
-    [isInShelf, removeBooks, removeFromAllGroups]
+    [isInShelf, removeBooks, removeFromAllGroups],
   );
 
   const moveToGroup = useCallback(
@@ -131,9 +131,9 @@ function useShelf(): IUseShelfResult {
         removeBooks(allMovedBooks);
       }
 
-      return { movedBooks: allMovedBooks, msg: '已添加至分组' };
+      return { movedBooks: allMovedBooks, msg: 'Added to group' };
     },
-    [removeBooks]
+    [removeBooks],
   );
 
   return { books, groups, isInShelf, toggle, removeBooks, removeGroups, moveToGroup };
