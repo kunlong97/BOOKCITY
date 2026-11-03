@@ -44,6 +44,11 @@ const EditBar: React.FC = memo(() => {
 
   // 点击提交: 清空输入值、关闭弹窗、清空 Input 组件内部状态、清除选中的书籍和分组
   const onConformDialog = () => {
+    // 名称为空时提示，对话框保持打开，让用户继续输入
+    if (!inputValue.trim()) {
+      Toast.show('Please enter a group name');
+      return;
+    }
     setInputValue('');
     setDialogVisible(false);
     inputRef.current!.clear();

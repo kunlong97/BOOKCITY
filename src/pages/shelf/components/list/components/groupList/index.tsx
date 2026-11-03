@@ -22,17 +22,20 @@ const GroupList: React.FC = memo(() => {
   const selectedGroup = useAppSelector((state) => state.Shelf.selectedGroup);
 
   const [visible, setVisible] = useState<boolean>(false); //控制底部分组框的显示与隐藏
-  const [bookList, setBookList] = useState<IBookInfo[]>([]); //存储当前分组框中要展示的书籍列表（点击某个分组后填充此数据）
+  // 只记住打开的是哪个分组，书籍列表每次从最新的 groupList 里读取，
+  // 弹窗打开期间分组内容变化时也能同步显示
+  const [openGroupName, setOpenGroupName] = useState<string>('');
+  const bookList: IBookInfo[] = groupList[openGroupName] || [];
 
   const onGroup = (groupName: string) => {
     // "编辑"模式,点击分组,选中/删除分组
     if (editMode) {
       dispatch(setSelectedGroup(groupName));
 
-    // 非"编辑"模式,点击分组,弹出分组框,将该分组下的书籍列表传入
+    // 非"编辑"模式,点击分组,弹出分组框,显示该分组下的书籍
     } else {
       setVisible(true);
-      setBookList(groupList[groupName] || []);
+      setOpenGroupName(groupName);
     }
   };
 
