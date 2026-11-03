@@ -56,7 +56,7 @@ const ChapterContent: React.FC = React.memo(() => {
   };
 
   const onNext = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.stopPropagation;
+    e.stopPropagation(); // 阻止冒泡到正文的点击事件，否则会把顶部和底部栏重新打开
     if (isLast) return;
     navigate(`/book/${bookId}/${Number(chapterId) + 1}`, { replace: true });
     dispatch(setHeaderVisible(false));
@@ -72,11 +72,20 @@ const ChapterContent: React.FC = React.memo(() => {
     element.scrollTop = 0; //页面回到顶部
   });
 
+  // error 要在 Loading 之前判断：请求失败时 chapters 一直是 undefined，
+  // 先判断 !chapters 的话会一直停在加载中
+  if (error) {
+    return <ErrorBlock />;
+  }
+
   if (!chapters) {
     return <Loading />;
   }
 
-  if (error || !chapters?.length) {
+  // 没有这本书的章节数据，或者 URL 里的章节号超出范围（比如只有 5 章却打开第 9 章），
+  // 直接渲染会读取 undefined 的 chapterName 导致整个页面崩溃
+  const chapterExists = chapters.length > 0 && chapters.every((item) => item.chapterContent[Number(chapterId) - 1]);
+  if (!chapterExists) {
     return <ErrorBlock />;
   }
 
