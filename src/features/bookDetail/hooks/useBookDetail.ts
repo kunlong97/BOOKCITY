@@ -6,6 +6,8 @@ interface IUseBookDetailResult {
   data: TBookDetailVM;
   loading: boolean;
   error: unknown;
+  /** 请求已完成，但没有这本书（json-server 对不存在的 bookId 返回空数组） */
+  notFound: boolean;
 }
 
 /**
@@ -15,16 +17,19 @@ interface IUseBookDetailResult {
  * 作为一个跨页面复用的 feature 模块。
  */
 function useBookDetail(id: string): IUseBookDetailResult {
-  const { data, error } = useRequest<TBookDetailDTO, TBookDetailVM>(
+  const { data, error, response } = useRequest<TBookDetailDTO, TBookDetailVM>(
     { url: api.getBook(id) },
     undefined,
     api.transformBookDetail,
   );
 
+  // 用"响应是否已经回来"判断加载状态，而不是看 data：
+  // 书不存在时 data 解包出来是 undefined，用 data 判断会一直停在加载中
   return {
     data,
-    loading: !data && !error,
+    loading: !response && !error,
     error,
+    notFound: !!response && !data,
   };
 }
 

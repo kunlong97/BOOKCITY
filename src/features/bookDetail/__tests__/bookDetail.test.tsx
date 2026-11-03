@@ -63,7 +63,7 @@ describe('useBookDetail', () => {
 
     const { result } = renderHook(() => useBookDetail('1001'), { wrapper: swrWrapper });
 
-    expect(result.current).toEqual({ data: undefined, loading: true, error: undefined });
+    expect(result.current).toEqual({ data: undefined, loading: true, error: undefined, notFound: false });
 
     await waitFor(() => expect(result.current.data).toEqual(book));
     expect(result.current.loading).toBe(false);
@@ -79,6 +79,27 @@ describe('useBookDetail', () => {
     await waitFor(() => expect(result.current.error).toEqual(error));
     expect(result.current.loading).toBe(false);
     expect(result.current.data).toBeUndefined();
+    expect(result.current.notFound).toBe(false);
+  });
+
+  it('书不存在（接口返回空数组）时 notFound 为 true，loading 为 false', async () => {
+    requestSpy.mockResolvedValue(ok([]));
+
+    const { result } = renderHook(() => useBookDetail('not-exist'), { wrapper: swrWrapper });
+
+    await waitFor(() => expect(result.current.notFound).toBe(true));
+    expect(result.current.loading).toBe(false);
+    expect(result.current.data).toBeUndefined();
+    expect(result.current.error).toBeUndefined();
+  });
+
+  it('找到书时 notFound 为 false', async () => {
+    requestSpy.mockResolvedValue(ok([book]));
+
+    const { result } = renderHook(() => useBookDetail('1001'), { wrapper: swrWrapper });
+
+    await waitFor(() => expect(result.current.data).toEqual(book));
+    expect(result.current.notFound).toBe(false);
   });
 
   it('bookId 变化时请求新的书籍', async () => {

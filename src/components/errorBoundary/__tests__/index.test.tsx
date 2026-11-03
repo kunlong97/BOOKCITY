@@ -42,7 +42,8 @@ describe('ErrorBoundary', () => {
   it('子组件渲染出错时，显示错误页和Back to Homepage按钮，而不是让整个应用崩溃', () => {
     renderAt('/crash');
 
-    expect(screen.getByText('Something went wrong with this page. Please try again later.')).toBeTruthy();
+    expect(screen.getByText('Something went wrong with this page.')).toBeTruthy();
+    expect(screen.getByText('Please try again later.')).toBeTruthy();
     expect(screen.getByText('Back to Homepage')).toBeTruthy();
     // 边界外面的内容不受影响
     expect(screen.getByText('go ok')).toBeTruthy();
@@ -61,12 +62,12 @@ describe('ErrorBoundary', () => {
   describe('路由切换时重置', () => {
     it('页面崩溃后切到其他路由，显示恢复正常', () => {
       renderAt('/crash');
-      expect(screen.getByText('Something went wrong with this page. Please try again later.')).toBeTruthy();
+      expect(screen.getByText('Something went wrong with this page.')).toBeTruthy();
 
       fireEvent.click(screen.getByText('go ok'));
 
       expect(screen.getByText('正常页面')).toBeTruthy();
-      expect(screen.queryByText('Something went wrong with this page. Please try again later.')).toBeNull();
+      expect(screen.queryByText('Something went wrong with this page.')).toBeNull();
     });
 
     it('从正常页面切到会崩溃的页面时，同样能捕获', () => {
@@ -74,7 +75,7 @@ describe('ErrorBoundary', () => {
 
       fireEvent.click(screen.getByText('go crash'));
 
-      expect(screen.getByText('Something went wrong with this page. Please try again later.')).toBeTruthy();
+      expect(screen.getByText('Something went wrong with this page.')).toBeTruthy();
     });
   });
 

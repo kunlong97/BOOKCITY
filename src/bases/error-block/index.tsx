@@ -29,8 +29,8 @@ const ErrorBlock: React.FC<ErrorBlockProps> = (props) => {
 };
 
 ErrorBlock.defaultProps = {
-  title: 'Something went wrong with this page. Please try again later.',
-  description: 'Please try again later',
+  title: 'Something went wrong with this page.',
+  description: 'Please try again later.',
 };
 
 export default ErrorBlock;
