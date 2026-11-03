@@ -3,7 +3,7 @@ import BookSearchBar from './components/searchBar';
 import SearchList from './components/searchList';
 import SearchHot from './components/searchHot';
 import SearchHistory from './components/searchHistory';
-import { setSearchKeyword } from './searchSlice';
+import { setSearchKeyword, setSearchMode } from './searchSlice';
 import { useAppDispatch } from '@/store/store';
 import { parse } from 'query-string';
 import { useEffect } from 'react';
@@ -18,6 +18,11 @@ export default function Search() {
     const keyword = parse(window.location.search).keyword;
     if (typeof keyword === 'string' && keyword) {
       dispatch(setSearchKeyword(keyword));
+    } else {
+      // 关键词存在 Redux 里，离开页面后还在。进入时以 URL 为准，URL 没有关键词就回到初始状态，
+      // 否则从首页重新进来，看到的还是上一次的搜索结果
+      dispatch(setSearchKeyword(''));
+      dispatch(setSearchMode(false));
     }
   }, [dispatch]);
 

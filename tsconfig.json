@@ -1,10 +1,10 @@
 {
   "extends": "@taoyage/configs/shared-tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
+    "moduleResolution": "bundler",
     "rootDir": "src",
     "types": ["jest"],
     "jsx": "react-jsx"
