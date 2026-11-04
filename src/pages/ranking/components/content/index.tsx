@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 import styles from './index.module.scss';
 import Sidebar from '@/bases/sidebar';
 import { IRanking } from '../../types';
@@ -9,14 +10,16 @@ interface IRankingContentProps {
   ranking: IRanking;
 }
 
-// 排行榜只有一份榜单列表，没有顶部 tab 可切换——activeKey 只需要在挂载时
-// 取一次"榜单列表的第一项"当默认值，后续只会因为用户点击侧边栏项而变化，
-// 不需要再监听任何外部状态来重置它。
+// 选中的榜单存在 URL 的 ?key= 里：从详情页返回、刷新页面或分享链接时都能保留。
+// URL 里没有 key 或 key 不存在时，默认选中第一个榜单。
 const RankingContent: React.FC<IRankingContentProps> = React.memo(({ ranking }) => {
-  const [activeKey, setActiveKey] = useState<string>(ranking[0].key);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const keyInUrl = searchParams.get('key');
+  const activeKey = ranking.some((item) => item.key === keyInUrl) ? (keyInUrl as string) : ranking[0].key;
 
   const onChange = (key: string) => {
-    setActiveKey(key);
+    // 用 replace：切换榜单不应该在浏览器历史里留下一条条记录
+    setSearchParams({ key }, { replace: true });
   };
 
   return (

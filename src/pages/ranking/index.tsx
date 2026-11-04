@@ -19,7 +19,12 @@ const Ranking: React.FC = () => {
   return (
     <div className={styles.ranking}>
       <RankingHeader />
-      <RankingContent ranking={data} />
+      {/* 没有任何榜单时直接提示，不渲染 RankingContent（它默认选中第一个榜单，列表为空会报错） */}
+      {data.length > 0 ? (
+        <RankingContent ranking={data} />
+      ) : (
+        <ErrorBlock title="No rankings available" description="Please check back later." />
+      )}
     </div>
   );
 };

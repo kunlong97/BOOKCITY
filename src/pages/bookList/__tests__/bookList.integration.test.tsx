@@ -116,7 +116,10 @@ describe('书单页', () => {
 
       scrollToBottom();
 
-      await waitFor(() => expect(bookNames()).toEqual(['1984', 'The Hobbit', 'Animal Farm', 'The Great Gatsby']));
+      // 要连续加载 4 页，而每加载一页 SWR 都会先重新请求第 1 页，全量并行跑测试时可能超过默认的 5 秒
+      await waitFor(() => expect(bookNames()).toEqual(['1984', 'The Hobbit', 'Animal Farm', 'The Great Gatsby']), {
+        timeout: 10000,
+      });
       expect(Math.max(...pageRequests(api))).toBe(4);
       expect(pageRequests(api)).not.toContain(5);
     });

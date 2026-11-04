@@ -23,4 +23,17 @@
     @include wrap(2);
     margin-bottom: 7px;
   }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  .loadError {
+    padding: 24px 0;
+    text-align: center;
+    font-size: var(--ygm-font-size-s);
+    color: #a1aab3;
+  }
 }
