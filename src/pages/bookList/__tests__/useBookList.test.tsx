@@ -161,6 +161,58 @@ describe('useBookList', () => {
       await waitFor(() => expect(result.current.error).toEqual(error));
       expect(result.current.loading).toBe(false);
       expect(result.current.data).toBeUndefined();
+      expect(result.current.loadMoreError).toBeUndefined();
+    });
+
+    describe('加载下一页失败', () => {
+      const error = { code: 500, msg: 'Request failed（500）' };
+
+      // 第 2 页是否失败由 state.failPage2 控制
+      const setup = async () => {
+        const state = { failPage2: true };
+        requestSpy.mockImplementation(async (config: { url: string }) => {
+          if (pageOf(config.url) === 2 && state.failPage2) throw error;
+          return mockPages(3)(config);
+        });
+        const hook = renderHook(() => useBookList('001'), { wrapper });
+        await waitFor(() => expect(hook.result.current.data).toHaveLength(1));
+
+        await act(async () => {
+          await hook.result.current.loadMore();
+        });
+        await waitFor(() => expect(hook.result.current.loadMoreError).toEqual(error));
+        return { ...hook, state };
+      };
+
+      it('返回 loadMoreError，error 为空，已加载的页保留', async () => {
+        const { result } = await setup();
+
+        expect(result.current.error).toBeUndefined();
+        expect(result.current.data?.map((page) => page.bookList[0].bookId)).toEqual(['p1']);
+      });
+
+      it('hasMore 变为 false，loadMore 不再发请求', async () => {
+        const { result } = await setup();
+        const callsBefore = requestSpy.mock.calls.length;
+
+        expect(result.current.hasMore).toBe(false);
+        await act(async () => {
+          await result.current.loadMore();
+        });
+
+        expect(requestSpy).toHaveBeenCalledTimes(callsBefore);
+      });
+
+      it('retry 重新请求，成功后追加下一页并清除 loadMoreError', async () => {
+        const { result, state } = await setup();
+        state.failPage2 = false;
+
+        act(() => result.current.retry());
+
+        await waitFor(() => expect(result.current.data).toHaveLength(2));
+        expect(result.current.loadMoreError).toBeUndefined();
+        expect(result.current.hasMore).toBe(true);
+      });
     });
   });
 });

@@ -15,7 +15,7 @@ const BookList: React.FC = () => {
   const pageKey = useParams().key as TPageKey;
   const navigate = useNavigate();
 
-  const { data, loading, error, hasMore, loadMore } = useBookList(pageKey);
+  const { data, loading, error, loadMoreError, hasMore, loadMore, retry } = useBookList(pageKey);
 
   const onBack = () => {
     navigate(-1);
@@ -33,7 +33,17 @@ const BookList: React.FC = () => {
     <div className={styles.bookList}>
       <NavBar onBack={onBack} leftText="Back">{TITLE_KEY_MAP[pageKey]}</NavBar>
       <div className={styles.content}>
-        <InfiniteScroll hasMore={hasMore} loadMore={loadMore}>
+        <InfiniteScroll
+          hasMore={hasMore}
+          loadMore={loadMore}
+          footer={
+            loadMoreError ? (
+              <div className={styles.loadError} onClick={retry}>
+                Failed to load. Tap to retry
+              </div>
+            ) : undefined
+          }
+        >
           <Grid columns={1} gap={px2rem(24)}>
             {data?.map((item) => {
               return item.bookList.map((book) => (
