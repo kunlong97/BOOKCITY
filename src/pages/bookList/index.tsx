@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Grid, Space, ErrorBlock } from '@/bases';
 import Loading from '@/components/loading';
 import { TPageKey } from '@/pages/bookList/types';
@@ -14,6 +14,12 @@ import { TITLE_KEY_MAP } from './constant';
 const BookList: React.FC = () => {
   const pageKey = useParams().key as TPageKey;
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // 标题依次取：前端登记的标题 → 跳转时带过来的标题（如分类页传来的分类名）→ 通用标题。
+  // 书单是否存在由接口决定（不存在时接口 404，走下面的 error 分支），不再依赖前端的标题表
+  const title =
+    TITLE_KEY_MAP[pageKey] ?? (location.state as { title?: string } | null)?.title ?? 'Book List';
 
   const { data, loading, error, loadMoreError, hasMore, loadMore, retry } = useBookList(pageKey);
 
@@ -21,7 +27,7 @@ const BookList: React.FC = () => {
     navigate(-1);
   };
 
-  if (error || !TITLE_KEY_MAP[pageKey]) {
+  if (error) {
     return <ErrorBlock />;
   }
 
@@ -31,7 +37,7 @@ const BookList: React.FC = () => {
 
   return (
     <div className={styles.bookList}>
-      <NavBar onBack={onBack} leftText="Back">{TITLE_KEY_MAP[pageKey]}</NavBar>
+      <NavBar onBack={onBack} leftText="Back">{title}</NavBar>
       <div className={styles.content}>
         <InfiniteScroll
           hasMore={hasMore}

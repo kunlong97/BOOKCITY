@@ -116,9 +116,17 @@ describe('书单页', () => {
 
       scrollToBottom();
 
-      // 要连续加载 4 页，而每加载一页 SWR 都会先重新请求第 1 页，全量并行跑测试时可能超过默认的 5 秒
+      // 要连续加载 4 页，而每加载一页 SWR 都会先重新请求第 1 页，全量并行跑测试时可能超过默认的 5 秒。
+      // 这个用例在全量运行时偶发失败过，原因还没确定（机器负载导致超时，或者加载在中途停住）。
+      // 失败时把当时已显示的书和已发出的请求打出来，用来区分这两种情况
       await waitFor(() => expect(bookNames()).toEqual(['1984', 'The Hobbit', 'Animal Farm', 'The Great Gatsby']), {
         timeout: 10000,
+        onTimeout: (error) => {
+          error.message =
+            `连续加载没有到达最后一页。已显示的书：${JSON.stringify(bookNames())}；` +
+            `已请求的页码（按顺序）：${JSON.stringify(pageRequests(api))}\n${error.message}`;
+          return error;
+        },
       });
       expect(Math.max(...pageRequests(api))).toBe(4);
       expect(pageRequests(api)).not.toContain(5);

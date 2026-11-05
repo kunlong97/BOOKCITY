@@ -17,8 +17,9 @@ const Category: React.FC = () => {
     navigate(-1);
   };
 
-  const onCategoryItem = (key: string) => {
-    navigate(`/book-list/${key}`);
+  // 把分类名一起带给书单页当标题：接口新增的分类不需要在前端的标题表里登记
+  const onCategoryItem = (key: string, name: string) => {
+    navigate(`/book-list/${key}`, { state: { title: name } });
   };
 
    if(error){
@@ -34,7 +35,7 @@ const Category: React.FC = () => {
       <div className={styles.categoryContent}>
         <Grid columns={2} gap={px2rem(16)}>
           {data?.map((category) => (
-            <Grid.Item span={1} key={category.id} onClick={() => onCategoryItem(category.id)}>
+            <Grid.Item span={1} key={category.id} onClick={() => onCategoryItem(category.id, category.name)}>
               <div className={styles.categoryItem}>
                 <Space gap={px2rem(12)}>
                   <div className={styles.bookCover}>

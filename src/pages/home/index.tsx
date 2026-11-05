@@ -30,24 +30,27 @@ export default function Home() {
     return <Loading />;
   }
 
+
   return (
     <div className={styles.home}>
       <Header />
       <Space direction="vertical" gap={px2rem(20)}>
-        <Swiper autoplay loop style={{ '--border-radius': px2rem(12), '--height': px2rem(200) }}>
-          {data.banner.map((item, index) => {
-            return (
-              <Swiper.Item key={index}>
-                <Image src={item.src} alt={item.alt} fit="cover" />
-              </Swiper.Item>
-            );
-          })}
-        </Swiper>
+        {data?.banner?.length && (
+          <Swiper autoplay loop style={{ '--border-radius': px2rem(12), '--height': px2rem(200) }}>
+            {data.banner.map((item, index) => {
+              return (
+                <Swiper.Item key={index}>
+                  <Image src={item.src} alt={item.alt} fit="cover" />
+                </Swiper.Item>
+              );
+            })}
+          </Swiper>
+        )}
         <Navbar />
-        <Popular books={data.popular} />
-        <Recommend books={data.recommend} />
-        <LimitedReader books={data.limited} />
-        <Ranking rankings={data.ranking} />
+        {data?.popular?.length > 0 && <Popular books={data.popular} />}
+        {data?.recommend?.length > 0 && <Recommend books={data.recommend} />}
+        {data?.limited?.length > 0 && <LimitedReader books={data.limited} />}
+        {data?.ranking?.length > 0 && <Ranking rankings={data.ranking} />}
       </Space>
     </div>
   );
