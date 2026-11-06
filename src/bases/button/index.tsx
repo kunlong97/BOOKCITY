@@ -15,7 +15,7 @@ export interface ButtonProps {
   fill?: 'solid' | 'outline' | 'none';
   children?: React.ReactNode;
   className?: string;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => Promise<void> | unknown;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => Promise<void> | unknown;
   block?: boolean;
   disabled?: boolean;
   loading?: boolean | 'auto';
@@ -40,8 +40,9 @@ const Button: React.FC<ButtonProps> = ({
   const [innerLoading, setInnerLoading] = React.useState(false);
   const cloading = loading === 'auto' ? innerLoading : loading; // 当loading 为 'auto' 时，使用内部状态；否则直接使用 props.loading
 
-  const onButtonClick = async (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!onClick) return;
+  const onButtonClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    // 原生 disabled 已经会拦住点击，这里再判断一次，同时在加载中忽略点击，避免重复提交
+    if (!onClick || disabled || cloading) return;
 
     const promise = onClick(e);
     if (isPromise(promise)) {
@@ -56,8 +57,13 @@ const Button: React.FC<ButtonProps> = ({
     }
   };
 
+  // 用原生 <button>：自带按钮语义（读屏、getByRole('button')）、能用键盘聚焦和触发，
+  // disabled 时浏览器不会派发点击事件。type="button" 避免放在 <form> 里时被当成提交按钮
   return (
-    <div
+    <button
+      type="button"
+      disabled={disabled}
+      aria-busy={cloading || undefined}
       className={cx(
         classPrefix,
         className,
@@ -72,8 +78,8 @@ const Button: React.FC<ButtonProps> = ({
       )}
       onClick={onButtonClick}
     >
-      {cloading ? <div className={`${classPrefix}-loading-wrap`}>{loadingIcon}</div> : children}
-    </div>
+      {cloading ? <span className={`${classPrefix}-loading-wrap`}>{loadingIcon}</span> : children}
+    </button>
   );
 };
 

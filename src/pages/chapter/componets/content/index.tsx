@@ -47,7 +47,7 @@ const ChapterContent: React.FC = React.memo(() => {
     );
   };
 
-  const onPrev = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onPrev = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     if (isFirst) return;
     navigate(`/book/${bookId}/${Number(chapterId) - 1}`, { replace: true });
@@ -55,7 +55,7 @@ const ChapterContent: React.FC = React.memo(() => {
     dispatch(setFooterVisible(false));
   };
 
-  const onNext = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const onNext = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation(); // 阻止冒泡到正文的点击事件，否则会把顶部和底部栏重新打开
     if (isLast) return;
     navigate(`/book/${bookId}/${Number(chapterId) + 1}`, { replace: true });

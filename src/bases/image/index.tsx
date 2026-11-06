@@ -47,7 +47,7 @@ const Image: React.FC<ImageProps> = ({
     <img
       className={className}
       ref={imageRef}
-      src={observerEntry?.isIntersecting || !lazy ? src : loading}
+      src={(observerEntry?.isIntersecting || !lazy) ? src : loading}
       alt={alt}
       // fit 放在前面作为默认值，调用方在 style 里显式写的 objectFit 优先生效
       style={{ objectFit: fit, ...style }}

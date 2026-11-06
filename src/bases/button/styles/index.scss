@@ -25,6 +25,11 @@ $class-prefix-button: 'ygm-button';
   border-radius: var(--ygm-radius-xs);
   user-select: none;
   border: var(--border-width) solid var(--border-color);
+  // 原生 <button> 的默认样式重置：字体继承页面、去掉系统外观和移动端点击高亮
+  font-family: inherit;
+  appearance: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &-block {
     display: block;
