@@ -27,35 +27,38 @@ export interface ImageProps {
   onLoad?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
 }
 
-const Image: React.FC<ImageProps> = (props) => {
+const Image: React.FC<ImageProps> = ({
+  alt = '',
+  width = '100%',
+  height = '100%',
+  lazy = false,
+  fit = 'fill',
+  loading = 'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/x8AAqMB0Fk+W34AAAAASUVORK5CYII=',
+  src,
+  style,
+  className,
+  onClick,
+  onError,
+  onLoad,
+}) => {
   const imageRef = React.useRef<HTMLImageElement | null>(null);
   const observerEntry = useIntersectionObserver(imageRef, { freezeOnceVisible: true });
   return (
     <img
-      className={props.className}
+      className={className}
       ref={imageRef}
-      src={observerEntry?.isIntersecting || !props.lazy ? props.src : props.loading}
-      alt={props.alt}
+      src={observerEntry?.isIntersecting || !lazy ? src : loading}
+      alt={alt}
       // fit 放在前面作为默认值，调用方在 style 里显式写的 objectFit 优先生效
-      style={{ objectFit: props.fit, ...props.style }}
-      width={props.width}
-      height={props.height}
-      onClick={props.onClick}
-      onError={props.onError}
-      onLoad={props.onLoad}
+      style={{ objectFit: fit, ...style }}
+      width={width}
+      height={height}
+      onClick={onClick}
+      onError={onError}
+      onLoad={onLoad}
       draggable={false}
     />
   );
-};
-
-Image.defaultProps = {
-  alt: '',
-  width: '100%',
-  height: '100%',
-  lazy: false,
-  fit: 'fill',
-  loading:
-    'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/x8AAqMB0Fk+W34AAAAASUVORK5CYII=',
 };
 
 Image.displayName = 'Image';

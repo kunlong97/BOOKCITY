@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 const axiosConfig: AxiosRequestConfig = {
+  // 所有接口统一加 /api 前缀（vite.config.js 里代理时再去掉），避免和页面路由重名
+  baseURL: '/api',
   timeout: 5000,
   headers: { 'Content-Type': 'application/json;charset=UTF-8' },
   responseType: 'json',

@@ -26,7 +26,8 @@ describe('axiosInstance', () => {
     consoleError.mockRestore();
   });
 
-  it('默认配置：5 秒超时、JSON 请求头', () => {
+  it('默认配置：接口统一加 /api 前缀、5 秒超时、JSON 请求头', () => {
+    expect(AxiosInstance.defaults.baseURL).toBe('/api');
     expect(AxiosInstance.defaults.timeout).toBe(5000);
     // axios 0.27 的类型里 defaults.headers 只声明了 common/get/post 等分组，实际合并后顶层也有 Content-Type
     expect((AxiosInstance.defaults.headers as unknown as Record<string, unknown>)['Content-Type']).toBe(

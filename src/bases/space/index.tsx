@@ -17,44 +17,49 @@ const classPrefix = `ygm-space`;
 
 const formatGap = (gap: string | number) => (typeof gap === 'number' ? '${gap}px' : gap);
 
-const Space: React.FC<SpaceProps> = (props) => {
+const Space: React.FC<SpaceProps> = ({
+  direction = 'horizontal',
+  block = true,
+  align,
+  gap,
+  justify,
+  wrap,
+  onClick,
+  children,
+}) => {
   const style = React.useMemo(() => {
-    if (props.gap) {
-      if (Array.isArray(props.gap)) {
-        const [gapH, gapV] = props.gap;
+    if (gap) {
+      if (Array.isArray(gap)) {
+        const [gapH, gapV] = gap;
         return {
           '--gap-vertical': formatGap(gapV),
           '--gap-horizontal': formatGap(gapH),
         };
       }
-      return { '--gap': formatGap(props.gap) };
+      return { '--gap': formatGap(gap) };
     }
     return {};
-  }, [props.gap]);
-  
+  }, [gap]);
+
   return (
     <div
       className={cx(classPrefix, {
-        [`${classPrefix}-wrap`]: props.wrap, //是否换行
-        [`${classPrefix}-block`]: props.block, //是否块级
-        [`${classPrefix}-${props.direction}`]: true, //排列方向
-        [`${classPrefix}-align-${props.align}`]: !!props.align, //交叉轴对齐
-        [`${classPrefix}-${props.justify}`]: !!props.justify, //主轴对齐
+        [`${classPrefix}-wrap`]: wrap, //是否换行
+        [`${classPrefix}-block`]: block, //是否块级
+        [`${classPrefix}-${direction}`]: true, //排列方向
+        [`${classPrefix}-align-${align}`]: !!align, //交叉轴对齐
+        [`${classPrefix}-${justify}`]: !!justify, //主轴对齐
       })}
-      onClick={props.onClick}
+      onClick={onClick}
       style={style as React.CSSProperties}
     >
-      {React.Children.map(props.children, (child) => {
+      {React.Children.map(children, (child) => {
         return child !== null && child !== undefined && <div className={`${classPrefix}-item`}>{child}</div>;
       })}
     </div>
   );
 };
 
-Space.defaultProps = {
-  direction: 'horizontal',
-  block: true,
-};
 
 Space.displayName = 'Space';
 

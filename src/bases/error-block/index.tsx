@@ -10,27 +10,26 @@ export interface ErrorBlockProps {
 
 const classPrefix = 'ygm-error-block';
 
-const ErrorBlock: React.FC<ErrorBlockProps> = (props) => {
+const ErrorBlock: React.FC<ErrorBlockProps> = ({
+  title = 'Something went wrong with this page.',
+  description = 'Please try again later.',
+  image,
+}) => {
   let imageNode: React.ReactNode = ErrorImage;
 
-  if (props.image) {
-    imageNode = props.image; //使用传入的图片
+  if (image) {
+    imageNode = image; //使用传入的图片
   }
 
   return (
     <div className={classPrefix}>
       <div className={`${classPrefix}-image`}>{imageNode}</div>
       <div className={`${classPrefix}-description`}>
-        <div className={`${classPrefix}-description-title`}>{props.title}</div>
-        <div className={`${classPrefix}-description-subtitle`}>{props.description}</div>
+        <div className={`${classPrefix}-description-title`}>{title}</div>
+        <div className={`${classPrefix}-description-subtitle`}>{description}</div>
       </div>
     </div>
   );
-};
-
-ErrorBlock.defaultProps = {
-  title: 'Something went wrong with this page.',
-  description: 'Please try again later.',
 };
 
 export default ErrorBlock;

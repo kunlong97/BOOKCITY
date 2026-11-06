@@ -2,16 +2,16 @@
   "headerCarousel": {
     "banner": [
       {
-        "src": "http://localhost:3002/images/banner1.png"
+        "src": "/api/images/banner1.png"
       },
       {
-        "src": "http://localhost:3002/images/banner2.png"
+        "src": "/api/images/banner2.png"
       },
       {
-        "src": "http://localhost:3002/images/banner3.png"
+        "src": "/api/images/banner3.png"
       },
       {
-        "src": "http://localhost:3002/images/banner4.png"
+        "src": "/api/images/banner4.png"
       }
     ],
     "limited": [
@@ -20,7 +20,7 @@
         "author": "Ernest Hemingway",
         "categoryName": "Classic Fiction",
         "title": "The Old Man and the Sea",
-        "coverImg": "http://localhost:3002/images/limited/limited1.png",
+        "coverImg": "/api/images/limited/limited1.png",
         "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
       },
       {
@@ -28,14 +28,14 @@
         "author": "Tara Westover",
         "categoryName": "Memoir",
         "title": "Educated",
-        "coverImg": "http://localhost:3002/images/limited/limited2.png",
+        "coverImg": "/api/images/limited/limited2.png",
         "desc": "A memoir of a woman who escapes her survivalist upbringing in Idaho to pursue an education, ultimately earning a PhD from Cambridge University."
       },
       {
         "bookId": "978-0141439709",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+        "coverImg": "/api/images/ranking/completedList/ranking1.png",
         "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
       },
       {
@@ -43,7 +43,7 @@
         "author": "Khaled Hosseini",
         "categoryName": "Historical Fiction",
         "title": "The Kite Runner",
-        "coverImg": "http://localhost:3002/images/limited/limited4.png",
+        "coverImg": "/api/images/limited/limited4.png",
         "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
       }
     ],
@@ -52,7 +52,7 @@
         "author": "George Orwell",
         "bookId": "978-0451524335",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular1.png",
+        "coverImg": "/api/images/popular/popular1.png",
         "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought.",
         "title": "1984"
       },
@@ -60,7 +60,7 @@
         "author": "Harper Lee",
         "bookId": "978-0061120082",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular2.png",
+        "coverImg": "/api/images/popular/popular2.png",
         "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime.",
         "title": "To Kill a Mockingbird"
       },
@@ -68,7 +68,7 @@
         "author": "Jane Austen",
         "bookId": "978-0141439511",
         "categoryName": "Classic Romance",
-        "coverImg": "http://localhost:3002/images/popular/popular3.png",
+        "coverImg": "/api/images/popular/popular3.png",
         "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
         "title": "Pride and Prejudice"
       }
@@ -82,7 +82,7 @@
             "author": "Paulo Coelho",
             "bookId": "978-0062315007",
             "categoryName": "Philosophical Fiction",
-            "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+            "coverImg": "/api/images/recommend/recommend1.png",
             "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny.",
             "title": "The Alchemist"
           },
@@ -90,35 +90,35 @@
             "bookId": "978-0026085052",
             "title": "Brave New World",
             "author": "Aldous Huxley",
-            "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+            "coverImg": "/api/images/ranking/topList/ranking2.png",
             "desc": "A notable literary work by Aldous Huxley."
           },
           {
             "bookId": "978-0142037230",
             "title": "Of Mice and Men",
             "author": "John Steinbeck",
-            "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+            "coverImg": "/api/images/ranking/topList/ranking3.png",
             "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
           },
           {
             "bookId": "978-0060254956",
             "title": "Where the Wild Things Are",
             "author": "Maurice Sendak",
-            "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+            "coverImg": "/api/images/ranking/topList/ranking4.png",
             "desc": "A young boy named Max sails to an island inhabited by mysterious creatures and becomes their king, exploring the world of his imagination."
           },
           {
             "bookId": "978-0307277671",
             "title": "The Road",
             "author": "Cormac McCarthy",
-            "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+            "coverImg": "/api/images/ranking/topList/ranking5.png",
             "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
           },
           {
             "bookId": "978-0141182636",
             "title": "The Grapes of Wrath",
             "author": "John Steinbeck",
-            "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+            "coverImg": "/api/images/ranking/topList/ranking6.png",
             "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
           }
         ]
@@ -131,35 +131,35 @@
             "bookId": "978-0060935467",
             "title": "The Lord of the Rings",
             "author": "J.R.R. Tolkien",
-            "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+            "coverImg": "/api/images/ranking/trendingList/ranking1.png",
             "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
           },
           {
             "bookId": "978-07432735651",
             "title": "The Sun Also Rises",
             "author": "Ernest Hemingway",
-            "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+            "coverImg": "/api/images/ranking/trendingList/ranking2.png",
             "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'."
           },
           {
             "bookId": "978-0316769488",
             "title": "Crime and Punishment",
             "author": "Fyodor Dostoevsky",
-            "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking3.png",
+            "coverImg": "/api/images/ranking/trendingList/ranking3.png",
             "desc": "A destitute student in St. Petersburg formulates a theory about extraordinary men being above the law and commits murder to test it, leading to a psychological battle with guilt."
           },
           {
             "bookId": "978-0060254926",
             "title": "The Hobbit",
             "author": "J.R.R. Tolkien",
-            "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking4.png",
+            "coverImg": "/api/images/ranking/trendingList/ranking4.png",
             "desc": "Bilbo Baggins, a home-loving hobbit, joins a group of dwarves on a quest to reclaim treasure from the dragon Smaug, discovering courage he never knew he had."
           },
           {
             "author": "Emily Brontë",
             "bookId": "978-0131182636",
             "categoryName": "Gothic Fiction / Romance",
-            "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+            "coverImg": "/api/images/recommend/recommend3.png",
             "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
             "title": "Wuthering Heights"
           },
@@ -168,7 +168,7 @@
             "author": "Ernest Hemingway",
             "categoryName": "Classic Fiction",
             "title": "The Old Man and the Sea",
-            "coverImg": "http://localhost:3002/images/limited/limited1.png",
+            "coverImg": "/api/images/limited/limited1.png",
             "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
           }
         ]
@@ -181,14 +181,14 @@
             "bookId": "978-0141439709",
             "title": "Jane Eyre",
             "author": "Charlotte Brontë",
-            "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+            "coverImg": "/api/images/ranking/completedList/ranking1.png",
             "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
           },
           {
             "author": "J.D. Salinger",
             "bookId": "978-032116769488",
             "categoryName": "Coming-of-Age",
-            "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+            "coverImg": "/api/images/recommend/recommend5.png",
             "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
             "title": "The Catcher in the Rye"
           },
@@ -196,28 +196,28 @@
             "bookId": "978-0553573404",
             "title": "A Game of Thrones",
             "author": "George R.R. Martin",
-            "coverImg": "http://localhost:3002/images/ranking/completedList/ranking3.png",
+            "coverImg": "/api/images/ranking/completedList/ranking3.png",
             "desc": "Nobles, knights, and outcasts vie for power in the Seven Kingdoms of Westeros, while an ancient threat stirs beyond the northern wall."
           },
           {
             "bookId": "978-0141439587",
             "title": "Oliver Twist",
             "author": "Charles Dickens",
-            "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+            "coverImg": "/api/images/ranking/completedList/ranking4.png",
             "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness."
           },
           {
             "bookId": "978-0451524935",
             "title": "Animal Farm",
             "author": "George Orwell",
-            "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+            "coverImg": "/api/images/ranking/completedList/ranking5.png",
             "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
           },
           {
             "bookId": "978-0140280098",
             "title": "Lord of the Flies",
             "author": "William Golding",
-            "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+            "coverImg": "/api/images/ranking/completedList/ranking6.png",
             "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
           }
         ]
@@ -228,14 +228,14 @@
         "bookId": "978-0062315007",
         "title": "The Alchemist",
         "author": "Paulo Coelho",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+        "coverImg": "/api/images/ranking/topList/ranking1.png",
         "desc": "A notable literary work by Paulo Coelho."
       },
       {
         "author": "Ray Bradbury",
         "bookId": "1451673319",
         "categoryName": "Science Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "coverImg": "/api/images/recommend/recommend2.png",
         "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
         "title": "Fahrenheit 451"
       },
@@ -243,7 +243,7 @@
         "bookId": "978-0131182636",
         "title": "Wuthering Heights",
         "author": "Emily Brontë",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking5.png",
         "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
       },
       {
@@ -251,21 +251,21 @@
         "title": "The Picture of Dorian Gray",
         "author": "Oscar Wilde",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+        "coverImg": "/api/images/recommend/recommend4.png",
         "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
       },
       {
         "bookId": "978-032116769488",
         "title": "The Catcher in the Rye",
         "author": "J.D. Salinger",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking2.png",
+        "coverImg": "/api/images/ranking/completedList/ranking2.png",
         "desc": "A notable literary work by J.D. Salinger."
       },
       {
         "author": "Louisa May Alcott",
         "bookId": "978-0147514011",
         "categoryName": "Classic / Family Drama",
-        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "coverImg": "/api/images/recommend/recommend6.png",
         "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
         "title": "Little Women"
       },
@@ -273,7 +273,7 @@
         "author": "Herman Melville",
         "bookId": "978-1503280788",
         "categoryName": "Adventure / Epic Tragedy",
-        "coverImg": "http://localhost:3002/images/recommend/recommend7.png",
+        "coverImg": "/api/images/recommend/recommend7.png",
         "desc": "A monumental tale of obsession and revenge. Captain Ahab's maniacal hunt for the white whale that maimed him drives his crew and ship into the abyss, exploring complex themes of fate, nature, and madness.",
         "title": "Moby-Dick"
       },
@@ -281,7 +281,7 @@
         "author": "F. Scott Fitzgerald",
         "bookId": "978-07432736565",
         "categoryName": "Literary Fiction / Jazz Age",
-        "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+        "coverImg": "/api/images/recommend/recommend8.png",
         "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
         "title": "The Great Gatsby"
       }
@@ -294,14 +294,14 @@
         "author": "Khaled Hosseini",
         "categoryName": "Historical Fiction",
         "title": "The Kite Runner",
-        "coverImg": "http://localhost:3002/images/limited/limited4.png",
+        "coverImg": "/api/images/limited/limited4.png",
         "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
       },
       {
         "author": "Jane Austen",
         "bookId": "978-0141439511",
         "categoryName": "Classic Romance",
-        "coverImg": "http://localhost:3002/images/popular/popular3.png",
+        "coverImg": "/api/images/popular/popular3.png",
         "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
         "title": "Pride and Prejudice"
       },
@@ -309,49 +309,49 @@
         "bookId": "978-0062315007",
         "title": "The Alchemist",
         "author": "Paulo Coelho",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+        "coverImg": "/api/images/ranking/topList/ranking1.png",
         "desc": "A notable literary work by Paulo Coelho."
       },
       {
         "bookId": "978-0026085052",
         "title": "Brave New World",
         "author": "Aldous Huxley",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+        "coverImg": "/api/images/ranking/topList/ranking2.png",
         "desc": "A notable literary work by Aldous Huxley."
       },
       {
         "bookId": "978-0142037230",
         "title": "Of Mice and Men",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+        "coverImg": "/api/images/ranking/topList/ranking3.png",
         "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
       },
       {
         "bookId": "978-0060254956",
         "title": "Where the Wild Things Are",
         "author": "Maurice Sendak",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+        "coverImg": "/api/images/ranking/topList/ranking4.png",
         "desc": "A young boy named Max sails to an island inhabited by mysterious creatures and becomes their king, exploring the world of his imagination."
       },
       {
         "bookId": "978-0307277671",
         "title": "The Road",
         "author": "Cormac McCarthy",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "coverImg": "/api/images/ranking/topList/ranking5.png",
         "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
       },
       {
         "bookId": "978-0141182636",
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       },
       {
         "bookId": "978-0060935467",
         "title": "The Lord of the Rings",
         "author": "J.R.R. Tolkien",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking1.png",
         "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
       }
     ],
@@ -363,14 +363,14 @@
         "bookId": "978-0140280098",
         "title": "Lord of the Flies",
         "author": "William Golding",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+        "coverImg": "/api/images/ranking/completedList/ranking6.png",
         "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
       },
       {
         "author": "Paulo Coelho",
         "bookId": "978-0062315007",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+        "coverImg": "/api/images/recommend/recommend1.png",
         "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny.",
         "title": "The Alchemist"
       },
@@ -378,7 +378,7 @@
         "author": "Ray Bradbury",
         "bookId": "1451673319",
         "categoryName": "Science Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "coverImg": "/api/images/recommend/recommend2.png",
         "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
         "title": "Fahrenheit 451"
       },
@@ -386,7 +386,7 @@
         "author": "Emily Brontë",
         "bookId": "978-0131182636",
         "categoryName": "Gothic Fiction / Romance",
-        "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+        "coverImg": "/api/images/recommend/recommend3.png",
         "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
         "title": "Wuthering Heights"
       },
@@ -395,7 +395,7 @@
         "title": "The Picture of Dorian Gray",
         "author": "Oscar Wilde",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+        "coverImg": "/api/images/recommend/recommend4.png",
         "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
       },
       {
@@ -403,7 +403,7 @@
         "title": "Wuthering Heights",
         "author": "Emily Brontë",
         "categoryName": "Tragic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking5.png",
         "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
       },
       {
@@ -411,7 +411,7 @@
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "categoryName": "Gothic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+        "coverImg": "/api/images/ranking/completedList/ranking1.png",
         "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
       },
       {
@@ -419,7 +419,7 @@
         "title": "Animal Farm",
         "author": "George Orwell",
         "categoryName": "Political Satire",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+        "coverImg": "/api/images/ranking/completedList/ranking5.png",
         "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
       },
       {
@@ -427,7 +427,7 @@
         "title": "Little Women",
         "author": "Louisa May Alcott",
         "categoryName": "Family Drama",
-        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "coverImg": "/api/images/recommend/recommend6.png",
         "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity."
       },
       {
@@ -435,7 +435,7 @@
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
         "categoryName": "Historical Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       }
     ],
@@ -447,7 +447,7 @@
       "author": "Ernest Hemingway",
       "categoryName": "Classic Fiction",
       "title": "The Old Man and the Sea",
-      "coverImg": "http://localhost:3002/images/limited/limited1.png",
+      "coverImg": "/api/images/limited/limited1.png",
       "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
     },
     {
@@ -455,7 +455,7 @@
       "author": "Tara Westover",
       "categoryName": "Memoir",
       "title": "Educated",
-      "coverImg": "http://localhost:3002/images/limited/limited2.png",
+      "coverImg": "/api/images/limited/limited2.png",
       "desc": "A memoir of a woman who escapes her survivalist upbringing in Idaho to pursue an education, ultimately earning a PhD from Cambridge University."
     },
     {
@@ -463,14 +463,14 @@
       "author": "Khaled Hosseini",
       "categoryName": "Historical Fiction",
       "title": "The Kite Runner",
-      "coverImg": "http://localhost:3002/images/limited/limited4.png",
+      "coverImg": "/api/images/limited/limited4.png",
       "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
     },
     {
       "author": "George Orwell",
       "bookId": "978-0451524335",
       "categoryName": "Dystopian Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular1.png",
+      "coverImg": "/api/images/popular/popular1.png",
       "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought.",
       "title": "1984"
     },
@@ -478,7 +478,7 @@
       "author": "Harper Lee",
       "bookId": "978-0061120082",
       "categoryName": "Classic Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular2.png",
+      "coverImg": "/api/images/popular/popular2.png",
       "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime.",
       "title": "To Kill a Mockingbird"
     },
@@ -486,7 +486,7 @@
       "author": "Jane Austen",
       "bookId": "978-0141439511",
       "categoryName": "Classic Romance",
-      "coverImg": "http://localhost:3002/images/popular/popular3.png",
+      "coverImg": "/api/images/popular/popular3.png",
       "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
       "title": "Pride and Prejudice"
     },
@@ -494,126 +494,126 @@
       "bookId": "978-0062315007",
       "title": "The Alchemist",
       "author": "Paulo Coelho",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+      "coverImg": "/api/images/ranking/topList/ranking1.png",
       "desc": "A notable literary work by Paulo Coelho."
     },
     {
       "bookId": "978-0026085052",
       "title": "Brave New World",
       "author": "Aldous Huxley",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+      "coverImg": "/api/images/ranking/topList/ranking2.png",
       "desc": "A notable literary work by Aldous Huxley."
     },
     {
       "bookId": "978-0142037230",
       "title": "Of Mice and Men",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+      "coverImg": "/api/images/ranking/topList/ranking3.png",
       "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
     },
     {
       "bookId": "978-0060254956",
       "title": "Where the Wild Things Are",
       "author": "Maurice Sendak",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+      "coverImg": "/api/images/ranking/topList/ranking4.png",
       "desc": "A young boy named Max sails to an island inhabited by mysterious creatures and becomes their king, exploring the world of his imagination."
     },
     {
       "bookId": "978-0307277671",
       "title": "The Road",
       "author": "Cormac McCarthy",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+      "coverImg": "/api/images/ranking/topList/ranking5.png",
       "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
     },
     {
       "bookId": "978-0141182636",
       "title": "The Grapes of Wrath",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+      "coverImg": "/api/images/ranking/topList/ranking6.png",
       "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
     },
     {
       "bookId": "978-0060935467",
       "title": "The Lord of the Rings",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking1.png",
       "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
     },
     {
       "bookId": "978-07432735651",
       "title": "The Sun Also Rises",
       "author": "Ernest Hemingway",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking2.png",
       "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'."
     },
     {
       "bookId": "978-0316769488",
       "title": "Crime and Punishment",
       "author": "Fyodor Dostoevsky",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking3.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking3.png",
       "desc": "A destitute student in St. Petersburg formulates a theory about extraordinary men being above the law and commits murder to test it, leading to a psychological battle with guilt."
     },
     {
       "bookId": "978-0060254926",
       "title": "The Hobbit",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking4.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking4.png",
       "desc": "Bilbo Baggins, a home-loving hobbit, joins a group of dwarves on a quest to reclaim treasure from the dragon Smaug, discovering courage he never knew he had."
     },
     {
       "bookId": "978-0131182636",
       "title": "Wuthering Heights",
       "author": "Emily Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking5.png",
       "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
     },
     {
       "bookId": "978-0141439709",
       "title": "Jane Eyre",
       "author": "Charlotte Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+      "coverImg": "/api/images/ranking/completedList/ranking1.png",
       "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
     },
     {
       "bookId": "978-032116769488",
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking2.png",
+      "coverImg": "/api/images/ranking/completedList/ranking2.png",
       "desc": "A notable literary work by J.D. Salinger."
     },
     {
       "bookId": "978-0553573404",
       "title": "A Game of Thrones",
       "author": "George R.R. Martin",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking3.png",
+      "coverImg": "/api/images/ranking/completedList/ranking3.png",
       "desc": "Nobles, knights, and outcasts vie for power in the Seven Kingdoms of Westeros, while an ancient threat stirs beyond the northern wall."
     },
     {
       "bookId": "978-0141439587",
       "title": "Oliver Twist",
       "author": "Charles Dickens",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+      "coverImg": "/api/images/ranking/completedList/ranking4.png",
       "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness."
     },
     {
       "bookId": "978-0451524935",
       "title": "Animal Farm",
       "author": "George Orwell",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+      "coverImg": "/api/images/ranking/completedList/ranking5.png",
       "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
     },
     {
       "bookId": "978-0140280098",
       "title": "Lord of the Flies",
       "author": "William Golding",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+      "coverImg": "/api/images/ranking/completedList/ranking6.png",
       "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
     },
     {
       "author": "Paulo Coelho",
       "bookId": "978-0062315007",
       "categoryName": "Philosophical Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+      "coverImg": "/api/images/recommend/recommend1.png",
       "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny.",
       "title": "The Alchemist"
     },
@@ -621,7 +621,7 @@
       "author": "Ray Bradbury",
       "bookId": "1451673319",
       "categoryName": "Science Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+      "coverImg": "/api/images/recommend/recommend2.png",
       "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
       "title": "Fahrenheit 451"
     },
@@ -629,7 +629,7 @@
       "author": "Emily Brontë",
       "bookId": "978-0131182636",
       "categoryName": "Gothic Fiction / Romance",
-      "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+      "coverImg": "/api/images/recommend/recommend3.png",
       "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
       "title": "Wuthering Heights"
     },
@@ -638,14 +638,14 @@
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
       "categoryName": "Philosophical Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+      "coverImg": "/api/images/recommend/recommend4.png",
       "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
     },
     {
       "author": "J.D. Salinger",
       "bookId": "978-032116769488",
       "categoryName": "Coming-of-Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+      "coverImg": "/api/images/recommend/recommend5.png",
       "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
       "title": "The Catcher in the Rye"
     },
@@ -653,7 +653,7 @@
       "author": "Louisa May Alcott",
       "bookId": "978-0147514011",
       "categoryName": "Classic / Family Drama",
-      "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+      "coverImg": "/api/images/recommend/recommend6.png",
       "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
       "title": "Little Women"
     },
@@ -661,7 +661,7 @@
       "author": "Herman Melville",
       "bookId": "978-1503280788",
       "categoryName": "Adventure / Epic Tragedy",
-      "coverImg": "http://localhost:3002/images/recommend/recommend7.png",
+      "coverImg": "/api/images/recommend/recommend7.png",
       "desc": "A monumental tale of obsession and revenge. Captain Ahab's maniacal hunt for the white whale that maimed him drives his crew and ship into the abyss, exploring complex themes of fate, nature, and madness.",
       "title": "Moby-Dick"
     },
@@ -669,7 +669,7 @@
       "author": "F. Scott Fitzgerald",
       "bookId": "978-07432736565",
       "categoryName": "Literary Fiction / Jazz Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+      "coverImg": "/api/images/recommend/recommend8.png",
       "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
       "title": "The Great Gatsby"
     }
@@ -720,7 +720,7 @@
       "author": "Ernest Hemingway",
       "categoryName": "Classic Fiction",
       "title": "The Old Man and the Sea",
-      "coverImg": "http://localhost:3002/images/limited/limited1.png",
+      "coverImg": "/api/images/limited/limited1.png",
       "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
     },
     {
@@ -728,7 +728,7 @@
       "author": "Tara Westover",
       "categoryName": "Memoir",
       "title": "Educated",
-      "coverImg": "http://localhost:3002/images/limited/limited2.png",
+      "coverImg": "/api/images/limited/limited2.png",
       "desc": "A memoir of a woman who escapes her survivalist upbringing in Idaho to pursue an education, ultimately earning a PhD from Cambridge University."
     },
     {
@@ -736,7 +736,7 @@
       "author": "Charlotte Brontë",
       "categoryName": "Classic Fiction",
       "title": "Jane Eyre",
-      "coverImg": "http://localhost:3002/images/limited/limited3.png",
+      "coverImg": "/api/images/limited/limited3.png",
       "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
     },
     {
@@ -744,14 +744,14 @@
       "author": "Khaled Hosseini",
       "categoryName": "Historical Fiction",
       "title": "The Kite Runner",
-      "coverImg": "http://localhost:3002/images/limited/limited4.png",
+      "coverImg": "/api/images/limited/limited4.png",
       "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
     },
     {
       "author": "George Orwell",
       "bookId": "978-0451524335",
       "categoryName": "Dystopian Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular1.png",
+      "coverImg": "/api/images/popular/popular1.png",
       "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought.",
       "title": "1984"
     },
@@ -759,7 +759,7 @@
       "author": "Harper Lee",
       "bookId": "978-0061120082",
       "categoryName": "Classic Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular2.png",
+      "coverImg": "/api/images/popular/popular2.png",
       "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime.",
       "title": "To Kill a Mockingbird"
     },
@@ -767,7 +767,7 @@
       "author": "Jane Austen",
       "bookId": "978-0141439511",
       "categoryName": "Classic Romance",
-      "coverImg": "http://localhost:3002/images/popular/popular3.png",
+      "coverImg": "/api/images/popular/popular3.png",
       "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
       "title": "Pride and Prejudice"
     },
@@ -775,21 +775,21 @@
       "bookId": "978-0062315007",
       "title": "The Alchemist",
       "author": "Paulo Coelho",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+      "coverImg": "/api/images/ranking/topList/ranking1.png",
       "desc": "A notable literary work by Paulo Coelho."
     },
     {
       "bookId": "978-0026085052",
       "title": "Brave New World",
       "author": "Aldous Huxley",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+      "coverImg": "/api/images/ranking/topList/ranking2.png",
       "desc": "A notable literary work by Aldous Huxley."
     },
     {
       "bookId": "978-0142037230",
       "title": "Of Mice and Men",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+      "coverImg": "/api/images/ranking/topList/ranking3.png",
       "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
     }
   ],
@@ -798,70 +798,70 @@
       "bookId": "978-0060254956",
       "title": "Where the Wild Things Are",
       "author": "Maurice Sendak",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+      "coverImg": "/api/images/ranking/topList/ranking4.png",
       "desc": "A young boy named Max sails to an island inhabited by mysterious creatures and becomes their king, exploring the world of his imagination."
     },
     {
       "bookId": "978-0307277671",
       "title": "The Road",
       "author": "Cormac McCarthy",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+      "coverImg": "/api/images/ranking/topList/ranking5.png",
       "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
     },
     {
       "bookId": "978-0141182636",
       "title": "The Grapes of Wrath",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+      "coverImg": "/api/images/ranking/topList/ranking6.png",
       "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
     },
     {
       "bookId": "978-0060935467",
       "title": "The Lord of the Rings",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking1.png",
       "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
     },
     {
       "bookId": "978-07432735651",
       "title": "The Sun Also Rises",
       "author": "Ernest Hemingway",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking2.png",
       "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'."
     },
     {
       "bookId": "978-0316769488",
       "title": "Crime and Punishment",
       "author": "Fyodor Dostoevsky",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking3.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking3.png",
       "desc": "A destitute student in St. Petersburg formulates a theory about extraordinary men being above the law and commits murder to test it, leading to a psychological battle with guilt."
     },
     {
       "bookId": "978-0060254926",
       "title": "The Hobbit",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking4.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking4.png",
       "desc": "Bilbo Baggins, a home-loving hobbit, joins a group of dwarves on a quest to reclaim treasure from the dragon Smaug, discovering courage he never knew he had."
     },
     {
       "bookId": "978-0131182636",
       "title": "Wuthering Heights",
       "author": "Emily Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking5.png",
       "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
     },
     {
       "bookId": "978-0141439709",
       "title": "Jane Eyre",
       "author": "Charlotte Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+      "coverImg": "/api/images/ranking/completedList/ranking1.png",
       "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
     },
     {
       "bookId": "978-032116769488",
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking2.png",
+      "coverImg": "/api/images/ranking/completedList/ranking2.png",
       "desc": "A notable literary work by J.D. Salinger."
     }
   ],
@@ -870,35 +870,35 @@
       "bookId": "978-0553573404",
       "title": "A Game of Thrones",
       "author": "George R.R. Martin",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking3.png",
+      "coverImg": "/api/images/ranking/completedList/ranking3.png",
       "desc": "Nobles, knights, and outcasts vie for power in the Seven Kingdoms of Westeros, while an ancient threat stirs beyond the northern wall."
     },
     {
       "bookId": "978-0141439587",
       "title": "Oliver Twist",
       "author": "Charles Dickens",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+      "coverImg": "/api/images/ranking/completedList/ranking4.png",
       "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness."
     },
     {
       "bookId": "978-0451524935",
       "title": "Animal Farm",
       "author": "George Orwell",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+      "coverImg": "/api/images/ranking/completedList/ranking5.png",
       "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
     },
     {
       "bookId": "978-0140280098",
       "title": "Lord of the Flies",
       "author": "William Golding",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+      "coverImg": "/api/images/ranking/completedList/ranking6.png",
       "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
     },
     {
       "author": "Paulo Coelho",
       "bookId": "978-0062315007",
       "categoryName": "Philosophical Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+      "coverImg": "/api/images/recommend/recommend1.png",
       "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny.",
       "title": "The Alchemist"
     },
@@ -906,7 +906,7 @@
       "author": "Ray Bradbury",
       "bookId": "1451673319",
       "categoryName": "Science Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+      "coverImg": "/api/images/recommend/recommend2.png",
       "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
       "title": "Fahrenheit 451"
     },
@@ -914,7 +914,7 @@
       "author": "Emily Brontë",
       "bookId": "978-0131182636",
       "categoryName": "Gothic Fiction / Romance",
-      "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+      "coverImg": "/api/images/recommend/recommend3.png",
       "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
       "title": "Wuthering Heights"
     },
@@ -923,14 +923,14 @@
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
       "categoryName": "Philosophical Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+      "coverImg": "/api/images/recommend/recommend4.png",
       "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
     },
     {
       "author": "J.D. Salinger",
       "bookId": "978-032116769488",
       "categoryName": "Coming-of-Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+      "coverImg": "/api/images/recommend/recommend5.png",
       "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
       "title": "The Catcher in the Rye"
     },
@@ -938,7 +938,7 @@
       "author": "Louisa May Alcott",
       "bookId": "978-0147514011",
       "categoryName": "Classic / Family Drama",
-      "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+      "coverImg": "/api/images/recommend/recommend6.png",
       "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
       "title": "Little Women"
     }
@@ -948,7 +948,7 @@
       "author": "Herman Melville",
       "bookId": "978-1503280788",
       "categoryName": "Adventure / Epic Tragedy",
-      "coverImg": "http://localhost:3002/images/recommend/recommend7.png",
+      "coverImg": "/api/images/recommend/recommend7.png",
       "desc": "A monumental tale of obsession and revenge. Captain Ahab's maniacal hunt for the white whale that maimed him drives his crew and ship into the abyss, exploring complex themes of fate, nature, and madness.",
       "title": "Moby-Dick"
     },
@@ -956,7 +956,7 @@
       "author": "F. Scott Fitzgerald",
       "bookId": "978-07432736565",
       "categoryName": "Literary Fiction / Jazz Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+      "coverImg": "/api/images/recommend/recommend8.png",
       "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
       "title": "The Great Gatsby"
     },
@@ -965,7 +965,7 @@
       "title": "One Flew Over the Cuckoo's Nest",
       "author": "Ken Kesey",
       "categoryName": "Classic Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank1.png",
+      "coverImg": "/api/images/rank/rank1.png",
       "desc": "A counterculture classic that explores the battle between individuality and institutional control in a mental asylum, narrated by the silent Native American patient, Chief Bromden."
     },
     {
@@ -973,7 +973,7 @@
       "title": "Slaughterhouse-Five",
       "author": "Kurt Vonnegut",
       "categoryName": "Science Fiction / War",
-      "coverImg": "http://localhost:3002/images/rank/rank2.png",
+      "coverImg": "/api/images/rank/rank2.png",
       "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden."
     },
     {
@@ -981,7 +981,7 @@
       "title": "The Trial",
       "author": "Franz Kafka",
       "categoryName": "Absurdist Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank3.png",
+      "coverImg": "/api/images/rank/rank3.png",
       "desc": "A nightmarish exploration of bureaucracy and alienation. A bank clerk, Josef K., is arrested and prosecuted by a remote, inaccessible authority, with no knowledge of the nature of his crime."
     },
     {
@@ -989,7 +989,7 @@
       "title": "Beloved",
       "author": "Toni Morrison",
       "categoryName": "Historical Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank4.png",
+      "coverImg": "/api/images/rank/rank4.png",
       "desc": "A powerful and haunting novel about Sethe, an escaped slave haunted by the ghost of her past and the unspeakable trauma of slavery, exploring the deep psychological scars left by oppression."
     },
     {
@@ -997,7 +997,7 @@
       "title": "Midnight's Children",
       "author": "Salman Rushdie",
       "categoryName": "Magical Realism",
-      "coverImg": "http://localhost:3002/images/rank/rank5.png",
+      "coverImg": "/api/images/rank/rank5.png",
       "desc": "A magical realist epic that weaves the history of India with the life of Saleem Sinai, one of 1,001 children born at the stroke of midnight on the day of India's independence, each endowed with special powers."
     },
     {
@@ -1005,7 +1005,7 @@
       "title": "The Color Purple",
       "author": "Alice Walker",
       "categoryName": "Epistolary Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank6.png",
+      "coverImg": "/api/images/rank/rank6.png",
       "desc": "An epistolary novel that follows the life of Celie, a young African American woman in the rural South, as she navigates abuse, sexism, and racism to find her voice and independence through the support of the women around her."
     },
     {
@@ -1013,7 +1013,7 @@
       "title": "Invisible Man",
       "author": "Ralph Ellison",
       "categoryName": "Social Commentary",
-      "coverImg": "http://localhost:3002/images/rank/rank7.png",
+      "coverImg": "/api/images/rank/rank7.png",
       "desc": "A groundbreaking novel about the African American experience. The unnamed narrator grapples with his identity and social invisibility in a racially divided society, moving from the South to Harlem in a journey of self-discovery."
     },
     {
@@ -1021,7 +1021,7 @@
       "title": "Frankenstein",
       "author": "Mary Shelley",
       "categoryName": "Gothic Horror",
-      "coverImg": "http://localhost:3002/images/rank/rank8.png",
+      "coverImg": "/api/images/rank/rank8.png",
       "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation."
     }
   ],
@@ -1030,37 +1030,37 @@
       "id": "001",
       "name": "Mystery & Thriller",
       "bookCount": 239,
-      "bookCover": "http://localhost:3002/images/category/category1.png"
+      "bookCover": "/api/images/category/category1.png"
     },
     {
       "id": "002",
       "name": "Science & Fantasy",
       "bookCount": 472,
-      "bookCover": "http://localhost:3002/images/category/category2.png"
+      "bookCover": "/api/images/category/category2.png"
     },
     {
       "id": "003",
       "name": "History",
       "bookCount": 815,
-      "bookCover": "http://localhost:3002/images/category/category3.png"
+      "bookCover": "/api/images/category/category3.png"
     },
     {
       "id": "004",
       "name": "Romance",
       "bookCount": 608,
-      "bookCover": "http://localhost:3002/images/category/category4.png"
+      "bookCover": "/api/images/category/category4.png"
     },
     {
       "id": "005",
       "name": "Horror",
       "bookCount": 951,
-      "bookCover": "http://localhost:3002/images/category/category5.png"
+      "bookCover": "/api/images/category/category5.png"
     },
     {
       "id": "006",
       "name": "Literature",
       "bookCount": 951,
-      "bookCover": "http://localhost:3002/images/category/category6.png"
+      "bookCover": "/api/images/category/category6.png"
     }
   ],
   "bookList_001": {
@@ -1069,28 +1069,28 @@
         "bookId": "978-0316769488",
         "title": "Crime and Punishment",
         "author": "Fyodor Dostoevsky",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking3.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking3.png",
         "desc": "A destitute student in St. Petersburg formulates a theory about extraordinary men being above the law and commits murder to test it, leading to a psychological battle with guilt."
       },
       {
         "bookId": "978-0140280098",
         "title": "Lord of the Flies",
         "author": "William Golding",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+        "coverImg": "/api/images/ranking/completedList/ranking6.png",
         "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed."
       },
       {
         "bookId": "978-0060254926",
         "title": "The Hobbit",
         "author": "J.R.R. Tolkien",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking4.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking4.png",
         "desc": "Bilbo Baggins, a home-loving hobbit, joins a group of dwarves on a quest to reclaim treasure from the dragon Smaug, discovering courage he never knew he had."
       },
       {
         "author": "J.D. Salinger",
         "bookId": "978-032116769488",
         "categoryName": "Coming-of-Age",
-        "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+        "coverImg": "/api/images/recommend/recommend5.png",
         "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
         "title": "The Catcher in the Rye"
       },
@@ -1099,21 +1099,21 @@
         "title": "Frankenstein",
         "author": "Mary Shelley",
         "categoryName": "Gothic Horror",
-        "coverImg": "http://localhost:3002/images/rank/rank8.png",
+        "coverImg": "/api/images/rank/rank8.png",
         "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation."
       },
       {
         "bookId": "978-0142037230",
         "title": "Of Mice and Men",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+        "coverImg": "/api/images/ranking/topList/ranking3.png",
         "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
       },
       {
         "bookId": "978-0307277671",
         "title": "The Road",
         "author": "Cormac McCarthy",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "coverImg": "/api/images/ranking/topList/ranking5.png",
         "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
       }
     ],
@@ -1125,21 +1125,21 @@
         "bookId": "978-0060935467",
         "title": "The Lord of the Rings",
         "author": "J.R.R. Tolkien",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking1.png",
         "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
       },
       {
         "bookId": "978-0026085052",
         "title": "Brave New World",
         "author": "Aldous Huxley",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+        "coverImg": "/api/images/ranking/topList/ranking2.png",
         "desc": "A notable literary work by Aldous Huxley."
       },
       {
         "author": "Ray Bradbury",
         "bookId": "1451673319",
         "categoryName": "Science Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "coverImg": "/api/images/recommend/recommend2.png",
         "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought.",
         "title": "Fahrenheit 451"
       },
@@ -1148,7 +1148,7 @@
         "title": "Slaughterhouse-Five",
         "author": "Kurt Vonnegut",
         "categoryName": "Science Fiction / War",
-        "coverImg": "http://localhost:3002/images/rank/rank2.png",
+        "coverImg": "/api/images/rank/rank2.png",
         "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden."
       },
       {
@@ -1156,7 +1156,7 @@
         "title": "Midnight's Children",
         "author": "Salman Rushdie",
         "categoryName": "Magical Realism",
-        "coverImg": "http://localhost:3002/images/rank/rank5.png",
+        "coverImg": "/api/images/rank/rank5.png",
         "desc": "A magical realist epic that weaves the history of India with the life of Saleem Sinai, one of 1,001 children born at the stroke of midnight on the day of India's independence, each endowed with special powers."
       },
       {
@@ -1164,21 +1164,21 @@
         "title": "Frankenstein",
         "author": "Mary Shelley",
         "categoryName": "Gothic Horror",
-        "coverImg": "http://localhost:3002/images/rank/rank8.png",
+        "coverImg": "/api/images/rank/rank8.png",
         "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation."
       },
       {
         "bookId": "978-0142037230",
         "title": "Of Mice and Men",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+        "coverImg": "/api/images/ranking/topList/ranking3.png",
         "desc": "Two displaced migrant workers during the Great Depression dream of owning their own land, but their plans are tragically derailed."
       },
       {
         "bookId": "978-0307277671",
         "title": "The Road",
         "author": "Cormac McCarthy",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "coverImg": "/api/images/ranking/topList/ranking5.png",
         "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
       }
     ],
@@ -1191,7 +1191,7 @@
         "author": "Khaled Hosseini",
         "categoryName": "Historical Fiction",
         "title": "The Kite Runner",
-        "coverImg": "http://localhost:3002/images/limited/limited4.png",
+        "coverImg": "/api/images/limited/limited4.png",
         "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
       },
       {
@@ -1199,7 +1199,7 @@
         "title": "Beloved",
         "author": "Toni Morrison",
         "categoryName": "Historical Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank4.png",
+        "coverImg": "/api/images/rank/rank4.png",
         "desc": "A powerful and haunting novel about Sethe, an escaped slave haunted by the ghost of her past and the unspeakable trauma of slavery, exploring the deep psychological scars left by oppression."
       },
       {
@@ -1207,21 +1207,21 @@
         "title": "The Color Purple",
         "author": "Alice Walker",
         "categoryName": "Epistolary Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank6.png",
+        "coverImg": "/api/images/rank/rank6.png",
         "desc": "An epistolary novel that follows the life of Celie, a young African American woman in the rural South, as she navigates abuse, sexism, and racism to find her voice and independence through the support of the women around her."
       },
       {
         "bookId": "978-0141182636",
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       },
       {
         "bookId": "978-0307277671",
         "title": "The Road",
         "author": "Cormac McCarthy",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "coverImg": "/api/images/ranking/topList/ranking5.png",
         "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
       },
       {
@@ -1229,7 +1229,7 @@
         "title": "One Flew Over the Cuckoo's Nest",
         "author": "Ken Kesey",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank1.png",
+        "coverImg": "/api/images/rank/rank1.png",
         "desc": "A counterculture classic that explores the battle between individuality and institutional control in a mental asylum, narrated by the silent Native American patient, Chief Bromden."
       }
     ],
@@ -1241,7 +1241,7 @@
         "author": "Jane Austen",
         "bookId": "978-0141439511",
         "categoryName": "Classic Romance",
-        "coverImg": "http://localhost:3002/images/popular/popular3.png",
+        "coverImg": "/api/images/popular/popular3.png",
         "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
         "title": "Pride and Prejudice"
       },
@@ -1250,14 +1250,14 @@
         "author": "Charlotte Brontë",
         "categoryName": "Classic Fiction",
         "title": "Jane Eyre",
-        "coverImg": "http://localhost:3002/images/limited/limited3.png",
+        "coverImg": "/api/images/limited/limited3.png",
         "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
       },
       {
         "author": "Emily Brontë",
         "bookId": "978-0131182636",
         "categoryName": "Gothic Fiction / Romance",
-        "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+        "coverImg": "/api/images/recommend/recommend3.png",
         "desc": "A dark, passionate tale of destructive love and vengeance set on the bleak Yorkshire moors. The intense and unyielding bond between Heathcliff and Catherine Earnshaw wreaks havoc across generations.",
         "title": "Wuthering Heights"
       },
@@ -1265,7 +1265,7 @@
         "author": "F. Scott Fitzgerald",
         "bookId": "978-07432736565",
         "categoryName": "Literary Fiction / Jazz Age",
-        "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+        "coverImg": "/api/images/recommend/recommend8.png",
         "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
         "title": "The Great Gatsby"
       },
@@ -1273,14 +1273,14 @@
         "bookId": "978-0141439587",
         "title": "Oliver Twist",
         "author": "Charles Dickens",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+        "coverImg": "/api/images/ranking/completedList/ranking4.png",
         "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness."
       },
       {
         "bookId": "978-0062315007",
         "title": "The Alchemist",
         "author": "Paulo Coelho",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+        "coverImg": "/api/images/ranking/topList/ranking1.png",
         "desc": "A notable literary work by Paulo Coelho."
       },
       {
@@ -1288,7 +1288,7 @@
         "title": "The Picture of Dorian Gray",
         "author": "Oscar Wilde",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+        "coverImg": "/api/images/recommend/recommend4.png",
         "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
       }
     ],
@@ -1301,7 +1301,7 @@
         "title": "Invisible Man",
         "author": "Ralph Ellison",
         "categoryName": "Social Commentary",
-        "coverImg": "http://localhost:3002/images/rank/rank7.png",
+        "coverImg": "/api/images/rank/rank7.png",
         "desc": "A groundbreaking novel about the African American experience. The unnamed narrator grapples with his identity and social invisibility in a racially divided society, moving from the South to Harlem in a journey of self-discovery."
       },
       {
@@ -1309,7 +1309,7 @@
         "title": "Oliver Twist",
         "author": "Charles Dickens",
         "categoryName": "Social Novel",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+        "coverImg": "/api/images/ranking/completedList/ranking4.png",
         "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness."
       },
       {
@@ -1317,7 +1317,7 @@
         "title": "The Alchemist",
         "author": "Paulo Coelho",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+        "coverImg": "/api/images/recommend/recommend1.png",
         "desc": "A shepherd boy's journey to the Egyptian pyramids in search of treasure becomes a profound allegory for listening to one's heart and pursuing personal destiny."
       },
       {
@@ -1325,14 +1325,14 @@
         "title": "The Picture of Dorian Gray",
         "author": "Oscar Wilde",
         "categoryName": "Philosophical Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+        "coverImg": "/api/images/recommend/recommend4.png",
         "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth."
       },
       {
         "author": "J.D. Salinger",
         "bookId": "978-032116769488",
         "categoryName": "Coming-of-Age",
-        "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+        "coverImg": "/api/images/recommend/recommend5.png",
         "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
         "title": "The Catcher in the Rye"
       },
@@ -1340,7 +1340,7 @@
         "author": "Louisa May Alcott",
         "bookId": "978-0147514011",
         "categoryName": "Classic / Family Drama",
-        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "coverImg": "/api/images/recommend/recommend6.png",
         "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
         "title": "Little Women"
       },
@@ -1348,7 +1348,7 @@
         "author": "Herman Melville",
         "bookId": "978-1503280788",
         "categoryName": "Adventure / Epic Tragedy",
-        "coverImg": "http://localhost:3002/images/recommend/recommend7.png",
+        "coverImg": "/api/images/recommend/recommend7.png",
         "desc": "A monumental tale of obsession and revenge. Captain Ahab's maniacal hunt for the white whale that maimed him drives his crew and ship into the abyss, exploring complex themes of fate, nature, and madness.",
         "title": "Moby-Dick"
       },
@@ -1356,7 +1356,7 @@
         "author": "F. Scott Fitzgerald",
         "bookId": "978-07432736565",
         "categoryName": "Literary Fiction / Jazz Age",
-        "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+        "coverImg": "/api/images/recommend/recommend8.png",
         "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
         "title": "The Great Gatsby"
       },
@@ -1365,7 +1365,7 @@
         "title": "One Flew Over the Cuckoo's Nest",
         "author": "Ken Kesey",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank1.png",
+        "coverImg": "/api/images/rank/rank1.png",
         "desc": "A counterculture classic that explores the battle between individuality and institutional control in a mental asylum, narrated by the silent Native American patient, Chief Bromden."
       }
     ],
@@ -1378,7 +1378,7 @@
         "title": "1984",
         "author": "George Orwell",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular1.png",
+        "coverImg": "/api/images/popular/popular1.png",
         "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought."
       },
       {
@@ -1386,7 +1386,7 @@
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular2.png",
+        "coverImg": "/api/images/popular/popular2.png",
         "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime."
       },
       {
@@ -1394,7 +1394,7 @@
         "title": "The Old Man and the Sea",
         "author": "Ernest Hemingway",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/limited/limited1.png",
+        "coverImg": "/api/images/limited/limited1.png",
         "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
       },
       {
@@ -1402,7 +1402,7 @@
         "title": "The Sun Also Rises",
         "author": "Ernest Hemingway",
         "categoryName": "Lost Generation",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking2.png",
         "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'."
       },
       {
@@ -1410,7 +1410,7 @@
         "title": "Wuthering Heights",
         "author": "Emily Brontë",
         "categoryName": "Tragic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking5.png",
         "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
       },
       {
@@ -1418,7 +1418,7 @@
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "categoryName": "Gothic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+        "coverImg": "/api/images/ranking/completedList/ranking1.png",
         "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
       },
       {
@@ -1426,7 +1426,7 @@
         "title": "Animal Farm",
         "author": "George Orwell",
         "categoryName": "Political Satire",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+        "coverImg": "/api/images/ranking/completedList/ranking5.png",
         "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
       },
       {
@@ -1434,7 +1434,7 @@
         "title": "Little Women",
         "author": "Louisa May Alcott",
         "categoryName": "Family Drama",
-        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "coverImg": "/api/images/recommend/recommend6.png",
         "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity."
       },
       {
@@ -1442,7 +1442,7 @@
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
         "categoryName": "Historical Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       },
       {
@@ -1450,7 +1450,7 @@
         "title": "Frankenstein",
         "author": "Mary Shelley",
         "categoryName": "Gothic Literature",
-        "coverImg": "http://localhost:3002/images/rank/rank8.png",
+        "coverImg": "/api/images/rank/rank8.png",
         "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation."
       },
       {
@@ -1458,7 +1458,7 @@
         "title": "The Lord of the Rings",
         "author": "J.R.R. Tolkien",
         "categoryName": "Epic Fantasy",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking1.png",
         "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
       },
       {
@@ -1466,7 +1466,7 @@
         "title": "Brave New World",
         "author": "Aldous Huxley",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+        "coverImg": "/api/images/ranking/topList/ranking2.png",
         "desc": "A notable literary work by Aldous Huxley."
       },
       {
@@ -1474,7 +1474,7 @@
         "title": "Fahrenheit 451",
         "author": "Ray Bradbury",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "coverImg": "/api/images/recommend/recommend2.png",
         "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought."
       },
       {
@@ -1482,7 +1482,7 @@
         "title": "Slaughterhouse-Five",
         "author": "Kurt Vonnegut",
         "categoryName": "Science Fiction / War",
-        "coverImg": "http://localhost:3002/images/rank/rank2.png",
+        "coverImg": "/api/images/rank/rank2.png",
         "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden."
       }
     ],
@@ -1495,7 +1495,7 @@
         "author": "Khaled Hosseini",
         "categoryName": "Historical Fiction",
         "title": "The Kite Runner",
-        "coverImg": "http://localhost:3002/images/limited/limited4.png",
+        "coverImg": "/api/images/limited/limited4.png",
         "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history."
       },
       {
@@ -1503,7 +1503,7 @@
         "title": "Beloved",
         "author": "Toni Morrison",
         "categoryName": "Historical Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank4.png",
+        "coverImg": "/api/images/rank/rank4.png",
         "desc": "A powerful and haunting novel about Sethe, an escaped slave haunted by the ghost of her past and the unspeakable trauma of slavery, exploring the deep psychological scars left by oppression."
       },
       {
@@ -1511,21 +1511,21 @@
         "title": "The Color Purple",
         "author": "Alice Walker",
         "categoryName": "Epistolary Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank6.png",
+        "coverImg": "/api/images/rank/rank6.png",
         "desc": "An epistolary novel that follows the life of Celie, a young African American woman in the rural South, as she navigates abuse, sexism, and racism to find her voice and independence through the support of the women around her."
       },
       {
         "bookId": "978-0141182636",
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       },
       {
         "bookId": "978-0307277671",
         "title": "The Road",
         "author": "Cormac McCarthy",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+        "coverImg": "/api/images/ranking/topList/ranking5.png",
         "desc": "A father and son journey across a post-apocalyptic wasteland, struggling to survive and maintain their humanity in a world stripped of civilization."
       },
       {
@@ -1533,7 +1533,7 @@
         "title": "One Flew Over the Cuckoo's Nest",
         "author": "Ken Kesey",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/rank/rank1.png",
+        "coverImg": "/api/images/rank/rank1.png",
         "desc": "A counterculture classic that explores the battle between individuality and institutional control in a mental asylum, narrated by the silent Native American patient, Chief Bromden."
       }
     ],
@@ -1545,7 +1545,7 @@
       "author": "Ernest Hemingway",
       "categoryName": "Classic Fiction",
       "title": "The Old Man and the Sea",
-      "coverImg": "http://localhost:3002/images/limited/limited1.png",
+      "coverImg": "/api/images/limited/limited1.png",
       "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity.",
       "wordCount": 260,
       "chapters": [
@@ -1574,7 +1574,7 @@
       "author": "Tara Westover",
       "categoryName": "Memoir",
       "title": "Educated",
-      "coverImg": "http://localhost:3002/images/limited/limited2.png",
+      "coverImg": "/api/images/limited/limited2.png",
       "desc": "A memoir of a woman who escapes her survivalist upbringing in Idaho to pursue an education, ultimately earning a PhD from Cambridge University.",
       "wordCount": 350,
       "chapters": [
@@ -1603,7 +1603,7 @@
       "author": "Charlotte Brontë",
       "categoryName": "Classic Fiction",
       "title": "Jane Eyre",
-      "coverImg": "http://localhost:3002/images/limited/limited3.png",
+      "coverImg": "/api/images/limited/limited3.png",
       "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms.",
       "wordCount": 420,
       "chapters": [
@@ -1633,7 +1633,7 @@
       "author": "Khaled Hosseini",
       "categoryName": "Historical Fiction",
       "title": "The Kite Runner",
-      "coverImg": "http://localhost:3002/images/limited/limited4.png",
+      "coverImg": "/api/images/limited/limited4.png",
       "desc": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's tumultuous history.",
       "wordCount": 380,
       "chapters": [
@@ -1661,7 +1661,7 @@
       "bookId": "978-0451524335",
       "author": "George Orwell",
       "categoryName": "Dystopian Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular1.png",
+      "coverImg": "/api/images/popular/popular1.png",
       "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought.",
       "title": "1984",
       "wordCount": 320,
@@ -1687,7 +1687,7 @@
       "author": "Harper Lee",
       "bookId": "978-0061120082",
       "categoryName": "Classic Fiction",
-      "coverImg": "http://localhost:3002/images/popular/popular2.png",
+      "coverImg": "/api/images/popular/popular2.png",
       "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime.",
       "title": "To Kill a Mockingbird",
       "wordCount": 290,
@@ -1716,7 +1716,7 @@
       "author": "Jane Austen",
       "bookId": "978-0141439511",
       "categoryName": "Classic Romance",
-      "coverImg": "http://localhost:3002/images/popular/popular3.png",
+      "coverImg": "/api/images/popular/popular3.png",
       "desc": "A witty and insightful exploration of love, class, and reputation in 19th-century England, centered on the spirited Elizabeth Bennet and the enigmatic Mr. Darcy.",
       "title": "Pride and Prejudice",
       "wordCount": 450,
@@ -1744,7 +1744,7 @@
       "bookId": "978-0062315007",
       "title": "The Alchemist",
       "author": "Paulo Coelho",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking1.png",
+      "coverImg": "/api/images/ranking/topList/ranking1.png",
       "desc": "A notable literary work by Paulo Coelho.",
       "wordCount": 150,
       "chapters": [
@@ -1771,7 +1771,7 @@
       "bookId": "978-0026085052",
       "title": "Brave New World",
       "author": "Aldous Huxley",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+      "coverImg": "/api/images/ranking/topList/ranking2.png",
       "desc": "A dystopian novel exploring a future society engineered for stability and happiness at the cost of individuality and freedom.",
       "wordCount": 1200,
       "chapters": [
@@ -1799,7 +1799,7 @@
       "bookId": "978-0142037230",
       "title": "Of Mice and Men",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking3.png",
+      "coverImg": "/api/images/ranking/topList/ranking3.png",
       "desc": "A tragic novella about two displaced migrant ranch workers during the Great Depression in California.",
       "wordCount": 290,
       "chapters": [
@@ -1825,7 +1825,7 @@
       "bookId": "978-0060254956",
       "title": "Where the Wild Things Are",
       "author": "Maurice Sendak",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking4.png",
+      "coverImg": "/api/images/ranking/topList/ranking4.png",
       "desc": "A classic children's picture book about a boy named Max who sails to a land of wild creatures.",
       "wordCount": 350,
       "chapters": [
@@ -1851,7 +1851,7 @@
       "bookId": "978-0307277671",
       "title": "The Road",
       "author": "Cormac McCarthy",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking5.png",
+      "coverImg": "/api/images/ranking/topList/ranking5.png",
       "desc": "A post-apocalyptic novel following a father and son's journey through a devastated America.",
       "wordCount": 550,
       "chapters": [
@@ -1877,7 +1877,7 @@
       "bookId": "978-0141182636",
       "title": "The Grapes of Wrath",
       "author": "John Steinbeck",
-      "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+      "coverImg": "/api/images/ranking/topList/ranking6.png",
       "desc": "An American realist novel about the Joad family's migration from Oklahoma to California during the Great Depression.",
       "wordCount": 1600,
       "chapters": [
@@ -1905,7 +1905,7 @@
       "bookId": "978-0062315007",
       "title": "The Alchemist",
       "author": "Paulo Coelho",
-      "coverImg": "http://localhost:3002/images/recommend/recommend1.png",
+      "coverImg": "/api/images/recommend/recommend1.png",
       "desc": "A philosophical novel about a young Andalusian shepherd named Santiago who travels to the Egyptian pyramids in search of a treasure buried there, discovering his Personal Legend along the way.",
       "wordCount": 450,
       "chapters": [
@@ -1932,7 +1932,7 @@
       "bookId": "1451673319",
       "title": "Fahrenheit 451",
       "author": "Ray Bradbury",
-      "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+      "coverImg": "/api/images/recommend/recommend2.png",
       "desc": "A dystopian novel set in a future American society where books are outlawed and firemen burn any that are found, following one fireman's journey of awakening and rebellion.",
       "wordCount": 460,
       "chapters": [
@@ -1959,7 +1959,7 @@
       "bookId": "978-0131182636",
       "title": "Wuthering Heights",
       "author": "Emily Brontë",
-      "coverImg": "http://localhost:3002/images/recommend/recommend3.png",
+      "coverImg": "/api/images/recommend/recommend3.png",
       "desc": "A Gothic novel set on the Yorkshire moors, chronicling the turbulent, passionate, and destructive relationship between Heathcliff and Catherine Earnshaw across two generations.",
       "wordCount": 1070,
       "chapters": [
@@ -1988,7 +1988,7 @@
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
       "categoryName": "Philosophical Fiction",
-      "coverImg": "http://localhost:3002/images/recommend/recommend4.png",
+      "coverImg": "/api/images/recommend/recommend4.png",
       "desc": "A stunning exploration of vanity, morality, and the pursuit of pleasure. When a young man's portrait begins to age and bear the marks of his sins instead of his body, he descends into a life of debauchery and corruption, hiding a dark secret behind his eternal youth.",
       "wordCount": 310,
       "chapters": [
@@ -2015,7 +2015,7 @@
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
       "categoryName": "Coming-of-Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend5.png",
+      "coverImg": "/api/images/recommend/recommend5.png",
       "desc": "The iconic voice of teenage alienation and rebellion, as Holden Caulfield navigates the 'phoniness' of the adult world after being expelled from prep school.",
       "wordCount": 200,
       "chapters": [
@@ -2041,7 +2041,7 @@
       "author": "Louisa May Alcott",
       "bookId": "978-0147514011",
       "categoryName": "Classic / Family Drama",
-      "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+      "coverImg": "/api/images/recommend/recommend6.png",
       "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity.",
       "title": "Little Women",
       "wordCount": 440,
@@ -2070,7 +2070,7 @@
       "author": "Herman Melville",
       "bookId": "978-1503280788",
       "categoryName": "Adventure / Epic Tragedy",
-      "coverImg": "http://localhost:3002/images/recommend/recommend7.png",
+      "coverImg": "/api/images/recommend/recommend7.png",
       "desc": "A monumental tale of obsession and revenge. Captain Ahab's maniacal hunt for the white whale that maimed him drives his crew and ship into the abyss, exploring complex themes of fate, nature, and madness.",
       "title": "Moby-Dick",
       "wordCount": 550,
@@ -2098,7 +2098,7 @@
       "author": "F. Scott Fitzgerald",
       "bookId": "978-07432736565",
       "categoryName": "Literary Fiction / Jazz Age",
-      "coverImg": "http://localhost:3002/images/recommend/recommend8.png",
+      "coverImg": "/api/images/recommend/recommend8.png",
       "desc": "A haunting critique of the American Dream set in the opulent Long Island of 1922. Through the eyes of Nick Carraway, readers witness the tragic obsession of the mysterious Jay Gatsby for the beautiful but shallow Daisy Buchanan.",
       "title": "The Great Gatsby",
       "wordCount": 2300,
@@ -2123,7 +2123,7 @@
       "title": "One Flew Over the Cuckoo's Nest",
       "author": "Ken Kesey",
       "categoryName": "Classic Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank1.png",
+      "coverImg": "/api/images/rank/rank1.png",
       "desc": "A counterculture classic that explores the battle between individuality and institutional control in a mental asylum, narrated by the silent Native American patient, Chief Bromden.",
       "wordCount": 250,
       "chapters": [
@@ -2145,7 +2145,7 @@
       "title": "Slaughterhouse-Five",
       "author": "Kurt Vonnegut",
       "categoryName": "Science Fiction / War",
-      "coverImg": "http://localhost:3002/images/rank/rank2.png",
+      "coverImg": "/api/images/rank/rank2.png",
       "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden.",
       "wordCount": 170,
       "chapters": [
@@ -2171,7 +2171,7 @@
       "title": "The Trial",
       "author": "Franz Kafka",
       "categoryName": "Absurdist Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank3.png",
+      "coverImg": "/api/images/rank/rank3.png",
       "desc": "A nightmarish exploration of bureaucracy and alienation. A bank clerk, Josef K., is arrested and prosecuted by a remote, inaccessible authority, with no knowledge of the nature of his crime.",
       "wordCount": 200,
       "chapters": [
@@ -2197,7 +2197,7 @@
       "title": "Beloved",
       "author": "Toni Morrison",
       "categoryName": "Historical Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank4.png",
+      "coverImg": "/api/images/rank/rank4.png",
       "desc": "A powerful and haunting novel about Sethe, an escaped slave haunted by the ghost of her past and the unspeakable trauma of slavery, exploring the deep psychological scars left by oppression.",
       "wordCount": 3300,
       "chapters": [
@@ -2225,7 +2225,7 @@
       "title": "Midnight's Children",
       "author": "Salman Rushdie",
       "categoryName": "Magical Realism",
-      "coverImg": "http://localhost:3002/images/rank/rank5.png",
+      "coverImg": "/api/images/rank/rank5.png",
       "desc": "A magical realist epic that weaves the history of India with the life of Saleem Sinai, one of 1,001 children born at the stroke of midnight on the day of India's independence, each endowed with special powers.",
       "wordCount": 470,
       "chapters": [
@@ -2253,7 +2253,7 @@
       "title": "The Color Purple",
       "author": "Alice Walker",
       "categoryName": "Epistolary Fiction",
-      "coverImg": "http://localhost:3002/images/rank/rank6.png",
+      "coverImg": "/api/images/rank/rank6.png",
       "desc": "An epistolary novel that follows the life of Celie, a young African American woman in the rural South, as she navigates abuse, sexism, and racism to find her voice and independence through the support of the women around her.",
       "wordCount": 3000,
       "chapters": [
@@ -2279,7 +2279,7 @@
       "title": "Invisible Man",
       "author": "Ralph Ellison",
       "categoryName": "Social Commentary",
-      "coverImg": "http://localhost:3002/images/rank/rank7.png",
+      "coverImg": "/api/images/rank/rank7.png",
       "desc": "A groundbreaking novel about the African American experience. The unnamed narrator grapples with his identity and social invisibility in a racially divided society, moving from the South to Harlem in a journey of self-discovery.",
       "wordCount": 300,
       "chapters": [
@@ -2306,7 +2306,7 @@
       "title": "Frankenstein",
       "author": "Mary Shelley",
       "categoryName": "Gothic Horror",
-      "coverImg": "http://localhost:3002/images/rank/rank8.png",
+      "coverImg": "/api/images/rank/rank8.png",
       "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation.",
       "wordCount": 390,
       "chapters": [
@@ -2334,7 +2334,7 @@
       "bookId": "978-0141234487",
       "title": "Walden",
       "author": "Henry David Thoreau",
-      "coverImg": "http://localhost:3002/images/banner1.png",
+      "coverImg": "/api/images/banner1.png",
       "desc": "A transcendentalist classic documenting Thoreau's two-year experiment in simple living and self-reliance at Walden Pond, reflecting on nature, society, and the human spirit.",
       "wordCount": 110,
       "chapters": [
@@ -2362,7 +2362,7 @@
       "bookId": "978-0140123266",
       "title": "The Red and the Black",
       "author": "Stendhal",
-      "coverImg": "http://localhost:3002/images/banner2.png",
+      "coverImg": "/api/images/banner2.png",
       "desc": "A psychological novel following Julien Sorel's ambitious rise and tragic fall in post-Napoleonic France, exploring class conflict, hypocrisy, and the clash between romantic idealism and social reality.",
       "wordCount": 180,
       "chapters": [
@@ -2390,7 +2390,7 @@
       "bookId": "978-0123439518",
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
-      "coverImg": "http://localhost:3002/images/banner3.png",
+      "coverImg": "/api/images/banner3.png",
       "desc": "A witty social comedy exploring the Bennet family's quest to marry off their daughters, centered on Elizabeth Bennet's evolving relationship with the proud Mr. Darcy.",
       "wordCount": 1200,
       "chapters": [
@@ -2418,7 +2418,7 @@
       "bookId": "978-0140569034",
       "title": "War and Peace",
       "author": "Leo Tolstoy",
-      "coverImg": "http://localhost:3002/images/banner4.png",
+      "coverImg": "/api/images/banner4.png",
       "desc": "An epic historical novel interweaving the lives of Russian aristocratic families with the Napoleonic Wars, exploring fate, free will, and the search for meaning in a turbulent era.",
       "wordCount": 580,
       "chapters": [
@@ -2446,7 +2446,7 @@
       "bookId": "978-0141439709",
       "title": "Jane Eyre",
       "author": "Charlotte Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+      "coverImg": "/api/images/ranking/completedList/ranking1.png",
       "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms.",
       "wordCount": 180,
       "chapters": [
@@ -2474,7 +2474,7 @@
       "bookId": "978-032116769488",
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking2.png",
+      "coverImg": "/api/images/ranking/completedList/ranking2.png",
       "desc": "A notable literary work by J.D. Salinger.",
       "wordCount": 700,
       "chapters": [
@@ -2502,7 +2502,7 @@
       "bookId": "978-0553573404",
       "title": "A Game of Thrones",
       "author": "George R.R. Martin",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking3.png",
+      "coverImg": "/api/images/ranking/completedList/ranking3.png",
       "desc": "Nobles, knights, and outcasts vie for power in the Seven Kingdoms of Westeros, while an ancient threat stirs beyond the northern wall.",
       "wordCount": 290,
       "chapters": [
@@ -2530,7 +2530,7 @@
       "bookId": "978-0141439587",
       "title": "Oliver Twist",
       "author": "Charles Dickens",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking4.png",
+      "coverImg": "/api/images/ranking/completedList/ranking4.png",
       "desc": "An orphan boy navigates the criminal underworld of Victorian London, encountering both cruelty and unexpected kindness.",
       "wordCount": 150,
       "chapters": [
@@ -2558,7 +2558,7 @@
       "bookId": "978-0451524935",
       "title": "Animal Farm",
       "author": "George Orwell",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+      "coverImg": "/api/images/ranking/completedList/ranking5.png",
       "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs.",
       "wordCount": 300,
       "chapters": [
@@ -2580,7 +2580,7 @@
       "bookId": "978-0140280098",
       "title": "Lord of the Flies",
       "author": "William Golding",
-      "coverImg": "http://localhost:3002/images/ranking/completedList/ranking6.png",
+      "coverImg": "/api/images/ranking/completedList/ranking6.png",
       "desc": "A group of boys stranded on a deserted island descends into savagery, revealing the darkness of human nature when civilization's rules are removed.",
       "wordCount": 600,
       "chapters": [
@@ -2602,7 +2602,7 @@
       "bookId": "978-0060935467",
       "title": "The Lord of the Rings",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking1.png",
       "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron.",
       "wordCount": 450,
       "chapters": [
@@ -2628,7 +2628,7 @@
       "bookId": "978-07432735651",
       "title": "The Sun Also Rises",
       "author": "Ernest Hemingway",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking2.png",
       "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'.",
       "wordCount": 700,
       "chapters": [
@@ -2653,7 +2653,7 @@
       "bookId": "978-0316769488",
       "title": "Crime and Punishment",
       "author": "Fyodor Dostoevsky",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking3.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking3.png",
       "desc": "A destitute student in St. Petersburg formulates a theory about extraordinary men being above the law and commits murder to test it, leading to a psychological battle with guilt.",
       "wordCount": 210,
       "chapters": [
@@ -2678,7 +2678,7 @@
       "bookId": "978-0060254926",
       "title": "The Hobbit",
       "author": "J.R.R. Tolkien",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking4.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking4.png",
       "desc": "Bilbo Baggins, a home-loving hobbit, joins a group of dwarves on a quest to reclaim treasure from the dragon Smaug, discovering courage he never knew he had.",
       "wordCount": 950,
       "chapters": [
@@ -2707,7 +2707,7 @@
       "bookId": "978-0131182636",
       "title": "Wuthering Heights",
       "author": "Emily Brontë",
-      "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+      "coverImg": "/api/images/ranking/trendingList/ranking5.png",
       "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors.",
       "wordCount": 1000,
       "chapters": [
@@ -6632,7 +6632,7 @@
         "title": "1984",
         "author": "George Orwell",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular1.png",
+        "coverImg": "/api/images/popular/popular1.png",
         "desc": "A chilling portrayal of a totalitarian society where 'Big Brother' watches everyone, and truth is constantly rewritten. A timeless warning against the erosion of freedom and individual thought."
       },
       {
@@ -6640,7 +6640,7 @@
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/popular/popular2.png",
+        "coverImg": "/api/images/popular/popular2.png",
         "desc": "Through the eyes of young Scout Finch, this novel explores racial injustice and moral courage in the American South, as her father, a lawyer, defends a Black man falsely accused of a crime."
       },
       {
@@ -6648,7 +6648,7 @@
         "title": "The Old Man and the Sea",
         "author": "Ernest Hemingway",
         "categoryName": "Classic Fiction",
-        "coverImg": "http://localhost:3002/images/limited/limited1.png",
+        "coverImg": "/api/images/limited/limited1.png",
         "desc": "An epic struggle between an aging fisherman and a giant marlin tests the limits of human endurance and dignity."
       },
       {
@@ -6656,7 +6656,7 @@
         "title": "The Sun Also Rises",
         "author": "Ernest Hemingway",
         "categoryName": "Lost Generation",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking2.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking2.png",
         "desc": "A group of American and British expatriates travel from Paris to Pamplona, grappling with the disillusionment and aimlessness of the 'Lost Generation'."
       },
       {
@@ -6664,7 +6664,7 @@
         "title": "Wuthering Heights",
         "author": "Emily Brontë",
         "categoryName": "Tragic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking5.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking5.png",
         "desc": "A dark and passionate tale of the destructive love and vengeance between Heathcliff and Catherine Earnshaw on the Yorkshire moors."
       },
       {
@@ -6672,7 +6672,7 @@
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "categoryName": "Gothic Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking1.png",
+        "coverImg": "/api/images/ranking/completedList/ranking1.png",
         "desc": "An orphaned governess navigates a life of hardship and romance, ultimately seeking independence and love on her own terms."
       },
       {
@@ -6680,7 +6680,7 @@
         "title": "Animal Farm",
         "author": "George Orwell",
         "categoryName": "Political Satire",
-        "coverImg": "http://localhost:3002/images/ranking/completedList/ranking5.png",
+        "coverImg": "/api/images/ranking/completedList/ranking5.png",
         "desc": "A group of farm animals rebel against their human farmer, only to see their revolution corrupted into a totalitarian regime under the pigs."
       },
       {
@@ -6688,7 +6688,7 @@
         "title": "Little Women",
         "author": "Louisa May Alcott",
         "categoryName": "Family Drama",
-        "coverImg": "http://localhost:3002/images/recommend/recommend6.png",
+        "coverImg": "/api/images/recommend/recommend6.png",
         "desc": "A heartwarming coming-of-age story following the four March sisters—Meg, Jo, Beth, and Amy—as they navigate poverty, love, loss, and ambition in Civil War-era New England, celebrating family and personal integrity."
       },
       {
@@ -6696,7 +6696,7 @@
         "title": "The Grapes of Wrath",
         "author": "John Steinbeck",
         "categoryName": "Historical Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking6.png",
+        "coverImg": "/api/images/ranking/topList/ranking6.png",
         "desc": "The Joad family travels from Oklahoma to California during the Dust Bowl, facing hardship and exploitation in search of a better life."
       },
       {
@@ -6704,7 +6704,7 @@
         "title": "Frankenstein",
         "author": "Mary Shelley",
         "categoryName": "Gothic Literature",
-        "coverImg": "http://localhost:3002/images/rank/rank8.png",
+        "coverImg": "/api/images/rank/rank8.png",
         "desc": "The seminal work of science fiction that tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox scientific experiment, leading to tragic consequences for both creator and creation."
       },
       {
@@ -6712,7 +6712,7 @@
         "title": "The Lord of the Rings",
         "author": "J.R.R. Tolkien",
         "categoryName": "Epic Fantasy",
-        "coverImg": "http://localhost:3002/images/ranking/trendingList/ranking1.png",
+        "coverImg": "/api/images/ranking/trendingList/ranking1.png",
         "desc": "A humble hobbit, Frodo Baggins, inherits a powerful ring and must destroy it in the fires of Mount Doom to save Middle-earth from dark lord Sauron."
       },
       {
@@ -6720,7 +6720,7 @@
         "title": "Brave New World",
         "author": "Aldous Huxley",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/ranking/topList/ranking2.png",
+        "coverImg": "/api/images/ranking/topList/ranking2.png",
         "desc": "A notable literary work by Aldous Huxley."
       },
       {
@@ -6728,7 +6728,7 @@
         "title": "Fahrenheit 451",
         "author": "Ray Bradbury",
         "categoryName": "Dystopian Fiction",
-        "coverImg": "http://localhost:3002/images/recommend/recommend2.png",
+        "coverImg": "/api/images/recommend/recommend2.png",
         "desc": "In a future where books are banned and firemen burn them, one man begins to question his role and discovers the transformative power of literature and critical thought."
       },
       {
@@ -6736,7 +6736,7 @@
         "title": "Slaughterhouse-Five",
         "author": "Kurt Vonnegut",
         "categoryName": "Science Fiction / War",
-        "coverImg": "http://localhost:3002/images/rank/rank2.png",
+        "coverImg": "/api/images/rank/rank2.png",
         "desc": "A satirical, anti-war masterpiece that follows Billy Pilgrim, who becomes 'unstuck in time' and experiences his life events non-sequentially, including the bombing of Dresden."
       }
     ],
