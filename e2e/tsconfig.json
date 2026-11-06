@@ -1,0 +1,16 @@
+{
+  // E2E 用例跑在 Node 里（Playwright），和 src 的浏览器代码分开配置；
+  // 只用于编辑器和类型检查，Playwright 运行时会自己编译 .ts 文件
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "types": ["node"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["./**/*.ts", "../playwright.config.ts"]
+}
