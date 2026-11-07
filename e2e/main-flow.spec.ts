@@ -24,7 +24,9 @@ const KEYWORD = 'Hobbit';
 const book: Book = db.book.find((b: Book) => b.title === 'The Hobbit');
 const chapters = (db.chapterInfoDetail as ChapterInfo[]).find((c) => c.bookId === book.bookId)!.chapterContent;
 // 搜索是 json-server 的全文搜索（q 参数），简介里提到 hobbit 的书也会被搜出来
-const searchHits: Book[] = db.bookList.filter((b: Book) => JSON.stringify(b).toLowerCase().includes(KEYWORD.toLowerCase()));
+const searchHits: Book[] = db.bookList.filter((b: Book) =>
+  JSON.stringify(b).toLowerCase().includes(KEYWORD.toLowerCase()),
+);
 
 const detailUrl = `/book/${book.bookId}`;
 const chapterUrl = (n: number) => `${detailUrl}/${n}`;
@@ -39,8 +41,11 @@ const visibleText = (page: Page, text: string): Locator =>
   page.getByText(text, { exact: true }).filter({ visible: true }).first();
 
 const expectInShelfButton = async (page: Page, inShelf: boolean) => {
-  if (inShelf) await expect(shelfButton(page)).toHaveClass(/_active_/);
-  else await expect(shelfButton(page)).not.toHaveClass(/_active_/);
+  if (inShelf) {
+    await expect(shelfButton(page)).toHaveClass(/_active_/);
+  } else {
+    await expect(shelfButton(page)).not.toHaveClass(/_active_/);
+  }
 };
 
 const addToShelfFromDetail = async (page: Page) => {
