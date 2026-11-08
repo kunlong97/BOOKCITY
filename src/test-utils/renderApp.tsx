@@ -3,18 +3,15 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { SWRConfig } from 'swr';
-import { chapterReducer } from '@/pages/chapter/chapterSlice';
 import { HISTORY_SEARCH_KEY } from '@/pages/search/constants';
-import { searchReducer } from '@/pages/search/searchSlice';
-import { shelfReducer } from '@/pages/shelf/shelfSlice';
 import AppRouter from '@/routers';
-import { RootState } from '@/store/store';
+import { RootState, rootReducer } from '@/store/store';
 import { IBookInfo } from '@/types/book';
 
 // 和 store/store.ts 同样的 reducer，但每个用例一份新的，避免 Redux 状态在用例之间串
 export const createTestStore = (preloadedState?: Partial<RootState>) =>
   configureStore({
-    reducer: { Shelf: shelfReducer, Chapter: chapterReducer, Search: searchReducer },
+    reducer: rootReducer,
     preloadedState,
   });
 

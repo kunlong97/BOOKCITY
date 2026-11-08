@@ -7,7 +7,7 @@ import useIsomorphicLayoutEffect from '../useIsomorphicLayout';
  * @param callback - 元素尺寸变化时触发的回调函数，接收当前元素作为参数
  * @param targetRef - React ref 对象，指向需要监听的 DOM 元素
  */
-const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void, targetRef: React.RefObject<T>) => {
+const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void, targetRef: React.RefObject<T | null>) => {
   // 观察器只在挂载时创建一次，把 callback 存进 ref，触发时才能调用到最新的那一份
   const callbackRef = useRef(callback);
   callbackRef.current = callback;
@@ -18,20 +18,20 @@ const useResizeObserver = <T extends HTMLElement>(callback: (target: T) => void,
     const element = targetRef.current;
     if (!element) return;
 
-    //检查浏览器是否原生支持 ResizeObserver API
+    // 检查浏览器是否原生支持 ResizeObserver API
     if (window.ResizeObserver) {
 
       const observer = new ResizeObserver(() => {
         callbackRef.current(element);
       });
-      observer.observe(element); //开始监听目标元素
+      observer.observe(element); // 开始监听目标元素
       return () => {
         // 组件卸载或依赖变化时，断开观察以释放资源，防止内存泄漏
         observer.disconnect();
       };
     }
 
-    //降级方案：不支持 ResizeObserver 时，初始化时手动执行一次回调
+    // 降级方案：不支持 ResizeObserver 时，初始化时手动执行一次回调
     callbackRef.current(element);
     return () => null;
   }, []);

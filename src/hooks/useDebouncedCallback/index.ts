@@ -15,7 +15,7 @@ function useDebouncedCallback<Args extends unknown[]>(
   const callbackRef = useRef(callback);
   callbackRef.current = callback;
 
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const cancel = useCallback(() => {
     if (timerRef.current) {

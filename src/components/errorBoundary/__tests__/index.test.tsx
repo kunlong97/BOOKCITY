@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
 import ErrorBoundary from '..';
 
-const Bomb = (): JSX.Element => {
+const Bomb = (): React.JSX.Element => {
   throw new Error('render crashed');
 };
 

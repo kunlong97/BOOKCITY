@@ -1,7 +1,7 @@
 import React from 'react';
 
 // 辅助函数：判断是否为 Fragment
-const isFragment = (child: React.ReactNode): child is React.ReactElement => {
+const isFragment = (child: React.ReactNode): child is React.ReactElement<{ children?: React.ReactNode }> => {
   return React.isValidElement(child) && child.type === React.Fragment;
 };
 

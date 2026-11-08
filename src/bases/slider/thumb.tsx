@@ -7,7 +7,7 @@ interface ThumbProps {
   min: number; // 最小值
   max: number; // 最大值
   disabled: boolean; // 是否禁用
-  trackRef: React.RefObject<HTMLDivElement>; // 父组件轨道的 DOM 引用
+  trackRef: React.RefObject<HTMLDivElement | null>; // 父组件轨道的 DOM 引用
   onDrag: (value: number) => void; // 拖拽时的回调
   onChangeAfter: (value: number) => void; // 拖拽结束时的回调
 }

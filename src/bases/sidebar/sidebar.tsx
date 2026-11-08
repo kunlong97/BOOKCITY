@@ -29,11 +29,11 @@ const classPrefix = `ygm-sidebar`;
 const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
   const items: React.ReactElement<React.ComponentProps<typeof SidebarItem>>[] = [];
 
-  //遍历 React 节点
+  // 遍历 React 节点
   traverseReactNode(props.children, (child) => {
     if (!React.isValidElement(child)) return;
     if (!child.key) return;
-    items.push(child as React.ReactElement);
+    items.push(child as React.ReactElement<React.ComponentProps<typeof SidebarItem>>);
   });
 
   // 这里曾经用 useState(props.activeKey) 存了一份"内部" activeKey，只在挂载时
@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
     <div className={classPrefix}>
       <div className={`${classPrefix}-items`} style={props.style}>
         {items.map((item) => {
-          const active = item.key === props.activeKey; //是当前激活的SidebarItem的key,值为true
+          const active = item.key === props.activeKey; // 是当前激活的SidebarItem的key,值为true
           return (
             <div
               className={cx(`${classPrefix}-item`, {

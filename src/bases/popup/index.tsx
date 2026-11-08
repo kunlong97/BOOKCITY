@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { useSpring, animated } from '@react-spring/web'; //需要安装react-spring库，用来做动画
+import { useSpring, animated } from '@react-spring/web'; // 需要安装react-spring库，用来做动画
 import useScrollLock from '@/hooks/useScrollLock';
 import Mask from '@/bases/mask';
 import './styles/index.scss';
@@ -50,7 +50,7 @@ const Popup: React.FC<PopupProps> = ({
       friction: 30,
     },
     onRest: () => {
-      //这个函数会在动画结束后执行
+      // 这个函数会在动画结束后执行
       if (visible) {
         afterShow?.();
       } else {
@@ -68,7 +68,8 @@ const Popup: React.FC<PopupProps> = ({
           ...style,
           transform: percent.to((v) => {
             if (position === 'left') {
-              return `translate(-${v}%, 0)`;
+              // 用 ${-v} 而不是 -${v}：v 为 0 时得到 0% 而不是 -0%
+              return `translate(${-v}%, 0)`;
             }
             if (position === 'bottom') {
               return `translate(0, ${v}%)`;
@@ -77,7 +78,7 @@ const Popup: React.FC<PopupProps> = ({
               return `translate(${v}%, 0)`;
             }
             if (position === 'top') {
-              return `translate(0, -${v}%)`;
+              return `translate(0, ${-v}%)`;
             }
             return 'none';
           }),

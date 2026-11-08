@@ -1,1 +1,3 @@
-module.exports = require('@taoyage/configs/commitlint');
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+};
