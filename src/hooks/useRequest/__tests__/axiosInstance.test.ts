@@ -1,4 +1,4 @@
-import { AxiosAdapter, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { AxiosAdapter, AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import AxiosInstance from '../axiosInstance';
 
 // 用自定义 adapter 代替真实网络请求：resolve 一个指定的响应
@@ -7,7 +7,7 @@ const respondWith = (data: unknown, status = 200): AxiosAdapter => {
 };
 
 // 用自定义 adapter 模拟请求失败
-const failWith = (build: (config: AxiosRequestConfig) => AxiosError): AxiosAdapter => {
+const failWith = (build: (config: InternalAxiosRequestConfig) => AxiosError): AxiosAdapter => {
   return (config) => Promise.reject(build(config));
 };
 
@@ -29,10 +29,7 @@ describe('axiosInstance', () => {
   it('默认配置：接口统一加 /api 前缀、5 秒超时、JSON 请求头', () => {
     expect(AxiosInstance.defaults.baseURL).toBe('/api');
     expect(AxiosInstance.defaults.timeout).toBe(5000);
-    // axios 0.27 的类型里 defaults.headers 只声明了 common/get/post 等分组，实际合并后顶层也有 Content-Type
-    expect((AxiosInstance.defaults.headers as unknown as Record<string, unknown>)['Content-Type']).toBe(
-      'application/json;charset=UTF-8',
-    );
+    expect(AxiosInstance.defaults.headers['Content-Type']).toBe('application/json;charset=UTF-8');
     expect(AxiosInstance.defaults.responseType).toBe('json');
   });
 

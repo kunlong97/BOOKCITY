@@ -1,4 +1,4 @@
-import { AxiosAdapter, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { AxiosAdapter, AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import AxiosInstance from '@/hooks/useRequest/axiosInstance';
 import { IBookInfo } from '@/types/book';
 import {
@@ -69,7 +69,7 @@ const defaultRoutes = (): MockRoutes => ({
   '/bookList_todaypicks': pagedBookList([[books.hobbit]]),
 });
 
-const createAxiosError = (failure: MockFailure, config: AxiosRequestConfig) => {
+const createAxiosError = (failure: MockFailure, config: InternalAxiosRequestConfig) => {
   if (failure.status === undefined) {
     return new AxiosError('Network Error', 'ERR_NETWORK', config, {});
   }
@@ -77,7 +77,7 @@ const createAxiosError = (failure: MockFailure, config: AxiosRequestConfig) => {
   return new AxiosError(`Request failed with status code ${failure.status}`, 'ERR_BAD_RESPONSE', config, {}, response);
 };
 
-const toRequest = (config: AxiosRequestConfig): MockRequest => {
+const toRequest = (config: InternalAxiosRequestConfig): MockRequest => {
   const url = config.url ?? '';
   const [path, search = ''] = url.split('?');
   const query = { ...Object.fromEntries(new URLSearchParams(search)), ...config.params } as Record<string, string>;

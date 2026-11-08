@@ -8,6 +8,8 @@ const axiosConfig: AxiosRequestConfig = {
   responseType: 'json',
 };
 
+// axios.create 是官方文档的标准写法；axios 1.x 同时导出了具名的 create，eslint-plugin-import 会误报
+// eslint-disable-next-line import/no-named-as-default-member
 const AxiosInstance = axios.create(axiosConfig);
 
 const SUCCESS_CODE = 200;
@@ -40,7 +42,10 @@ AxiosInstance.interceptors.response.use(
   // 让 useRequest / useInfiniteRequest 的 Response<Data> 结构保持不变。
   // 非 2xx 的响应 axios 默认就会走下面的错误分支，这里不需要再判断状态码。
   (res: AxiosResponse) => {
-    return { code: SUCCESS_CODE, msg: 'ok', data: res.data };
+    const wrapped: { code: number; msg: string; data: unknown } = { code: SUCCESS_CODE, msg: 'ok', data: res.data };
+    // axios 1.x 的类型要求拦截器返回 AxiosResponse，但这里是故意改了返回结构，
+    // 调用方（useRequest / useInfiniteRequest）按 Response<Data> 使用，所以只能绕过类型
+    return wrapped as unknown as AxiosResponse;
   },
   (error: AxiosError) => {
     const normalized = normalizeError(error);
