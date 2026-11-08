@@ -3,7 +3,7 @@ import { isPromise } from '../validate';
 describe('isPromise', () => {
   describe('返回 true', () => {
     it('Promise 实例', () => {
-      expect(isPromise(new Promise(() => undefined))).toBe(true);
+      expect(isPromise(new Promise(() => {}))).toBe(true);
     });
 
     it('已完成和已拒绝的 Promise', () => {

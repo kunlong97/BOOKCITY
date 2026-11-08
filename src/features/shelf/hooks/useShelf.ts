@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import useReadLocalStorage from '@/hooks/useReadLocalStorage';
 import storage from '@/utils/storage';
 import { IBookInfo } from '@/types/book';
@@ -35,8 +35,11 @@ interface IUseShelfResult {
 }
 
 function useShelf(): IUseShelfResult {
-  const books = useReadLocalStorage<IBookInfo[]>(SHELF_KEY) || [];
-  const groups = useReadLocalStorage<Record<string, IBookInfo[]>>(GROUP_KEY) || {};
+  const storedBooks = useReadLocalStorage<IBookInfo[]>(SHELF_KEY);
+  const storedGroups = useReadLocalStorage<Record<string, IBookInfo[]>>(GROUP_KEY);
+  // 直接写 `|| []` 的话，没有数据时每次渲染都是一个新数组，下面 isInShelf / toggle 的 useCallback 就白做了
+  const books = useMemo(() => storedBooks || [], [storedBooks]);
+  const groups = useMemo(() => storedGroups || {}, [storedGroups]);
 
   // "在不在书架里"要把散装列表和所有分组都算进去——书架、分组本质上都是
   // "这本书在我的书架里"这同一个概念的两种存放方式，不是两件事。

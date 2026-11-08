@@ -38,32 +38,32 @@ const shelfSlice = createSlice({
       }
     },
 
-    //切换分组选中状态
+    // 切换分组选中状态
     setSelectedGroup: (state, action) => {
       const groupName = action.payload;
       const index = state.selectedGroup.indexOf(groupName);
 
-      //直接"添加"
+      // 直接"添加"
       if (index === -1) {
         state.selectedGroup.push(groupName);
 
-        //直接"删除"
+        // 直接"删除"
       } else {
         state.selectedGroup.splice(index, 1);
       }
     },
 
-    //清空选中的书籍
+    // 清空选中的书籍
     clearSelectedBook: (state) => {
       state.selectedBook = [];
     },
 
-    //清空选中的分组
+    // 清空选中的分组
     clearSelectedGroup: (state) => {
       state.selectedGroup = [];
     },
 
-    //切换分组编辑模式
+    // 切换分组编辑模式
     setGroupVisibleMode: (state, action) => {
       state.groupVisibleMode = action.payload;
     },

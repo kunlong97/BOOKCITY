@@ -19,7 +19,7 @@ const EditBar: React.FC = memo(() => {
   const [inputValue, setInputValue] = useState<string>('');
   const inputRef = useRef<InputRef>(null);
 
-  const isDisabled = selectedBook.length === 0 && selectedGroup.length === 0; //没有选中任何书籍或分组
+  const isDisabled = selectedBook.length === 0 && selectedGroup.length === 0; // 没有选中任何书籍或分组
 
   const { groups: groupList, moveToGroup, removeBooks, removeGroups } = useShelf();
 
@@ -65,7 +65,7 @@ const EditBar: React.FC = memo(() => {
     } else {
       const result = moveToGroup(name, selectedBook, selectedGroup);
       Toast.show(result.msg);
-      //接着要清除选中的书籍和分组
+      // 接着要清除选中的书籍和分组
       dispatch(clearSelectedBook());
       dispatch(clearSelectedGroup());
       dispatch(setGroupVisibleMode(false));
@@ -128,7 +128,7 @@ const EditBar: React.FC = memo(() => {
           { key: 'cancel', text: 'Cancel', onClick: onCancelDialog },
           { key: 'confirm', text: 'Submit', color: 'primary', onClick: onConformDialog },
         ]}
-      ></Dialog>
+       />
     </div>
   );
 });

@@ -13,8 +13,8 @@ import Loading from '@/components/loading';
 
 const SearchList: React.FC = React.memo(() => {
   const navigate = useNavigate();
-  const searchKeyword = useAppSelector<string>((state) => state.Search.searchKeyword); //从store中取出searchKeyword
-  const searchMode = useAppSelector<boolean>((state) => state.Search.searchMode); //从store中取出searchMode
+  const searchKeyword = useAppSelector<string>((state) => state.Search.searchKeyword); // 从store中取出searchKeyword
+  const searchMode = useAppSelector<boolean>((state) => state.Search.searchMode); // 从store中取出searchMode
 
   // request 为 null 时 useRequest 会跳过请求（SWR 的 conditional fetching）——没有关键词
   // 就不该请求。之前这里无论有没有关键词都会立刻发一次 /bookList 请求，全靠外面用

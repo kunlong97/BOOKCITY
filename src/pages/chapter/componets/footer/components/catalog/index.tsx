@@ -22,7 +22,7 @@ const ChapterFooterCatalog: React.FC = React.memo(() => {
     dispatch(setCatalogVisible(false));
   };
 
-  //跳转到指定章节
+  // 跳转到指定章节
   const onClickChapter = (chapter:number) => {
     navigate(`/book/${bookId}/${chapter}`, {replace: true});
     dispatch(setCatalogVisible(false));

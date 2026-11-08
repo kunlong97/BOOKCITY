@@ -78,7 +78,7 @@ describe('useRequest', () => {
       const { result } = renderHook(() => useRequest(null), { wrapper });
 
       // 等待一个宏任务，确认 SWR 没有在之后发起请求
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((resolve) => { setTimeout(resolve, 0); });
 
       expect(requestSpy).not.toHaveBeenCalled();
       expect(result.current.data).toBeUndefined();
@@ -87,7 +87,7 @@ describe('useRequest', () => {
     it('request 没有 url 时不发请求', async () => {
       renderHook(() => useRequest({ params: { keyword: 'a' } }), { wrapper });
 
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((resolve) => { setTimeout(resolve, 0); });
 
       expect(requestSpy).not.toHaveBeenCalled();
     });

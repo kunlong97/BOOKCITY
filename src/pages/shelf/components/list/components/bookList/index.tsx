@@ -4,9 +4,8 @@ import { px2rem } from '@/utils/unit';
 import React, { memo } from 'react';
 import styles from './index.module.scss';
 import BookCover from '@/components/bookCover/bookCover';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector, useAppDispatch } from '@/store/store';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '@/store/store';
 import { setSelectedBook } from '@/pages/shelf/shelfSlice';
 
 export interface IBookList {

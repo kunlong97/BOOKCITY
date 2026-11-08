@@ -22,13 +22,13 @@ const ChapterContent: React.FC = React.memo(() => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   const dispatch = useAppDispatch();
-  const headerVisible = useAppSelector<boolean>((state) => state.Chapter.headerVisible); //控制顶部导航的显示与隐藏
+  const headerVisible = useAppSelector<boolean>((state) => state.Chapter.headerVisible); // 控制顶部导航的显示与隐藏
   const footerVisible = useAppSelector<boolean>((state) => state.Chapter.footerVisible);
-  const nightTheme = useAppSelector<boolean>((state) => state.Chapter.nightTheme); //控制夜间与日间模式
-  const theme = useAppSelector<string>((state) => state.Chapter.theme); //控制主题颜色
-  const fontSize = useAppSelector<number>((state) => state.Chapter.fontSzie); //控制字号大小
+  const nightTheme = useAppSelector<boolean>((state) => state.Chapter.nightTheme); // 控制夜间与日间模式
+  const theme = useAppSelector<string>((state) => state.Chapter.theme); // 控制主题颜色
+  const fontSize = useAppSelector<number>((state) => state.Chapter.fontSzie); // 控制字号大小
 
-  //顶部和底部导航的显示与隐藏
+  // 顶部和底部导航的显示与隐藏
   const onContent = () => {
     dispatch(setHeaderVisible(!headerVisible));
     dispatch(setFooterVisible(!footerVisible));
@@ -63,13 +63,13 @@ const ChapterContent: React.FC = React.memo(() => {
     dispatch(setFooterVisible(false));
   };
 
-  const isFirst = Number(chapterId) === 1; //是否为第一章
-  const isLast = Number(chapterId) === chapters?.[0]?.chapterContent?.length; //是否为最后一章
+  const isFirst = Number(chapterId) === 1; // 是否为第一章
+  const isLast = Number(chapterId) === chapters?.[0]?.chapterContent?.length; // 是否为最后一章
 
   useEffect(() => {
     const element = contentRef.current;
     if (!element) return;
-    element.scrollTop = 0; //页面回到顶部
+    element.scrollTop = 0; // 页面回到顶部
   });
 
   // error 要在 Loading 之前判断：请求失败时 chapters 一直是 undefined，

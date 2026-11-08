@@ -37,12 +37,12 @@ const ChapterFooterProgressBar: React.FC = React.memo(() => {
     sliderRef.current?.setValue(newIndex); // 同步滑块位置
   };
 
-  //滑动滑块时更新显示的章节数
+  // 滑动滑块时更新显示的章节数
   const onChange = (value: number) => {
     setCurrentPageIndex(value);
   };
 
-  //滑动结束后跳转到指定章节,更新显示的章节数
+  // 滑动结束后跳转到指定章节,更新显示的章节数
   const onChangeAfter = (value: number) => {
     navigate(`/book/${bookId}/${value}`, { replace: true });
     setCurrentPageIndex(value);

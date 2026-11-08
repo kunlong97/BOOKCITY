@@ -16,12 +16,12 @@ const SearchHistory: React.FC = React.memo(() => {
   const searchMode = useAppSelector<boolean>((state) => state.Search.searchMode);
   const historyList = useReadLocalStorage<string[]>(HISTORY_SEARCH_KEY);
 
-  //清空历史记录
+  // 清空历史记录
   const onClear = () => {
     clearHistory();
   };
 
-  //根据历史记录搜索
+  // 根据历史记录搜索
   const onSearch = (e: React.MouseEvent) => {
     const keyword = (e.target as HTMLElement).dataset['keyword'] as string;
     setUrlParams([['keyword', keyword]], 'search');
@@ -29,10 +29,10 @@ const SearchHistory: React.FC = React.memo(() => {
     dispatch(setSearchKeyword(keyword));
   };
 
-  //删除对应的历史记录
+  // 删除对应的历史记录
   const onDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
-    const name = (e.target as HTMLElement).dataset['name'] as string; //从自定义的属性中取到要删除的记录
+    const name = (e.target as HTMLElement).dataset['name'] as string; // 从自定义的属性中取到要删除的记录
     deleteHistory(name);
   };
 

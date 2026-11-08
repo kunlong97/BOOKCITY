@@ -1,13 +1,13 @@
 
 export interface SidebarItemProps{
 
-   /** 菜单项的唯一标识符*/
+   /** 菜单项的唯一标识符 */
   key: string;
 
   /** 菜单项的显示标题 */
   title?: React.ReactNode;
 
-  /**子节点内容。*/
+  /** 子节点内容。 */
   children?: React.ReactNode;
 }
 

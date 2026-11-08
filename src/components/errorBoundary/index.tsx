@@ -36,11 +36,11 @@ class ErrorBoundaryImpl extends React.Component<IErrorBoundaryProps, IErrorBound
     // 用整页跳转而不是 useNavigate：这里已经是"某处渲染崩溃"之后的兜底路径，
     // 不应该依赖任何可能受牵连的 React 状态（包括 Router 的 context）能正常工作，
     // window.location 是唯一在任何情况下都能用的逃生手段。
-    window.location.href = '/';   //是浏览器级别的重新加载整个项目，而useNavigate是路由级别的
+    window.location.href = '/';   // 是浏览器级别的重新加载整个项目，而useNavigate是路由级别的
   };
 
   render() {
-    if (this.state.error) {   //但如果子组件在渲染过程中抛出了未捕获的异常，React 就会调用 getDerivedStateFromError，把错误存进 state，就会走到这个if，渲染这个降级UI
+    if (this.state.error) {   // 但如果子组件在渲染过程中抛出了未捕获的异常，React 就会调用 getDerivedStateFromError，把错误存进 state，就会走到这个if，渲染这个降级UI
       return (
         <div className={styles.errorBoundary}>
           <ErrorBlock />
@@ -50,7 +50,7 @@ class ErrorBoundaryImpl extends React.Component<IErrorBoundaryProps, IErrorBound
         </div>
       );
     }
-    return this.props.children;   //正常情况下，ErrorBoundary 会直接渲染 this.props.children
+    return this.props.children;   // 正常情况下，ErrorBoundary 会直接渲染 this.props.children
   }
 }
 

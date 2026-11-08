@@ -22,21 +22,21 @@ const BookSearchBar: React.FC = React.memo(() => {
     dispatch(setSearchKeyword(value));
   }, SEARCH_DEBOUNCE_MS);
 
-  //输入框回车键触发事件：立即搜索，不等防抖，同时把历史记录这件事只留给这条"明确提交"的路径
+  // 输入框回车键触发事件：立即搜索，不等防抖，同时把历史记录这件事只留给这条"明确提交"的路径
   const onSearch = (value: string) => {
     if (!value) return;
     cancelDebouncedSearch(); // 防止等会儿那次还没触发的防抖搜索用同一个值重复 dispatch 一次
-    setUrlParams([['keyword', value]], 'search'); //设置或更新 URL 中的查询参数
+    setUrlParams([['keyword', value]], 'search'); // 设置或更新 URL 中的查询参数
     setHistory(value);
     dispatch(setSearchKeyword(value));
   };
 
-  //点击取消按钮时触发事件
+  // 点击取消按钮时触发事件
   const onCancel = () => {
-    navigate(-1); //返回上一页
+    navigate(-1); // 返回上一页
   };
 
-  //点击清除图标时触发事件
+  // 点击清除图标时触发事件
   const onClear = () => {
     cancelDebouncedSearch();
     removeUrlParams(['keyword'], '/search');
@@ -61,7 +61,7 @@ const BookSearchBar: React.FC = React.memo(() => {
   };
 
   useEffect(() => {
-    searchRef.current?.focus(); //自动获取焦点
+    searchRef.current?.focus(); // 自动获取焦点
   }, []);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const BookSearchBar: React.FC = React.memo(() => {
       dispatch(setSearchMode(true));
       searchRef.current?.setValue(searchKeyword as string);
     }
-  }, [searchKeyword]);
+  }, [dispatch, searchKeyword]);
 
   return (
     <SearchBar

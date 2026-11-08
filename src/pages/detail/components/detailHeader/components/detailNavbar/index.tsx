@@ -12,7 +12,7 @@ const DetailNavbar: React.FC = React.memo(() => {
 
   const book = useBookDetailContext();
 
-  //返回上一页
+  // 返回上一页
   const onBack = () => {
     navigate(-1);
   };
@@ -20,7 +20,7 @@ const DetailNavbar: React.FC = React.memo(() => {
   const onScroll = (e: Event) => {
     const offsetY = (e.target as HTMLElement).scrollTop || window.pageYOffset || document.body.scrollTop;
 
-    //判断滚动条滚过的距离是否大于Navbar的高度
+    // 判断滚动条滚过的距离是否大于Navbar的高度
     if (offsetY > wrapRef.current!.offsetHeight) {
       setFixedMode(true);
     } else {
@@ -28,7 +28,7 @@ const DetailNavbar: React.FC = React.memo(() => {
     }
   };
 
-  //绑定滚动事件
+  // 绑定滚动事件
   useEffect(() => {
     window.addEventListener('scroll', onScroll, true);
 

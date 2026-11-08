@@ -18,7 +18,7 @@ const ErrorBlock: React.FC<ErrorBlockProps> = ({
   let imageNode: React.ReactNode = ErrorImage;
 
   if (image) {
-    imageNode = image; //使用传入的图片
+    imageNode = image; // 使用传入的图片
   }
 
   return (

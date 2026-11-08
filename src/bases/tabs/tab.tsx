@@ -1,8 +1,8 @@
 import React from 'react';
 
 export interface TabProps {
-  key: string; //匹配显示哪一个tab
-  title: string; //标签名称
+  key: string; // 匹配显示哪一个tab
+  title: string; // 标签名称
   children?: React.ReactNode;
 }
 

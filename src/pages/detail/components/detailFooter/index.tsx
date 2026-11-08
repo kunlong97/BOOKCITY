@@ -21,7 +21,7 @@ const DetailFooter: React.FC = () => {
 
   const onShelf = () => {
     const msg = toggle(book);
-    Toast.show(msg);   //加入书架后弹窗提示Toast组件
+    Toast.show(msg);   // 加入书架后弹窗提示Toast组件
   };
 
   const onRead = () => {

@@ -4,8 +4,8 @@ import './styles/grid-item.scss';
 
 export interface GridItemProps {
 
-  span?: number;   //跨度
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;   //点击事件
+  span?: number;   // 跨度
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;   // 点击事件
   children: React.ReactNode;
 }
 

@@ -19,7 +19,7 @@ const type = (input: HTMLInputElement, value: string) => fireEvent.change(input,
 const pressEnter = (input: HTMLInputElement) => fireEvent.keyDown(input, { key: 'Enter' });
 
 // 等到防抖一定已经触发
-const waitDebounce = () => act(() => new Promise<void>((resolve) => setTimeout(resolve, DEBOUNCE_MS + 100)));
+const waitDebounce = () => act(() => new Promise<void>((resolve) => { setTimeout(resolve, DEBOUNCE_MS + 100); }));
 
 // 书名可能同时出现在热搜和结果里，简介只有搜索结果才有
 const resultOf = (title: string) => `Description of ${title}`;

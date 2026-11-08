@@ -32,7 +32,7 @@ const Toast: React.FC<ToastProps> = ({ duration = 2000, content, afterClose, unm
 
   // afterClose 存进 ref，下面的 effect 不依赖它，重新渲染时传入新函数也不会提前触发
   const afterCloseRef = useRef(afterClose);
-  afterCloseRef.current = afterClose;   //如果不做这行代码,那么useRef里的内容将永远停留在第一次挂载时的那个旧函数上。
+  afterCloseRef.current = afterClose;   // 如果不做这行代码,那么useRef里的内容将永远停留在第一次挂载时的那个旧函数上。
 
   /**
    * 关闭回调逻辑

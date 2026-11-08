@@ -39,14 +39,14 @@ function useInfiniteRequest<Data = unknown, VM = Data>(
   transform?: (data: Data) => VM
 ): Return<Data, VM> {
   const {
-    data: response,   //将 data 属性的值赋值给一个新的局部变量response(对象解构赋值语法)
+    data: response,   // 将 data 属性的值赋值给一个新的局部变量response(对象解构赋值语法)
     error,
     isValidating,
     mutate,
     size,
     setSize,
   } = useSWRInfinite<Response<Data>, INormalizedError>(
-    (pageIndex: number) => getKey(pageIndex, request.url!),   //这里写成箭头函数是为了拿到request.url的值(因为request.url在useInfiniteRequest函数里,getKey函数是在外面定义的,直接拿拿不到useInfiniteRequest里的值)
+    (pageIndex: number) => getKey(pageIndex, request.url!),   // 这里写成箭头函数是为了拿到request.url的值(因为request.url在useInfiniteRequest函数里,getKey函数是在外面定义的,直接拿拿不到useInfiniteRequest里的值)
     (url: string) => AxiosInstance.request({ url }),
     { ...config}
   );

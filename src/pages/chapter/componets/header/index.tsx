@@ -8,14 +8,14 @@ import { useNavigate } from 'react-router-dom';
 const ChapterHeader: React.FC = React.memo(() => {
   const navigate = useNavigate();
 
-  const headerVisible = useAppSelector<boolean>((state) => state.Chapter.headerVisible); //控制导航的显示与隐藏
+  const headerVisible = useAppSelector<boolean>((state) => state.Chapter.headerVisible); // 控制导航的显示与隐藏
 
-  //返回到首页
+  // 返回到首页
   const onGoHome = () => {
     navigate('/');
   };
 
-  //返回到上一页
+  // 返回到上一页
   const onBack = () => {
     navigate(-1);
   };

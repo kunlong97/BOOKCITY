@@ -11,7 +11,7 @@ const Catalog: React.FC = React.memo(() => {
   const navigate = useNavigate();
 
   const latestChapters = useMemo(() => {
-    return book.chapters?.slice(-3).reverse(); //取出最新三章,倒序排列
+    return book.chapters?.slice(-3).reverse(); // 取出最新三章,倒序排列
   }, [book.chapters]);
 
   const onShow = () => {

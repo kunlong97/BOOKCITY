@@ -66,6 +66,8 @@ describe('traverseReactNode', () => {
           <div key="a" />
           <>
             <div key="b" />
+            {/* 只包一个子元素的 Fragment 是故意的：用来测第三层嵌套 */}
+            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
             <>
               <div key="c" />
             </>
@@ -79,6 +81,8 @@ describe('traverseReactNode', () => {
     });
 
     it('空 Fragment 不调用回调', () => {
+      // 空 Fragment 正是这个用例要测的输入
+      // eslint-disable-next-line react/jsx-no-useless-fragment
       expect(collect(<></>).nodes).toEqual([]);
     });
 

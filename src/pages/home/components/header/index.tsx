@@ -9,11 +9,11 @@ export default function Header() {
         <h1>MoocReads</h1>
       </div>
       <div className={styles.right}>
-        <Link to={'/search'}>
-          <i className="icon-search"></i>
+        <Link to="/search">
+          <i className="icon-search" />
         </Link>
-        <Link to={'/shelf'}>
-          <i className="icon-shelf"></i>
+        <Link to="/shelf">
+          <i className="icon-shelf" />
         </Link>
       </div>
     </div>

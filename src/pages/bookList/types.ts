@@ -12,7 +12,7 @@ export interface IBookItemDTO extends Omit<IBookInfo, 'categoryName'> {
 
 export interface IBookListDTO {
   bookList: IBookItemDTO[];
-  isLast: boolean; //是否是最后一条数据
+  isLast: boolean; // 是否是最后一条数据
 }
 
 /**

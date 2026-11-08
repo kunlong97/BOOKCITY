@@ -27,42 +27,42 @@ const chapterSlice = createSlice({
   name: 'chapter',
   initialState,
   reducers: {
-    //切换顶部导航显示与隐藏
+    // 切换顶部导航显示与隐藏
     setHeaderVisible: (state, action) => {
       state.headerVisible = action.payload;
     },
 
-    //切换底部导航显示与隐藏
+    // 切换底部导航显示与隐藏
     setFooterVisible: (state, action) => {
       state.footerVisible = action.payload;
     },
 
-    //切换目录框显示与隐藏
+    // 切换目录框显示与隐藏
     setCatalogVisible: (state, action) => {
       state.catalogVisible = action.payload;
     },
 
-    //切换进度条的显示与隐藏
+    // 切换进度条的显示与隐藏
     setFooterProgressBarVisible: (state, action) => {
       state.footerProgressBarVisible = action.payload;
     },
 
-    //切换设置框的显示与隐藏
+    // 切换设置框的显示与隐藏
     setFooterSettingBarVisible: (state, action) => {
       state.footerSettingBarVisible = action.payload;
     },
 
-    //切换夜间与日间模式
+    // 切换夜间与日间模式
     setNightTheme: (state, action) => {
       state.nightTheme = action.payload;
     },
 
-    //切换主题颜色
+    // 切换主题颜色
     setTheme: (state, action) => {
       state.theme = action.payload;
     },
 
-    //切换字号大小
+    // 切换字号大小
     setFontSize: (state, action) => {
       state.fontSzie = action.payload;
     },

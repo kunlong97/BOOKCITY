@@ -35,14 +35,14 @@ const Mask: React.FC<MaskProps> = (props) => {
       }
    })
 
-   useIsomorphicLayoutEffect(() => {   //渲染之前执行。蒙板Mask组件在Popup弹出之前出现
+   useIsomorphicLayoutEffect(() => {   // 渲染之前执行。蒙板Mask组件在Popup弹出之前出现
       if(props.visible){
          setActive(true)
       }
    }, [props.visible])
 
    const onMask = (e:React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      e.stopPropagation();   //阻止冒泡
+      e.stopPropagation();   // 阻止冒泡
       props.onMaskClick?.(e);
    }
 

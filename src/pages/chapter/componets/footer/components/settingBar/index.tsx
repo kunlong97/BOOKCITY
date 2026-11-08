@@ -14,17 +14,17 @@ const ChapterFooterSettingBar: React.FC = React.memo(() => {
   const footerSettingBarVisible = useAppSelector<boolean>((state) => state.Chapter.footerSettingBarVisible);
   const theme = useAppSelector<string>((state) => state.Chapter.theme);
 
-  //滑动时切换字号大小
+  // 滑动时切换字号大小
   const onChange = (value: number) => {
     dispatch(setFontSize(value));
   };
 
-  //滑动结束后切换字号大小
+  // 滑动结束后切换字号大小
   const onChangeAfter = (value: number) => {
     dispatch(setFontSize(value));
   };
 
-  //切换主题
+  // 切换主题
   const onSetTheme = (theme: string) => {
     dispatch(setTheme(theme));
     dispatch(setNightTheme(false));

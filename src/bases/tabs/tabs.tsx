@@ -31,7 +31,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
   // 维护内部激活的 tab key 状态
   const [activeKey, setActiveKey] = React.useState<string>(props.activeKey);
 
-  //当外部传入的 props.activeKey 发生变化时，同步更新内部状态
+  // 当外部传入的 props.activeKey 发生变化时，同步更新内部状态
   React.useEffect(() => {
     setActiveKey(props.activeKey);
   }, [props.activeKey]);

@@ -94,7 +94,7 @@ const Dialog: React.FC<DialogProps> = ({
             key={action.key}
             action={action}
             onAction={async () => {
-              await Promise.all([action.onClick?.(), onAction?.(action, index)]); //Promise.all()用于并行处理多个 Promise，并在所有 Promise 都成功解决（resolved）时返回结果。如果其中任何一个 Promise 被拒绝（rejected），Promise.all?会立即返回该拒绝的原因。
+              await Promise.all([action.onClick?.(), onAction?.(action, index)]); // Promise.all()用于并行处理多个 Promise，并在所有 Promise 都成功解决（resolved）时返回结果。如果其中任何一个 Promise 被拒绝（rejected），Promise.all?会立即返回该拒绝的原因。
               if (closeOnAction) {
                 onClose?.();
               }

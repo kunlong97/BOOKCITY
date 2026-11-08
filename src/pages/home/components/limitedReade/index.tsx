@@ -42,7 +42,7 @@ const LimitedReader: React.FC<ILimitedReaderProps> = React.memo(({ books }) => {
 
   return (
     <div className={styles.limited}>
-      <Card headerClassName={styles.header} title={header}></Card>
+      <Card headerClassName={styles.header} title={header} />
       <Grid columns={4} gap={px2rem(16)}>
         {renderContent()}
       </Grid>

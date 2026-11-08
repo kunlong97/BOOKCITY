@@ -7,7 +7,7 @@ const useLockFn = <P extends any[] = any[], V=any>(fn:(...args:P) => Promise<V>)
    return React.useCallback(async (...args:P) => {
       if(lockRef.current) return;
 
-      lockRef.current = true;   //加锁
+      lockRef.current = true;   // 加锁
       try{
          const ret = await fn(...args);
          lockRef.current = false;

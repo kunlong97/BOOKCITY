@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const RankingHeader: React.FC = React.memo(() => {
   const naviagte = useNavigate();
 
-  //返回到上一页
+  // 返回到上一页
   const onBack = () => {
     naviagte(-1);
   };

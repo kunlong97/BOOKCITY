@@ -17,9 +17,9 @@ const SearchHot: React.FC = React.memo(() => {
   const dispatch = useAppDispatch();
 
   const onSearch = (e: React.MouseEvent<HTMLDivElement>) => {
-    const keyword = e.currentTarget.dataset.keyword; //获取自定义属性data-keyword的值
+    const keyword = e.currentTarget.dataset.keyword; // 获取自定义属性data-keyword的值
 
-    setHistory(keyword as string); //保存到localStorage
+    setHistory(keyword as string); // 保存到localStorage
     setUrlParams([['keyword', keyword as string]], 'search');
     dispatch(setSearchMode(true));
     dispatch(setSearchKeyword(keyword as string));

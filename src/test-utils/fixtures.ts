@@ -4,7 +4,10 @@ import { IBookInfo } from '@/types/book';
  * 集成测试用的小份数据，结构和 api-now/db.json 一致。
  * 用例需要特殊数据时，通过 mockApi({ '/xxx': ... }) 覆盖对应接口即可。
  */
-const createBook = (id: number, title: string, author: string, categoryName: string): IBookInfo => ({
+const createBook = (
+  id: number,
+  { title, author, categoryName }: Pick<IBookInfo, 'title' | 'author' | 'categoryName'>,
+): IBookInfo => ({
   bookId: `book-${id}`,
   title,
   author,
@@ -17,10 +20,10 @@ const createBook = (id: number, title: string, author: string, categoryName: str
 });
 
 export const books = {
-  orwell: createBook(1, '1984', 'George Orwell', 'Dystopian Fiction'),
-  hobbit: createBook(2, 'The Hobbit', 'J.R.R. Tolkien', 'Fantasy'),
-  farm: createBook(3, 'Animal Farm', 'George Orwell', 'Satire'),
-  gatsby: createBook(4, 'The Great Gatsby', 'F. Scott Fitzgerald', 'Classic Fiction'),
+  orwell: createBook(1, { title: '1984', author: 'George Orwell', categoryName: 'Dystopian Fiction' }),
+  hobbit: createBook(2, { title: 'The Hobbit', author: 'J.R.R. Tolkien', categoryName: 'Fantasy' }),
+  farm: createBook(3, { title: 'Animal Farm', author: 'George Orwell', categoryName: 'Satire' }),
+  gatsby: createBook(4, { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', categoryName: 'Classic Fiction' }),
 };
 
 export const allBooks = Object.values(books);

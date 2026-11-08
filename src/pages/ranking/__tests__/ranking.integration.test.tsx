@@ -207,7 +207,7 @@ describe('排行榜', () => {
 
     it('榜单列表加载中显示加载动画', async () => {
       let resolve!: (value: unknown) => void;
-      mockApi({ '/ranking': () => new Promise((res) => (resolve = res)) });
+      mockApi({ '/ranking': () => new Promise((res) => { resolve = res; }) });
 
       renderApp('/ranking');
 
@@ -251,7 +251,7 @@ describe('排行榜', () => {
 
       it('加载中显示加载动画', async () => {
         let resolve!: (value: unknown) => void;
-        mockApi({ '/rank_001': () => new Promise((res) => (resolve = res)) });
+        mockApi({ '/rank_001': () => new Promise((res) => { resolve = res; }) });
 
         renderApp('/ranking');
         await screen.findByText('Popular List');

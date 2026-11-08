@@ -3,8 +3,7 @@ import { Grid, Popup } from '@/bases';
 import BookCover from '@/components/bookCover/bookCover';
 import useShelf from '@/features/shelf/hooks/useShelf';
 import { setSelectedGroup } from '@/pages/shelf/shelfSlice';
-import { useAppDispatch } from '@/store/store';
-import { useAppSelector } from '@/store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import { IBookInfo } from '@/types/book';
 import { px2rem } from '@/utils/unit';
 import { memo, useState } from 'react';
@@ -21,7 +20,7 @@ const GroupList: React.FC = memo(() => {
   const editMode = useAppSelector((state) => state.Shelf.editMode);
   const selectedGroup = useAppSelector((state) => state.Shelf.selectedGroup);
 
-  const [visible, setVisible] = useState<boolean>(false); //控制底部分组框的显示与隐藏
+  const [visible, setVisible] = useState<boolean>(false); // 控制底部分组框的显示与隐藏
   // 只记住打开的是哪个分组，书籍列表每次从最新的 groupList 里读取，
   // 弹窗打开期间分组内容变化时也能同步显示
   const [openGroupName, setOpenGroupName] = useState<string>('');

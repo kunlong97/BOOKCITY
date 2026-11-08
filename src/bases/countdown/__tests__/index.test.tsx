@@ -65,7 +65,7 @@ describe('Countdown', () => {
     });
 
     it('跨分钟、跨小时时正确借位', () => {
-      const { container } = render(<Countdown time={HOUR + 1 * SECOND} />);
+      const { container } = render(<Countdown time={HOUR + SECOND} />);
       expect(textOf(container)).toBe('01:00:01');
 
       advance(SECOND);
