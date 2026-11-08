@@ -45,6 +45,17 @@ describe('setUrlParams', () => {
     expect(currentUrl()).toBe('/?keyword=abc&page=1');
   });
 
+  it('空格编码为 %20，加号编码为 %2B', () => {
+    setUrlParams([['keyword', 'the hobbit c++']], '/search');
+    expect(currentUrl()).toBe('/search?keyword=the%20hobbit%20c%2B%2B');
+  });
+
+  it('保留已有参数里的空格和加号', () => {
+    setLocation('/search?keyword=the%20hobbit%20c%2B%2B');
+    setUrlParams([['page', '2']], '/search');
+    expect(currentUrl()).toBe('/search?keyword=the%20hobbit%20c%2B%2B&page=2');
+  });
+
   it('参数为空数组时不修改 URL', () => {
     setLocation('/search?page=1');
     const replaceSpy = jest.spyOn(window.history, 'replaceState');

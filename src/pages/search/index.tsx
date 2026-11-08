@@ -5,7 +5,6 @@ import SearchHot from './components/searchHot';
 import SearchHistory from './components/searchHistory';
 import { setSearchKeyword, setSearchMode } from './searchSlice';
 import { useAppDispatch } from '@/store/store';
-import { parse } from 'query-string';
 import { useEffect } from 'react';
 
 export default function Search() {
@@ -15,8 +14,8 @@ export default function Search() {
   // BookSearchBar 里已有的 effect 会在 searchKeyword 变化时自动把搜索模式打开、
   // 把关键词填进输入框，这里不需要重复处理。
   useEffect(() => {
-    const keyword = parse(window.location.search).keyword;
-    if (typeof keyword === 'string' && keyword) {
+    const keyword = new URLSearchParams(window.location.search).get('keyword');
+    if (keyword) {
       dispatch(setSearchKeyword(keyword));
     } else {
       // 关键词存在 Redux 里，离开页面后还在。进入时以 URL 为准，URL 没有关键词就回到初始状态，

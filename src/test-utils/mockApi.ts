@@ -1,5 +1,4 @@
 import { AxiosAdapter, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { parse } from 'query-string';
 import AxiosInstance from '@/hooks/useRequest/axiosInstance';
 import { IBookInfo } from '@/types/book';
 import {
@@ -81,7 +80,7 @@ const createAxiosError = (failure: MockFailure, config: AxiosRequestConfig) => {
 const toRequest = (config: AxiosRequestConfig): MockRequest => {
   const url = config.url ?? '';
   const [path, search = ''] = url.split('?');
-  const query = { ...parse(search), ...config.params } as Record<string, string>;
+  const query = { ...Object.fromEntries(new URLSearchParams(search)), ...config.params } as Record<string, string>;
   return { url, path, query };
 };
 
