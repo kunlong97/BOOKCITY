@@ -11,7 +11,6 @@ afterAll(() => {
   Globals.assign({ skipAnimation: false });
 });
 
-
 const setup = (props: DialogProps = {}) => {
   const utils = render(<Dialog visible {...props} />);
   const root = utils.container.querySelector('.ygm-dialog') as HTMLElement;

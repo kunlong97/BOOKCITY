@@ -7,7 +7,6 @@ import React, { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ChapterFooterCatalog: React.FC = React.memo(() => {
-
   const navigate = useNavigate();
   const { bookId } = useParams();
 
@@ -23,10 +22,10 @@ const ChapterFooterCatalog: React.FC = React.memo(() => {
   };
 
   // 跳转到指定章节
-  const onClickChapter = (chapter:number) => {
-    navigate(`/book/${bookId}/${chapter}`, {replace: true});
+  const onClickChapter = (chapter: number) => {
+    navigate(`/book/${bookId}/${chapter}`, { replace: true });
     dispatch(setCatalogVisible(false));
-  }
+  };
 
   return (
     <Popup mask visible={catalogVisible} position="left" onMaskClick={onMaskClick}>

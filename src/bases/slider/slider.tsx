@@ -37,7 +37,6 @@ const classPrefix = 'ygm-slider';
 // 使用 forwardRef 包装组件，以便父组件可以通过 ref 调用内部方法
 const Slider = React.forwardRef<SliderRef, SliderProps>(
   ({ min = 0, max = 100, value = 0, step = 1, disabled = false, onChange, onChangeAfter, style }, ref) => {
-
     // 内部状态：初始化时通过 getValueByScope 确保初始值在合法范围内
     const [sliderValue, setSliderValue] = React.useState<number>(getValueByScope(value!, min!, max!));
 
@@ -140,7 +139,6 @@ const Slider = React.forwardRef<SliderRef, SliderProps>(
     );
   },
 );
-
 
 // 设置组件显示名称，方便在 React DevTools 中调试
 Slider.displayName = 'Slider';

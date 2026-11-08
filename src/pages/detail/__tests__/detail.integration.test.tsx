@@ -274,7 +274,12 @@ describe('详情页', () => {
 
     it('书籍信息加载中显示加载动画', async () => {
       let resolve!: (value: unknown) => void;
-      mockApi({ '/book': () => new Promise((res) => { resolve = res; }) });
+      mockApi({
+        '/book': () =>
+          new Promise((res) => {
+            resolve = res;
+          }),
+      });
 
       renderApp('/book/book-1');
 

@@ -10,7 +10,6 @@ import { clearHistory, deleteHistory } from '../../utils';
 import { setUrlParams } from '@/utils/url';
 import { setSearchKeyword, setSearchMode } from '../../searchSlice';
 
-
 const SearchHistory: React.FC = React.memo(() => {
   const dispatch = useAppDispatch();
   const searchMode = useAppSelector<boolean>((state) => state.Search.searchMode);

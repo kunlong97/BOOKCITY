@@ -31,7 +31,7 @@ const GroupList: React.FC = memo(() => {
     if (editMode) {
       dispatch(setSelectedGroup(groupName));
 
-    // 非"编辑"模式,点击分组,弹出分组框,显示该分组下的书籍
+      // 非"编辑"模式,点击分组,弹出分组框,显示该分组下的书籍
     } else {
       setVisible(true);
       setOpenGroupName(groupName);

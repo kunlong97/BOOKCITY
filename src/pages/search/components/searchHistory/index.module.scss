@@ -27,7 +27,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center; /* 关键：让文本和 × 按钮垂直居中对齐 */
-      
+
       .name {
         flex: 1; /* 让左侧文本尽可能占据空间，把按钮挤到最右边 */
         cursor: pointer;

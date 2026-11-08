@@ -18,7 +18,14 @@ describe('Button', () => {
   });
 
   it('按 props 加上颜色、尺寸、填充、形状、块级的类名', () => {
-    const { button } = setup({ color: 'primary', size: 'large', fill: 'outline', shape: 'rounded', block: true, className: 'custom' });
+    const { button } = setup({
+      color: 'primary',
+      size: 'large',
+      fill: 'outline',
+      shape: 'rounded',
+      block: true,
+      className: 'custom',
+    });
 
     expect(button.className.split(' ')).toEqual(
       expect.arrayContaining([
@@ -80,9 +87,12 @@ describe('Button', () => {
   describe("loading='auto'", () => {
     it('onClick 返回 Promise 时自动进入加载状态，期间再点不会重复调用，完成后恢复', async () => {
       let resolve!: () => void;
-      const onClick = jest.fn(() => new Promise<void>((r) => {
-          resolve = r;
-        }));
+      const onClick = jest.fn(
+        () =>
+          new Promise<void>((r) => {
+            resolve = r;
+          }),
+      );
       const { button, container } = setup({ onClick, loading: 'auto' });
 
       fireEvent.click(button);

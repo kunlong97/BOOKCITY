@@ -74,10 +74,9 @@ describe('useInfiniteRequest', () => {
   });
 
   it('传入 revalidateFirstPage: false 时加载下一页不再重新请求第 1 页', async () => {
-    const { result } = renderHook(
-      () => useInfiniteRequest({ url: '/bookList_001' }, { revalidateFirstPage: false }),
-      { wrapper },
-    );
+    const { result } = renderHook(() => useInfiniteRequest({ url: '/bookList_001' }, { revalidateFirstPage: false }), {
+      wrapper,
+    });
     await waitFor(() => expect(result.current.data).toHaveLength(1));
 
     await act(async () => {

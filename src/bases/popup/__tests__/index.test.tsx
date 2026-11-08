@@ -149,7 +149,7 @@ describe('Popup', () => {
       unmount();
 
       expect(html.style.overflow).toBe('auto');
-    }); 
+    });
 
     it('带蒙层时，卸载后恢复页面原有的 overflow 值', () => {
       html.style.overflow = 'auto';

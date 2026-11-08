@@ -1,5 +1,5 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import Loading from '@/components/loading';
 import { ErrorBlock } from '@/bases';
 import DetailHeader from './components/detailHeader';
@@ -8,8 +8,7 @@ import DetailFooter from './components/detailFooter';
 import useBookDetail from '@/features/bookDetail/hooks/useBookDetail';
 import BookDetailContext from '@/features/bookDetail/context';
 
-const Detail:React.FC = () => {
-
+const Detail: React.FC = () => {
   const id = useParams().id as string;
   const { data, loading, error, notFound } = useBookDetail(id);
 
@@ -17,19 +16,19 @@ const Detail:React.FC = () => {
   // 变成真值，导致 error 分支其实永远走不到，页面会一直卡在 Loading。
   // 书不存在（notFound）同理，也要在 Loading 之前判断。
   if (error || notFound) {
-    return <ErrorBlock />
+    return <ErrorBlock />;
   }
   if (loading || !data) {
-    return <Loading />
+    return <Loading />;
   }
 
-  return(
+  return (
     <BookDetailContext.Provider value={data}>
-      <DetailHeader/>
+      <DetailHeader />
       <DetailContent />
       <DetailFooter />
     </BookDetailContext.Provider>
-  )
-}
+  );
+};
 
 export default Detail;

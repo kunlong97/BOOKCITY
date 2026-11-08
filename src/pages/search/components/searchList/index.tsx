@@ -23,7 +23,7 @@ const SearchList: React.FC = React.memo(() => {
   // 不同关键词对应不同的缓存条目，SWR 自己就会在 key 变化时重新请求，
   // 不再需要手动 useEffect + mutate() 去强制触发。
   const { data, error } = useRequest<IBookInfo[]>(
-    searchKeyword ? { url: api.getSearchList, params: { q: searchKeyword } } : null
+    searchKeyword ? { url: api.getSearchList, params: { q: searchKeyword } } : null,
   );
 
   if (error && searchMode) {

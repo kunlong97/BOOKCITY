@@ -60,7 +60,6 @@ const Space: React.FC<SpaceProps> = ({
   );
 };
 
-
 Space.displayName = 'Space';
 
 export default Space;

@@ -8,8 +8,10 @@ interface Response<Data> {
   msg: string;
 }
 
-interface useRequestResponse<Data, VM>
-  extends Pick<SWRResponse<Response<Data>, INormalizedError>, 'isValidating' | 'error' | 'mutate'> {
+interface useRequestResponse<Data, VM> extends Pick<
+  SWRResponse<Response<Data>, INormalizedError>,
+  'isValidating' | 'error' | 'mutate'
+> {
   data: VM | undefined;
   response: Response<Data> | undefined;
 }
@@ -37,7 +39,7 @@ function buildKey(request: AxiosRequestConfig | null): string | null {
 function useRequest<Data = unknown, VM = Data>(
   request: AxiosRequestConfig | null,
   config?: SWRConfiguration,
-  transform?: (data: Data) => VM
+  transform?: (data: Data) => VM,
 ): useRequestResponse<Data, VM> {
   const {
     data: response,
@@ -47,7 +49,7 @@ function useRequest<Data = unknown, VM = Data>(
   } = useSWR<Response<Data>, INormalizedError>(
     buildKey(request),
     () => AxiosInstance.request(request as AxiosRequestConfig),
-    config
+    config,
   );
 
   return {

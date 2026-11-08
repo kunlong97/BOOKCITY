@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import useBookDetail from '@/features/bookDetail/hooks/useBookDetail';
 import BookDetailContext from '@/features/bookDetail/context';
-import ChapterFooterCatalog from "./components/catalog";
-import ChapterFooterNavBar from "./components/navBar";
-import ChapterFooterProgressBar from "./components/progressBar";
-import ChapterFooterSettingBar from "./components/settingBar";
+import ChapterFooterCatalog from './components/catalog';
+import ChapterFooterNavBar from './components/navBar';
+import ChapterFooterProgressBar from './components/progressBar';
+import ChapterFooterSettingBar from './components/settingBar';
 
 /**
  * 之前 ChapterFooterCatalog 和 ChapterFooterProgressBar 各自独立请求同一本书的数据
@@ -18,18 +18,18 @@ import ChapterFooterSettingBar from "./components/settingBar";
  * undefined）传下去，Catalog/ProgressBar 自己处理"还没加载完"这个中间状态，
  * 和它们重构前的行为保持一致。
  */
-const ChapterFooter:React.FC = () => {
+const ChapterFooter: React.FC = () => {
   const { bookId } = useParams();
   const { data } = useBookDetail(bookId as string);
 
-  return(
+  return (
     <BookDetailContext.Provider value={data ?? null}>
       <ChapterFooterNavBar />
       <ChapterFooterCatalog />
       <ChapterFooterProgressBar />
       <ChapterFooterSettingBar />
     </BookDetailContext.Provider>
-  )
-}
+  );
+};
 
 export default ChapterFooter;

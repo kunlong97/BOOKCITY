@@ -29,12 +29,15 @@ const chapters = (db.chapterInfoDetail as ChapterInfo[]).find((c) => c.bookId ==
 const rankings: Ranking[] = db.ranking;
 const rankingBooks = (key: string): Book[] => db[`rank_${key}`];
 const KEYWORD = 'Hobbit';
-const searchHits: Book[] = db.bookList.filter((b: Book) => JSON.stringify(b).toLowerCase().includes(KEYWORD.toLowerCase()));
+const searchHits: Book[] = db.bookList.filter((b: Book) =>
+  JSON.stringify(b).toLowerCase().includes(KEYWORD.toLowerCase()),
+);
 
 const ERROR_TITLE = 'Something went wrong with this page.';
 
 // ---------- 定位 ----------
-const visibleText = (page: Page, text: string) => page.getByText(text, { exact: true }).filter({ visible: true }).first();
+const visibleText = (page: Page, text: string) =>
+  page.getByText(text, { exact: true }).filter({ visible: true }).first();
 const searchInput = (page: Page) => page.getByPlaceholder('Search books or authors');
 const searchList = (page: Page) => page.locator('[class*="_searchList_"]');
 const searchHot = (page: Page) => page.getByText('Trending Searches');
@@ -56,7 +59,9 @@ const expectSearchResults = async (page: Page) => {
 const expectRanking = async (page: Page, ranking: Ranking) => {
   await expect(activeRanking(page)).toHaveText(ranking.shortTitle);
   await expect(visibleRankingList(page)).toHaveCount(1);
-  await expect(visibleRankingList(page).getByText(rankingBooks(ranking.key)[0].title, { exact: true }).first()).toBeVisible();
+  await expect(
+    visibleRankingList(page).getByText(rankingBooks(ranking.key)[0].title, { exact: true }).first(),
+  ).toBeVisible();
 };
 
 const expectErrorPage = async (page: Page) => {

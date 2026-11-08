@@ -57,7 +57,8 @@ const defaultRoutes = (): MockRoutes => ({
   '/rank_001': [books.orwell, books.hobbit],
   '/rank_002': [books.gatsby],
   '/book': ({ query }: MockRequest) => allBooks.filter((book) => book.bookId === query.bookId),
-  '/bookList': ({ query }: MockRequest) => (query.q ? allBooks.filter((book) => includesText(book, query.q)) : allBooks),
+  '/bookList': ({ query }: MockRequest) =>
+    query.q ? allBooks.filter((book) => includesText(book, query.q)) : allBooks,
   '/chapterInfo': chapterIntro,
   '/chapterInfoDetail': ({ query }: MockRequest) => chapterDetails.filter((item) => item.bookId === query.bookId),
   '/chapterContent': ({ query }: MockRequest) => chapterContents.filter((item) => item.chapterId === query.chapterId),

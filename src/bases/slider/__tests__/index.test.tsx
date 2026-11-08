@@ -9,7 +9,14 @@ const TRACK_WIDTH = 200;
 const mockTrackLayout = (track: HTMLElement) => {
   Object.defineProperty(track, 'offsetWidth', { configurable: true, value: TRACK_WIDTH });
   track.getBoundingClientRect = () =>
-    ({ left: TRACK_LEFT, width: TRACK_WIDTH, top: 0, right: TRACK_LEFT + TRACK_WIDTH, bottom: 0, height: 0 }) as DOMRect;
+    ({
+      left: TRACK_LEFT,
+      width: TRACK_WIDTH,
+      top: 0,
+      right: TRACK_LEFT + TRACK_WIDTH,
+      bottom: 0,
+      height: 0,
+    }) as DOMRect;
 };
 
 const setup = (props: SliderProps = {}) => {

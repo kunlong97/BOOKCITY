@@ -197,7 +197,12 @@ describe('首页', () => {
 
     it('加载中显示加载动画，完成后显示内容', async () => {
       let resolve!: (value: unknown) => void;
-      mockApi({ '/headerCarousel': () => new Promise((res) => { resolve = res; }) });
+      mockApi({
+        '/headerCarousel': () =>
+          new Promise((res) => {
+            resolve = res;
+          }),
+      });
 
       renderApp('/');
 
@@ -356,7 +361,12 @@ describe('分类页', () => {
 
     it('加载中显示加载动画', async () => {
       let resolve!: (value: unknown) => void;
-      mockApi({ '/category': () => new Promise((res) => { resolve = res; }) });
+      mockApi({
+        '/category': () =>
+          new Promise((res) => {
+            resolve = res;
+          }),
+      });
 
       renderApp('/category');
 

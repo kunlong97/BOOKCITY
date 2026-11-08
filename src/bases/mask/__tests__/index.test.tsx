@@ -67,7 +67,7 @@ describe('Mask', () => {
       rerender(<Mask visible={false} />);
       expect(html.style.overflow).toBe('');
     });
-    
+
     it('解除时恢复页面原有的 overflow 值', () => {
       html.style.overflow = 'scroll';
       const { unmount } = render(<Mask visible />);

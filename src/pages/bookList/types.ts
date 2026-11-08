@@ -25,15 +25,6 @@ export interface IBookListVM {
 }
 
 export type TPageKey =
-  | '001'
-  | '002'
-  | '003'
-  | '004'
-  | '005'
-  | '006'
-  | 'finish'
-  | 'recommend'
-  | 'hotpicks'
-  | 'todaypicks'
+  '001' | '002' | '003' | '004' | '005' | '006' | 'finish' | 'recommend' | 'hotpicks' | 'todaypicks';
 
 export type TTtileKeyMap = Record<TPageKey, string>;

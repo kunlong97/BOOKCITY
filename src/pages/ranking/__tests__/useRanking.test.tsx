@@ -31,7 +31,7 @@ describe('ranking api', () => {
   ])('getBookList(%s) 生成 %s', (key, expected) => {
     expect(api.getBookList(key)).toBe(expected);
   });
-});   
+});
 
 describe('useRanking', () => {
   let requestSpy: jest.SpyInstance;

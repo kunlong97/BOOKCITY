@@ -2,7 +2,12 @@ import React from 'react';
 import { Popup, Grid } from '@/bases';
 import styles from './index.module.scss';
 import { useAppDispatch, useAppSelector } from '@/store/store';
-import { setCatalogVisible, setFooterProgressBarVisible, setFooterSettingBarVisible, setNightTheme } from '@/pages/chapter/chapterSlice';
+import {
+  setCatalogVisible,
+  setFooterProgressBarVisible,
+  setFooterSettingBarVisible,
+  setNightTheme,
+} from '@/pages/chapter/chapterSlice';
 
 const NavBar: React.FC = React.memo(() => {
   const dispatch = useAppDispatch();
@@ -23,7 +28,6 @@ const NavBar: React.FC = React.memo(() => {
 
   const onNightTheme = () => {
     dispatch(setNightTheme(!nightTheme));
-    
   };
 
   return (

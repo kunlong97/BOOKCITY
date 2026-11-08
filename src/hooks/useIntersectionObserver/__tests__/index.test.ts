@@ -8,7 +8,10 @@ class MockIntersectionObserver {
   observed: Element[] = [];
   disconnected = false;
 
-  constructor(public callback: IntersectionObserverCallback, public options: IntersectionObserverInit) {
+  constructor(
+    public callback: IntersectionObserverCallback,
+    public options: IntersectionObserverInit,
+  ) {
     MockIntersectionObserver.instances.push(this);
   }
 

@@ -109,7 +109,12 @@ describe('mockApi', () => {
 
   it('函数形式的接口可以返回 Promise，用来控制请求何时完成', async () => {
     let resolve!: (value: unknown) => void;
-    mockApi({ '/category': () => new Promise((res) => { resolve = res; }) });
+    mockApi({
+      '/category': () =>
+        new Promise((res) => {
+          resolve = res;
+        }),
+    });
 
     const { container } = renderApp('/category');
 

@@ -62,7 +62,9 @@ const expectRanking = async (page: Page, ranking: Ranking) => {
   const keyPattern = ranking.key === rankings[0].key ? `(\\?key=${ranking.key})?` : `\\?key=${ranking.key}`;
   await expect(page).toHaveURL(new RegExp(`/ranking${keyPattern}$`));
   await expect(activeRanking(page)).toHaveText(ranking.shortTitle);
-  await expect(visibleRankingList(page).getByText(rankingBooks(ranking.key)[0].title, { exact: true }).first()).toBeVisible();
+  await expect(
+    visibleRankingList(page).getByText(rankingBooks(ranking.key)[0].title, { exact: true }).first(),
+  ).toBeVisible();
 };
 
 // ---------- 操作 ----------

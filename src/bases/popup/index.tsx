@@ -38,8 +38,7 @@ const Popup: React.FC<PopupProps> = ({
   afterShow,
   afterClose,
 }) => {
-
-  useScrollLock(visible); 
+  useScrollLock(visible);
 
   const { percent } = useSpring({
     percent: visible ? 0 : 100,

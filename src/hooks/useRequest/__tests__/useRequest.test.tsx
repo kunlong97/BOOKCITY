@@ -47,9 +47,10 @@ describe('useRequest', () => {
     requestSpy.mockResolvedValue(ok([{ id: 1, name: 'a' }]));
 
     const { result } = renderHook(
-      () => useRequest<{ id: number; name: string }[], string[]>({ url: '/category' }, undefined, (list) =>
-        list.map((item) => item.name),
-      ),
+      () =>
+        useRequest<{ id: number; name: string }[], string[]>({ url: '/category' }, undefined, (list) =>
+          list.map((item) => item.name),
+        ),
       { wrapper },
     );
 
@@ -78,7 +79,9 @@ describe('useRequest', () => {
       const { result } = renderHook(() => useRequest(null), { wrapper });
 
       // 等待一个宏任务，确认 SWR 没有在之后发起请求
-      await new Promise((resolve) => { setTimeout(resolve, 0); });
+      await new Promise((resolve) => {
+        setTimeout(resolve, 0);
+      });
 
       expect(requestSpy).not.toHaveBeenCalled();
       expect(result.current.data).toBeUndefined();
@@ -87,7 +90,9 @@ describe('useRequest', () => {
     it('request 没有 url 时不发请求', async () => {
       renderHook(() => useRequest({ params: { keyword: 'a' } }), { wrapper });
 
-      await new Promise((resolve) => { setTimeout(resolve, 0); });
+      await new Promise((resolve) => {
+        setTimeout(resolve, 0);
+      });
 
       expect(requestSpy).not.toHaveBeenCalled();
     });
@@ -111,10 +116,13 @@ describe('useRequest', () => {
     it('params 变化时自动重新请求', async () => {
       requestSpy.mockImplementation(async (config) => ok(`result of ${config.params.keyword}`));
 
-      const { result, rerender } = renderHook(({ keyword }) => useRequest<string>({ url: '/search', params: { keyword } }), {
-        wrapper,
-        initialProps: { keyword: 'a' },
-      });
+      const { result, rerender } = renderHook(
+        ({ keyword }) => useRequest<string>({ url: '/search', params: { keyword } }),
+        {
+          wrapper,
+          initialProps: { keyword: 'a' },
+        },
+      );
 
       await waitFor(() => expect(result.current.data).toBe('result of a'));
 

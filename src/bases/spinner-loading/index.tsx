@@ -12,7 +12,7 @@ const SpinnerLoading: React.FC<SpinnerLoadingProps> = ({ color = 'default', size
     <div
       className={cx('ygm-spinner-loading', `ygm-spinner-loading-color-${color}`)}
       style={{ width: size, height: size }}
-     />
+    />
   );
 };
 

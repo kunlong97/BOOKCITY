@@ -95,7 +95,6 @@ describe('Toast.show', () => {
     expect(screen.getByText('Added to bookshelf')).toBeTruthy();
   });
 
-
   it('到期后从页面移除，并清理挂载的容器节点', () => {
     const childCountBefore = document.body.childElementCount;
 

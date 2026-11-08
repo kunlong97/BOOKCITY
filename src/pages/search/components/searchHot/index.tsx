@@ -10,7 +10,6 @@ import { setHistory } from '../../utils';
 import { setUrlParams } from '@/utils/url';
 import { setSearchKeyword, setSearchMode } from '../../searchSlice';
 
-
 const SearchHot: React.FC = React.memo(() => {
   const searchMode = useAppSelector((state) => state.Search.searchMode);
   const { data, error } = useRequest<string[]>({ url: api.getHotSearch });

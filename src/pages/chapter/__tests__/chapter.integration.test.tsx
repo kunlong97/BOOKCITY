@@ -202,8 +202,7 @@ describe('阅读页', () => {
   });
 
   describe('目录', () => {
-    const catalogItems = () =>
-      Array.from(document.querySelectorAll('.ygm-popup-left .catalogItem')) as HTMLElement[];
+    const catalogItems = () => Array.from(document.querySelectorAll('.ygm-popup-left .catalogItem')) as HTMLElement[];
 
     it('点 Contents 打开目录，显示这本书的全部章节', async () => {
       mockApi();

@@ -3,8 +3,6 @@ import ErrorBoundary from '@/components/errorBoundary';
 import React from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
 
-
-
 const Home = React.lazy(() => import('@/pages/home'));
 const Detail = React.lazy(() => import('@/pages/detail'));
 const Ranking = React.lazy(() => import('@/pages/ranking'));

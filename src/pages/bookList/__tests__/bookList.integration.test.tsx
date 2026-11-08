@@ -106,7 +106,12 @@ describe('书单页', () => {
       expect(bottomSpinner()).toBeFalsy();
       scrollAway();
       scrollToBottom();
-      await act(() => new Promise((resolve) => { setTimeout(resolve, 100); }));
+      await act(
+        () =>
+          new Promise((resolve) => {
+            setTimeout(resolve, 100);
+          }),
+      );
       expect(pageRequests(api)).not.toContain(3);
     });
 
@@ -139,7 +144,9 @@ describe('书单页', () => {
         '/bookList_001': (req: MockRequest) =>
           req.query.pageIndex === '1'
             ? pages(req)
-            : new Promise((resolve) => { pending.push(() => resolve(pages(req))); }),
+            : new Promise((resolve) => {
+                pending.push(() => resolve(pages(req)));
+              }),
       });
       await openList('001');
 
@@ -149,7 +156,12 @@ describe('书单页', () => {
       scrollToBottom();
       scrollAway();
       scrollToBottom();
-      await act(() => new Promise((resolve) => { setTimeout(resolve, 100); }));
+      await act(
+        () =>
+          new Promise((resolve) => {
+            setTimeout(resolve, 100);
+          }),
+      );
 
       expect(pageRequests(api).filter((page) => page === 2)).toHaveLength(1);
     });
@@ -166,7 +178,12 @@ describe('书单页', () => {
 
     it('第一页加载中显示加载动画', async () => {
       let resolve!: (value: unknown) => void;
-      mockApi({ '/bookList_001': () => new Promise((res) => { resolve = res; }) });
+      mockApi({
+        '/bookList_001': () =>
+          new Promise((res) => {
+            resolve = res;
+          }),
+      });
 
       renderApp('/book-list/001');
 
@@ -227,7 +244,12 @@ describe('书单页', () => {
 
         scrollAway();
         scrollToBottom();
-        await act(() => new Promise((resolve) => { setTimeout(resolve, 200); }));
+        await act(
+          () =>
+            new Promise((resolve) => {
+              setTimeout(resolve, 200);
+            }),
+        );
 
         expect(pageRequests(api)).toHaveLength(requestsAfterFailure);
       });

@@ -9,7 +9,7 @@ export interface GridProps {
 
 const formatGap = (gap: string | number) => {
   // 处理传入的间距是number或string类型时的情况
-  return typeof gap === 'number' ? `${gap}px` : gap ;
+  return typeof gap === 'number' ? `${gap}px` : gap;
 };
 
 const classPrefix = 'ygm-grid';
@@ -30,7 +30,7 @@ const Grid: React.FC<GridProps> = (props) => {
       }
     }
     // 没有传入gap
-    return { '--columns': props.columns };   
+    return { '--columns': props.columns };
   }, [props.columns, props.gap]);
 
   return (

@@ -15,10 +15,10 @@ export interface IBookInfo {
 export interface IChapterInfo {
   bookId: string;
   chapterContent: [IChapterMessage];
-  content:string[];
+  content: string[];
 }
 
-export interface IChapterMessage{
+export interface IChapterMessage {
   chapterId: string;
   chapterIndex: number;
   chapterName: string;

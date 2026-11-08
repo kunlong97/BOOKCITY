@@ -30,7 +30,6 @@ export default function Home() {
     return <Loading />;
   }
 
-
   return (
     <div className={styles.home}>
       <Header />

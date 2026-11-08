@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './index.module.scss';
 import { useAppDispatch, useAppSelector } from '@/store/store';
-import { setFooterProgressBarVisible, setFooterSettingBarVisible, setFooterVisible, setHeaderVisible } from '../../chapterSlice';
+import {
+  setFooterProgressBarVisible,
+  setFooterSettingBarVisible,
+  setFooterVisible,
+  setHeaderVisible,
+} from '../../chapterSlice';
 import { NIGHT_THEME, NIGHT_THEME_TEXT_COLOR } from '../constants';
 import { useNavigate, useParams } from 'react-router-dom';
 import useRequest from '@/hooks/useRequest/useRequest';

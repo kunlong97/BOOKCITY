@@ -18,11 +18,10 @@ function getKey(pageIndex: number, url: string) {
  * 这里从 SWR 官方提供的 SWRInfiniteResponse 类型中，只挑选了 5 个核心属性：
  * 这个接口又额外定义了 2 个属性data和response
  */
-interface Return<Data, VM>
-  extends Pick<
-    SWRInfiniteResponse<Response<Data>, INormalizedError>,
-    'isValidating' | 'error' | 'mutate' | 'size' | 'setSize'
-  > {
+interface Return<Data, VM> extends Pick<
+  SWRInfiniteResponse<Response<Data>, INormalizedError>,
+  'isValidating' | 'error' | 'mutate' | 'size' | 'setSize'
+> {
   data: VM[] | undefined;
   response: Response<Data>[] | undefined;
 }
@@ -36,19 +35,19 @@ interface Return<Data, VM>
 function useInfiniteRequest<Data = unknown, VM = Data>(
   request: AxiosRequestConfig,
   config?: SWRInfiniteConfiguration,
-  transform?: (data: Data) => VM
+  transform?: (data: Data) => VM,
 ): Return<Data, VM> {
   const {
-    data: response,   // 将 data 属性的值赋值给一个新的局部变量response(对象解构赋值语法)
+    data: response, // 将 data 属性的值赋值给一个新的局部变量response(对象解构赋值语法)
     error,
     isValidating,
     mutate,
     size,
     setSize,
   } = useSWRInfinite<Response<Data>, INormalizedError>(
-    (pageIndex: number) => getKey(pageIndex, request.url!),   // 这里写成箭头函数是为了拿到request.url的值(因为request.url在useInfiniteRequest函数里,getKey函数是在外面定义的,直接拿拿不到useInfiniteRequest里的值)
+    (pageIndex: number) => getKey(pageIndex, request.url!), // 这里写成箭头函数是为了拿到request.url的值(因为request.url在useInfiniteRequest函数里,getKey函数是在外面定义的,直接拿拿不到useInfiniteRequest里的值)
     (url: string) => AxiosInstance.request({ url }),
-    { ...config}
+    { ...config },
   );
 
   return {
@@ -63,6 +62,3 @@ function useInfiniteRequest<Data = unknown, VM = Data>(
 }
 
 export default useInfiniteRequest;
-
-
-

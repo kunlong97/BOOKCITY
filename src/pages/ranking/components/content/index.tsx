@@ -25,13 +25,13 @@ const RankingContent: React.FC<IRankingContentProps> = React.memo(({ ranking }) 
   return (
     <div className={styles.rankingContent}>
       <Sidebar activeKey={activeKey} onChange={onChange}>
-        {
-          ranking.map((item) => {
-            return <SidebarItem key={item.key} title={item.shortTitle}>
+        {ranking.map((item) => {
+          return (
+            <SidebarItem key={item.key} title={item.shortTitle}>
               <BookList id={item.key} />
-            </SidebarItem>;
-          })
-        }
+            </SidebarItem>
+          );
+        })}
       </Sidebar>
     </div>
   );

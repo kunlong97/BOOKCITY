@@ -1,7 +1,6 @@
-import ChapterContent from "./componets/content";
-import ChapterFooter from "./componets/footer";
-import ChapterHeader from "./componets/header";
-
+import ChapterContent from './componets/content';
+import ChapterFooter from './componets/footer';
+import ChapterHeader from './componets/header';
 
 export default function Chapter() {
   return (
@@ -10,6 +9,5 @@ export default function Chapter() {
       <ChapterContent />
       <ChapterFooter />
     </>
-  )
+  );
 }
-

@@ -13,11 +13,7 @@ const DetailBookInfo: React.FC = React.memo(() => {
   return (
     <div className={styles.bookInfo}>
       <Space gap={px2rem(12)}>
-        <BookCover
-          src={book.coverImg}
-          alt={book.title}
-          style={{ '--width': px2rem(84), '--height': px2rem(112) }}
-        />
+        <BookCover src={book.coverImg} alt={book.title} style={{ '--width': px2rem(84), '--height': px2rem(112) }} />
         <Space direction="vertical" justify="center" gap={px2rem(10)}>
           <div className={styles.bookName}>{book.title}</div>
           <div className={styles.author}>{book.author}</div>

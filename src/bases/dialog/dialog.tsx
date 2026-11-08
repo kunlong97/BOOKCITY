@@ -127,7 +127,6 @@ const Dialog: React.FC<DialogProps> = ({
   );
 };
 
-
 Dialog.displayName = 'Dialog';
 
 export default Dialog;

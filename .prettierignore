@@ -1,0 +1,9 @@
+# 数据文件：json-server 会读写 api-now/db.json；e2e/fixtures/db.json 由 npm run e2e:fixture 生成
+api-now/db.json
+e2e/fixtures/db.json
+
+# 由 npm 维护
+package-lock.json
+
+# 编辑器 / 工具配置
+.claude/

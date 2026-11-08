@@ -216,7 +216,6 @@ describe('Input', () => {
   });
 
   describe('问题修复', () => {
-
     it('手机虚拟键盘按回车（code 为空、key 为 Enter）时也会调用 onEnterPress', () => {
       const onEnterPress = jest.fn();
       const { input } = setup({ onEnterPress });

@@ -17,7 +17,7 @@ const LimitedReader: React.FC<ILimitedReaderProps> = React.memo(({ books }) => {
   const renderContent = () => {
     return books.map((book) => {
       return (
-        <React.Fragment key={book.bookId} >
+        <React.Fragment key={book.bookId}>
           <Grid.Item onClick={() => navigate(`/book/${book.bookId}`)}>
             <BookCover src={book.coverImg} alt={book.title} />
             <Space direction="vertical" gap={px2rem(6)}>
@@ -35,7 +35,7 @@ const LimitedReader: React.FC<ILimitedReaderProps> = React.memo(({ books }) => {
       <div className={styles.headerLeft}>
         <div className={styles.title}>Free for a limited time</div>
         <div className={styles.divider}>|</div>
-        <Countdown numberClassName={styles.num} symbolClassName={styles.symbol} time={10800000} format='hh:mm:ss'/>
+        <Countdown numberClassName={styles.num} symbolClassName={styles.symbol} time={10800000} format="hh:mm:ss" />
       </div>
     );
   }, []);

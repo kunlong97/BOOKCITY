@@ -5,7 +5,6 @@ import NavBar from '@/bases/nav-bar';
 import { useBookDetailContext } from '@/features/bookDetail/context';
 
 const DetailNavbar: React.FC = React.memo(() => {
-
   const wrapRef = useRef<HTMLDivElement>(null);
   const [fixedMode, setFixedMode] = useState<boolean>(false);
   const navigate = useNavigate();

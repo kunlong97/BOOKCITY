@@ -16,23 +16,22 @@ const BookList: React.FC<IBookList> = memo((props) => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
-  const editMode = useAppSelector(state => state.Shelf.editMode);
-  const selectedBook = useAppSelector(state => state.Shelf.selectedBook)
+  const editMode = useAppSelector((state) => state.Shelf.editMode);
+  const selectedBook = useAppSelector((state) => state.Shelf.selectedBook);
 
   const onBook = (book: IBookInfo) => {
-
     // 非"编辑"模式,点击书籍跳转到书籍详情页
     if (!editMode) {
       navigate(`/book/${book.bookId}`);
 
-    // "编辑"模式,点击书籍选中书籍  
-    }else{
+      // "编辑"模式,点击书籍选中书籍
+    } else {
       dispatch(setSelectedBook(book));
     }
   };
 
   const getBookActive = (bookId: string) => {
-    const index = selectedBook.findIndex(book => book.bookId === bookId)
+    const index = selectedBook.findIndex((book) => book.bookId === bookId);
     return index === -1 ? false : true;
   };
 

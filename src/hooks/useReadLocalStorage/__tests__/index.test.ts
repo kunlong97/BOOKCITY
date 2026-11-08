@@ -66,9 +66,9 @@ describe('useReadLocalStorage', () => {
 
     it('没有收到事件时，直接修改 localStorage 不会更新', () => {
       const { result } = renderHook(() => useReadLocalStorage<string>(KEY));
-     
+
       localStorage.setItem(KEY, JSON.stringify('new'));
-     
+
       expect(result.current).toBeNull();
     });
   });

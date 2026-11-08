@@ -1,4 +1,4 @@
-import { parse, stringify } from 'query-string'; 
+import { parse, stringify } from 'query-string';
 
 export const setUrlParams = (params: [string, string][], basePath = '/') => {
   // 设置或更新 URL 中的查询参数

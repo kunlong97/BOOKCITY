@@ -91,7 +91,7 @@ const Ellipsis: React.FC<EllipsisProps> = ({ text = '', rows = 1, collapse, expa
     calcEllipsised();
   }, [calcEllipsised]);
 
-  useResizeObserver(calcEllipsised, containerRef);   // 页面尺寸发生变化时,重新计算
+  useResizeObserver(calcEllipsised, containerRef); // 页面尺寸发生变化时,重新计算
 
   const renderContent = () => {
     // 情况1：文本没有溢出，直接展示完整文本

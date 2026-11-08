@@ -21,17 +21,18 @@ const DetailFooter: React.FC = () => {
 
   const onShelf = () => {
     const msg = toggle(book);
-    Toast.show(msg);   // 加入书架后弹窗提示Toast组件
+    Toast.show(msg); // 加入书架后弹窗提示Toast组件
   };
 
   const onRead = () => {
     navigate(`/book/${id}/1`);
-  }
+  };
 
   return (
     <div className={styles.footer}>
-
-      <Button block color="primary" onClick={onRead}>Start Reading</Button>
+      <Button block color="primary" onClick={onRead}>
+        Start Reading
+      </Button>
 
       <div className={cx(styles.icon, { [styles.active]: shelfMode })} onClick={onShelf}>
         <i className="icon-book" />

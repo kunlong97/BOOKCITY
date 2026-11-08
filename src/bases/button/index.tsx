@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
         await promise; // 等待异步操作完成
         setInnerLoading(false); // 异步结束，关闭 Loading
       } catch (e) {
-        setInnerLoading(false);   // 出错时同样关闭 Loading 并抛出异常
+        setInnerLoading(false); // 出错时同样关闭 Loading 并抛出异常
         throw e;
       }
     }

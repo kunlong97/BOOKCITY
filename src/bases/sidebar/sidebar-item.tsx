@@ -1,7 +1,5 @@
-
-export interface SidebarItemProps{
-
-   /** 菜单项的唯一标识符 */
+export interface SidebarItemProps {
+  /** 菜单项的唯一标识符 */
   key: string;
 
   /** 菜单项的显示标题 */
@@ -11,12 +9,10 @@ export interface SidebarItemProps{
   children?: React.ReactNode;
 }
 
-
-const SidebarItem:React.FC<SidebarItemProps> = (props) => {
-
+const SidebarItem: React.FC<SidebarItemProps> = (props) => {
   return props.children ? (props.children as React.ReactElement) : null;
-}
+};
 
-SidebarItem.displayName = 'SidebarItem'; 
+SidebarItem.displayName = 'SidebarItem';
 
 export default SidebarItem;

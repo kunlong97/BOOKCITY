@@ -128,7 +128,7 @@ const EditBar: React.FC = memo(() => {
           { key: 'cancel', text: 'Cancel', onClick: onCancelDialog },
           { key: 'confirm', text: 'Submit', color: 'primary', onClick: onConformDialog },
         ]}
-       />
+      />
     </div>
   );
 });

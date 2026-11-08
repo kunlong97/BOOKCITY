@@ -1,8 +1,8 @@
-import { shelfReducer } from "@/pages/shelf/shelfSlice";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { chapterReducer } from "@/pages/chapter/chapterSlice";
-import { searchReducer } from "@/pages/search/searchSlice";
+import { shelfReducer } from '@/pages/shelf/shelfSlice';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { chapterReducer } from '@/pages/chapter/chapterSlice';
+import { searchReducer } from '@/pages/search/searchSlice';
 
 // 单独导出 rootReducer，测试里新建 store 时复用同一份，preloadedState 的类型也由它推导
 export const rootReducer = combineReducers({

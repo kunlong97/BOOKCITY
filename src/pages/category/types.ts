@@ -1,6 +1,6 @@
-export interface ICategory{
-   id: string;
-   name: string;
-   bookCount: number;
-   bookCover: string;
+export interface ICategory {
+  id: string;
+  name: string;
+  bookCount: number;
+  bookCover: string;
 }

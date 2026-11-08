@@ -104,7 +104,6 @@ describe('useDebouncedCallback', () => {
     expect(jest.getTimerCount()).toBe(0);
   });
 
-
   it('等待期间 callback 变化，触发时调用最新的 callback，且不打断计时', () => {
     const oldCallback = jest.fn();
     const newCallback = jest.fn();
@@ -119,7 +118,7 @@ describe('useDebouncedCallback', () => {
 
     // 只需再等剩下的 100ms，说明重新渲染没有重置定时器
     jest.advanceTimersByTime(100);
-  
+
     expect(oldCallback).not.toHaveBeenCalled();
     expect(newCallback).toHaveBeenCalledWith('a');
   });

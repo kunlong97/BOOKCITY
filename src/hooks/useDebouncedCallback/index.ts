@@ -10,7 +10,7 @@ import { useCallback, useEffect, useRef } from 'react';
  */
 function useDebouncedCallback<Args extends unknown[]>(
   callback: (...args: Args) => void,
-  delay: number
+  delay: number,
 ): readonly [(...args: Args) => void, () => void] {
   const callbackRef = useRef(callback);
   callbackRef.current = callback;
@@ -33,7 +33,7 @@ function useDebouncedCallback<Args extends unknown[]>(
         callbackRef.current(...args);
       }, delay);
     },
-    [cancel, delay]
+    [cancel, delay],
   );
 
   return [debounced, cancel] as const;

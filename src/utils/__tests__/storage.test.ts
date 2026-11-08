@@ -18,7 +18,7 @@ describe('storage', () => {
       storage.set('history', ['a', 'b']);
       expect(storage.get('history')).toEqual(['a', 'b']);
     });
-    
+
     it('同一个 key 再次 set 会覆盖旧值', () => {
       storage.set('key', 1);
       storage.set('key', 2);

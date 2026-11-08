@@ -22,16 +22,18 @@ const Category: React.FC = () => {
     navigate(`/book-list/${key}`, { state: { title: name } });
   };
 
-   if(error){
-      return <ErrorBlock />
-   }
-   if(!data){
-      return <Loading />
-   }
+  if (error) {
+    return <ErrorBlock />;
+  }
+  if (!data) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.category}>
-      <NavBar onBack={onBack} leftText="Back">Category</NavBar>
+      <NavBar onBack={onBack} leftText="Back">
+        Category
+      </NavBar>
       <div className={styles.categoryContent}>
         <Grid columns={2} gap={px2rem(16)}>
           {data?.map((category) => (
