@@ -1,6 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
+import { hardNavigate } from '@/utils/navigation';
 import ErrorBoundary from '..';
+
+// jsdom 不支持真正的页面跳转，这里只检查有没有发起整页跳转
+jest.mock('@/utils/navigation');
 
 const Bomb = (): React.JSX.Element => {
   throw new Error('render crashed');
@@ -80,23 +84,12 @@ describe('ErrorBoundary', () => {
   });
 
   describe('点击Back to Homepage', () => {
-    const originalLocation = window.location;
-
-    beforeEach(() => {
-      // jsdom 的 location.href 赋值会触发未实现的页面跳转，这里换成普通对象来观察赋值结果
-      Object.defineProperty(window, 'location', { configurable: true, value: { href: '/crash' } });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(window, 'location', { configurable: true, value: originalLocation });
-    });
-
     it('整页跳转回首页', () => {
       renderAt('/crash');
 
       fireEvent.click(screen.getByText('Back to Homepage'));
 
-      expect(window.location.href).toBe('/');
+      expect(hardNavigate).toHaveBeenCalledWith('/');
     });
   });
 });
