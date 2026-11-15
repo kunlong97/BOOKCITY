@@ -22,6 +22,19 @@ img {
   vertical-align: top;
 }
 
+// 只给读屏软件看、不在页面上显示的内容（比如没有可见标题的页面里的 h1）
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media screen and (min-width: 750px) {
   html {
     font-size: 50px;

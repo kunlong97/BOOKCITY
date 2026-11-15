@@ -37,7 +37,7 @@
       @include wrap(1);
     }
     .author {
-      color: #b2b2b2;
+      color: #6b6b6b; // 原 #b2b2b2，对比度不足 4.5:1
       font-size: var(--ygm-font-size-s);
     }
   }

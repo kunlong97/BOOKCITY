@@ -36,7 +36,7 @@
       .deleteBtn {
         cursor: pointer;
         font-size: 18px; /* × 符号的大小 */
-        color: #999; /* 默认颜色 */
+        color: var(--ygm-color-weak); /* 默认颜色；原来的 #999 在白底上对比度不足 4.5:1 */
         padding: 4px 8px; /* 关键：增加点击区域，方便手指点击 */
         border-radius: 4px; /* 悬停时微微圆角 */
 

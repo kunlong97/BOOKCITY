@@ -12,14 +12,14 @@
 
   .meta {
     font-size: var(--ygm-font-size-s);
-    color: #a1aab3;
+    color: #656b71; // 原 #a1aab3，对比度不足 4.5:1
     @include no-wrap();
   }
 
   .desc {
     font-size: var(--ygm-font-size-m);
     line-height: 18px;
-    color: #a1aab3;
+    color: #656b71; // 原 #a1aab3，对比度不足 4.5:1
     @include wrap(2);
     margin-bottom: 7px;
   }
@@ -34,6 +34,6 @@
     padding: 24px 0;
     text-align: center;
     font-size: var(--ygm-font-size-s);
-    color: #a1aab3;
+    color: #656b71; // 原 #a1aab3，对比度不足 4.5:1
   }
 }

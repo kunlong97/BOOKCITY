@@ -64,7 +64,8 @@ $class-prefix-button: 'ygm-button';
   }
 
   &-primary {
-    --color: var(--ygm-color-primary);
+    // 实心按钮是蓝底白字、线框按钮是白底蓝字，都需要足够的对比度，所以用深一点的品牌蓝
+    --color: var(--ygm-color-primary-strong);
   }
   &-success {
     --color: var(--ygm-color-success);

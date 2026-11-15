@@ -99,6 +99,8 @@ const ChapterContent: React.FC = React.memo(() => {
       className={styles.content}
       onClick={onContent}
       ref={contentRef}
+      // 正文区域可以滚动，tabIndex 让只用键盘的用户也能聚焦到它、用方向键滚动
+      tabIndex={0}
       style={{
         background: nightTheme ? NIGHT_THEME : theme,
         fontSize: fontSize,

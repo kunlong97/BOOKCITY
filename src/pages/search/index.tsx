@@ -27,6 +27,8 @@ export default function Search() {
 
   return (
     <div className={styles.search}>
+      {/* 搜索页顶部是搜索框，没有可见的标题；给读屏软件一个页面标题 */}
+      <h1 className="sr-only">Search</h1>
       <BookSearchBar />
       <SearchHot />
       <SearchHistory />

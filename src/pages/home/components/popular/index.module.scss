@@ -14,13 +14,13 @@
 
   .meta {
     font-size: var(--ygm-font-size-s);
-    color: #969ba3;
+    color: #676b70; // 原 #969ba3，对比度不足 4.5:1
     @include no-wrap();
   }
 
   .desc {
     line-height: 18px;
-    color: #969ba3;
+    color: #676b70; // 原 #969ba3，对比度不足 4.5:1
     @include wrap(2);
     margin-bottom: 7px;
   }

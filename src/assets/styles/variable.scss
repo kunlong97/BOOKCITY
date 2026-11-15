@@ -1,12 +1,16 @@
 :root {
   // Color
   --ygm-color-primary: #0bafff;
+  // 品牌蓝上放白字时对比度只有 2.44:1，达不到 WCAG AA 的 4.5:1；
+  // 主按钮、选中 Tab 这类“蓝底白字”的地方改用这个深一点的蓝（约 5:1）
+  --ygm-color-primary-strong: #0076b3;
   --ygm-color-success: #00b578;
   --ygm-color-warning: #ff8f1f;
   --ygm-color-danger: #ff3141;
   --ygm-color-white: #ffffff;
   --ygm-color-text: #333333;
-  --ygm-color-weak: #999999;
+  // 原来是 #999999，在白底和 #eee 底上对比度不足 4.5:1（WCAG AA），按原色相加深到刚好达标
+  --ygm-color-weak: #6a6a6a;
   --ygm-color-light: #cccccc;
   --ygm-color-border: #eeeeee;
   --ygm-color-background: #ffffff;

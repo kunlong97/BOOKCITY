@@ -39,7 +39,8 @@ const BookList: React.FC = () => {
       <NavBar onBack={onBack} leftText="Back">
         {title}
       </NavBar>
-      <div className={styles.content}>
+      {/* 列表区域可以滚动，tabIndex 让只用键盘的用户也能聚焦到它、用方向键滚动 */}
+      <div className={styles.content} tabIndex={0}>
         <InfiniteScroll
           hasMore={hasMore}
           loadMore={loadMore}

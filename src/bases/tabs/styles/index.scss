@@ -18,7 +18,8 @@ $class-prefix-tabs: 'ygm-tabs';
 
     &-card {
       .#{$class-prefix-tabs}-tab-active {
-        background: var(--ygm-color-primary);
+        // 选中的卡片 Tab 是蓝底白字，用深一点的品牌蓝保证对比度
+        background: var(--ygm-color-primary-strong);
 
         .#{$class-prefix-tabs}-tab-title {
           color: var(--ygm-color-white);

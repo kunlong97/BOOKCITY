@@ -29,7 +29,8 @@ const BookCatalogList: React.FC<BookCatalogListProps> = React.memo((props) => {
           </div>
         </Space>
       </div>
-      <div className={styles.content}>
+      {/* 目录可以滚动，tabIndex 让只用键盘的用户也能聚焦到它、用方向键滚动 */}
+      <div className={styles.content} tabIndex={0}>
         {props.catalogList?.map((item, index) => (
           <div key={item} className={styles.catalogItem} onClick={() => onGoChapter(index)}>
             {item}

@@ -34,7 +34,9 @@ const NavBar: React.FC<NavBarProps> = ({ onBack, right, leftArrow = true, childr
         )}
         <div className={`${classPrefix}-left-text`}>{leftText}</div>
       </div>
-      <div className={`${classPrefix}-title`}>{children}</div>
+      {/* 有标题时用 h1：每个页面都需要一个一级标题，读屏软件靠它告诉用户当前在哪个页面。
+          reset.scss 已经把 h1 的字号、字重、边距重置成和普通文字一样，外观不变 */}
+      {children ? <h1 className={`${classPrefix}-title`}>{children}</h1> : <div className={`${classPrefix}-title`} />}
       <div className={`${classPrefix}-right`}>{right}</div>
     </div>
   );

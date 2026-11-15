@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
+    <!-- 不限制 maximum-scale：视力不好的用户需要能双指放大页面（WCAG 1.4.4） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
     <script>
       // 访问首页时，在下载 JS 之前就开始请求首页数据（/api 前缀和 axiosInstance 的 baseURL 一致），
@@ -20,7 +21,8 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- role="main"：页面主体的地标，读屏软件可以直接跳到这里；直接加在 #root 上，不多包一层，不影响页面布局 -->
+    <div id="root" role="main"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

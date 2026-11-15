@@ -12,7 +12,7 @@ const Navbar: React.FC = React.memo(() => {
       <div className={styles.item}>
         <Link to="/ranking" className={styles.icon}>
           <img src={Rank} alt="rank" width="100%" />
-          <h3 className={styles.title}>Rankings</h3>
+          <h2 className={styles.title}>Rankings</h2>
         </Link>
       </div>
 
@@ -20,7 +20,7 @@ const Navbar: React.FC = React.memo(() => {
         <div className={styles.item}>
           <Link to="/category" className={styles.icon}>
             <img src={Category} alt="category" width="100%" />
-            <h3 className={styles.title}>Genres</h3>
+            <h2 className={styles.title}>Genres</h2>
           </Link>
         </div>
       </div>
@@ -29,7 +29,7 @@ const Navbar: React.FC = React.memo(() => {
         <div className={styles.item}>
           <Link to="/book-list/finish" className={styles.icon}>
             <img src={Finish} alt="finish" width="100%" />
-            <h3 className={styles.title}>Completed</h3>
+            <h2 className={styles.title}>Completed</h2>
           </Link>
         </div>
       </div>
@@ -38,7 +38,7 @@ const Navbar: React.FC = React.memo(() => {
         <div className={styles.item}>
           <Link to="/book-list/recommend" className={styles.icon}>
             <img src={Recommend} alt="recommend" width="100%" />
-            <h3 className={styles.title}>Picks</h3>
+            <h2 className={styles.title}>Picks</h2>
           </Link>
         </div>
       </div>

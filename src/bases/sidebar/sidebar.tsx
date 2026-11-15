@@ -69,7 +69,8 @@ const Sidebar: React.FC<SidebarProps> = React.memo((props) => {
           );
         })}
       </div>
-      <div className={`${classPrefix}-content`}>
+      {/* 内容区可以滚动，tabIndex 让只用键盘的用户也能聚焦到它、用方向键滚动 */}
+      <div className={`${classPrefix}-content`} tabIndex={0}>
         {items.map((item) => (
           <div
             className={`${classPrefix}-content-item`}
