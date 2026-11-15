@@ -33,7 +33,7 @@ test.describe('接口服务', () => {
   });
 
   test('图片通过 /api 代理加载', async ({ request }) => {
-    const res = await request.get('/api/images/banner1.png');
+    const res = await request.get('/api/images/banner1.webp');
 
     expect(res.ok()).toBe(true);
     expect(res.headers()['content-type']).toContain('image');

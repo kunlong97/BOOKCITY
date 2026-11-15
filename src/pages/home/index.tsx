@@ -39,7 +39,7 @@ export default function Home() {
             {data.banner.map((item, index) => {
               return (
                 <Swiper.Item key={index}>
-                  <Image src={item.src} alt={item.alt} fit="cover" />
+                  <Image src={item.src} alt={item.alt} fit="cover" lazy={false} />
                 </Swiper.Item>
               );
             })}

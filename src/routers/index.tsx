@@ -2,8 +2,8 @@ import Loading from '@/components/loading';
 import ErrorBoundary from '@/components/errorBoundary';
 import React from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
+import Home from '@/pages/home';
 
-const Home = React.lazy(() => import('@/pages/home'));
 const Detail = React.lazy(() => import('@/pages/detail'));
 const Ranking = React.lazy(() => import('@/pages/ranking'));
 const Shelf = React.lazy(() => import('@/pages/shelf'));

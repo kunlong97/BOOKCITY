@@ -54,7 +54,7 @@ test.describe('首页冒烟', () => {
     });
     page.on('request', (req) => {
       if (req.url().includes('/api/headerCarousel')) {
-        homeRequests.push(req.url());
+        homeRequests.push(req.resourceType());
       }
     });
 
@@ -63,7 +63,22 @@ test.describe('首页冒烟', () => {
     await page.waitForLoadState('networkidle');
 
     expect(failed).toEqual([]);
-    expect(homeRequests).toHaveLength(1);
+    // 只有 index.html 里提前发出的那一次（fetch）；首页组件通过 SWR 的 preload 复用它，不会再用 axios（xhr）请求
+    expect(homeRequests).toEqual(['fetch']);
+  });
+
+  test('其他页面不会提前请求首页数据', async ({ page }) => {
+    const homeRequests: string[] = [];
+    page.on('request', (req) => {
+      if (req.url().includes('/api/headerCarousel')) {
+        homeRequests.push(req.url());
+      }
+    });
+
+    await page.goto('/category');
+    await page.waitForLoadState('networkidle');
+
+    expect(homeRequests).toEqual([]);
   });
 
   test('控制台没有报错，页面没有未捕获的异常', async ({ page }) => {

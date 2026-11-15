@@ -24,6 +24,20 @@ export interface INormalizedError {
   msg: string;
 }
 
+export interface IWrappedResponse<Data = unknown> {
+  code: number;
+  msg: string;
+  data: Data;
+}
+
+/**
+ * 把接口返回的裸数据包成 { code, msg, data }。
+ * 响应拦截器和首页的提前请求（index.html 里用 fetch 发出的）都用它，保证两条路径拿到的结构一致。
+ */
+export function wrapResponse<Data>(data: Data): IWrappedResponse<Data> {
+  return { code: SUCCESS_CODE, msg: 'ok', data };
+}
+
 function normalizeError(error: AxiosError): INormalizedError {
   if (error.response) {
     // 服务端有响应，但状态码非 2xx
@@ -42,10 +56,9 @@ AxiosInstance.interceptors.response.use(
   // 让 useRequest / useInfiniteRequest 的 Response<Data> 结构保持不变。
   // 非 2xx 的响应 axios 默认就会走下面的错误分支，这里不需要再判断状态码。
   (res: AxiosResponse) => {
-    const wrapped: { code: number; msg: string; data: unknown } = { code: SUCCESS_CODE, msg: 'ok', data: res.data };
     // axios 1.x 的类型要求拦截器返回 AxiosResponse，但这里是故意改了返回结构，
     // 调用方（useRequest / useInfiniteRequest）按 Response<Data> 使用，所以只能绕过类型
-    return wrapped as unknown as AxiosResponse;
+    return wrapResponse(res.data) as unknown as AxiosResponse;
   },
   (error: AxiosError) => {
     const normalized = normalizeError(error);

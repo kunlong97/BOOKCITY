@@ -25,7 +25,7 @@ interface useRequestResponse<Data, VM> extends Pick<
  * request 为 null 时返回 null，SWR 会跳过这次请求，用来支持"当前不需要发这个请求"
  * 的场景（比如搜索关键词还是空的时候）。
  */
-function buildKey(request: AxiosRequestConfig | null): string | null {
+export function buildKey(request: AxiosRequestConfig | null): string | null {
   if (!request?.url) return null;
   if (!request.params) return request.url;
   return `${request.url}?${JSON.stringify(request.params)}`;

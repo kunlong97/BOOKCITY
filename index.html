@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
     <title>Vite + React + TS</title>
+    <script>
+      // 访问首页时，在下载 JS 之前就开始请求首页数据（/api 前缀和 axiosInstance 的 baseURL 一致），
+      // 结果由 src/pages/home/hooks/useHomeData.ts 通过 SWR 的 preload 接管。
+      // 所有路由返回的都是这个 HTML，所以只在首页发，其他页面不发。
+      if (location.pathname === '/') {
+        window.__HOME_DATA__ = fetch('/api/headerCarousel').then(function (res) {
+          return res.ok ? res.json() : Promise.reject(res.status);
+        });
+        // 先挂一个空的错误处理，避免请求失败时控制台报“未处理的 rejection”；失败后由 useHomeData 重新请求
+        window.__HOME_DATA__.catch(function () {});
+      }
+    </script>
   </head>
 
   <body>
