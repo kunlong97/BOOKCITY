@@ -1,12 +1,22 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // 接口服务（json-server）的地址。日常开发默认 3002；E2E 测试会通过 API_TARGET 指向它自己启动的那一份
 const apiTarget = process.env.API_TARGET || 'http://localhost:3002';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({
+      open: true, // 构建后自动打开浏览器
+      gzipSize: true, // 显示 gzip 体积
+      brotliSize: true,
+      filename: 'dist/stats.html',
+      template: 'treemap', // 想看清单用 list，看占比用 treemap
+    }),
+  ],
   resolve: {
     alias: {
       '@': '/src',

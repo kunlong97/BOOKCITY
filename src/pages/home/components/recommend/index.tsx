@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
-import { Card, Grid } from '@/bases';
+import Card from '@/bases/card';
+import Grid from '@/bases/grid';
 import { IBookInfo } from '@/types/book';
 import { px2rem } from '@/utils/unit';
 import { useNavigate } from 'react-router-dom';

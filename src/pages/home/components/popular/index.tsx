@@ -5,7 +5,8 @@ import { px2rem } from '@/utils/unit';
 import { IBookInfo } from '@/types/book';
 import Space from '@/bases/space';
 import BookCover from '@/components/bookCover/bookCover';
-import { Card, Grid } from '@/bases';
+import Card from '@/bases/card';
+import Grid from '@/bases/grid';
 
 interface IPopularProps {
   books: IBookInfo[];

@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './index.module.scss';
-import { Card, Countdown, Grid } from '@/bases';
+import Card from '@/bases/card';
+import Countdown from '@/bases/countdown';
+import Grid from '@/bases/grid';
 import { px2rem } from '@/utils/unit';
 import { useNavigate } from 'react-router-dom';
 import { IBookInfo } from '@/types/book';

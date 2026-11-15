@@ -1,7 +1,9 @@
 import Header from './components/header';
 import styles from './index.module.scss';
 import Loading from '@/components/loading';
-import { ErrorBlock, Image, Swiper } from '@/bases';
+import ErrorBlock from '@/bases/error-block';
+import Image from '@/bases/image';
+import Swiper from '@/bases/swiper';
 import Navbar from './components/navbar';
 import Space from '@/bases/space';
 import { px2rem } from '@/utils/unit';

@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { Image } from '@/bases';
+import Image from '@/bases/image';
 
 import styles from './index.module.scss';
 

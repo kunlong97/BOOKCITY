@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './index.module.scss';
 import { Link } from 'react-router-dom';
-import Rank from '@/assets/images/rank.png';
-import Category from '@/assets/images/category.png';
-import Finish from '@/assets/images/finish.png';
-import Recommend from '@/assets/images/recommend.png';
+import Rank from '@/assets/images/rank.webp';
+import Category from '@/assets/images/category.webp';
+import Finish from '@/assets/images/finish.webp';
+import Recommend from '@/assets/images/recommend.webp';
 
 const Navbar: React.FC = React.memo(() => {
   return (

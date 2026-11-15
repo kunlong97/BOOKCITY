@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { Button, ErrorBlock } from '@/bases';
+import Button from '@/bases/button';
+import ErrorBlock from '@/bases/error-block';
 import { hardNavigate } from '@/utils/navigation';
 import styles from './index.module.scss';
 

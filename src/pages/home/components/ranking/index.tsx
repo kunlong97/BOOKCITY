@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Space, Grid, Tabs } from '@/bases';
+import Card from '@/bases/card';
+import Space from '@/bases/space';
+import Grid from '@/bases/grid';
+import Tabs from '@/bases/tabs';
 import BookCover from '@/components/bookCover/bookCover';
 import { IRanking } from '@/pages/home/types';
 import { px2rem } from '@/utils/unit';

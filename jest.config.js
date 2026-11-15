@@ -11,7 +11,7 @@ module.exports = {
   moduleNameMapper: {
     // 静态资源规则要放在 @/ 别名前面，否则 @/assets/xxx.png 会被当成 JS 解析
     '\\.(css|scss)$': '<rootDir>/src/test-utils/stubs/styleStub.js',
-    '\\.(png|jpe?g|gif|svg|eot|ttf|woff2?)$': '<rootDir>/src/test-utils/stubs/fileStub.js',
+    '\\.(png|jpe?g|gif|svg|webp|avif|eot|ttf|woff2?)$': '<rootDir>/src/test-utils/stubs/fileStub.js',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 };
