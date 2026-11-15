@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "lint": "eslint .",
     "prepare": "husky",
     "start:api": "json-server --watch ./api-now/db.json --static ./api-now/public --port $PORT",
     "test": "jest",
