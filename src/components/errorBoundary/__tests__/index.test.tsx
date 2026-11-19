@@ -1,10 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import { hardNavigate } from '@/utils/navigation';
 import ErrorBoundary from '..';
 
 // jsdom 不支持真正的页面跳转，这里只检查有没有发起整页跳转
 jest.mock('@/utils/navigation');
+// 只检查有没有上报，不真的发给 Sentry
+jest.mock('@sentry/react', () => ({ captureException: jest.fn() }));
 
 const Bomb = (): React.JSX.Element => {
   throw new Error('render crashed');
@@ -28,6 +31,8 @@ describe('ErrorBoundary', () => {
   let consoleError: jest.SpyInstance;
 
   beforeEach(() => {
+    // 清掉上一个用例里 Sentry.captureException / hardNavigate 的调用记录
+    jest.clearAllMocks();
     // React 和 componentDidCatch 都会把渲染异常打印到 console.error，这里屏蔽，避免干扰测试输出
     consoleError = jest.spyOn(console, 'error').mockImplementation(() => undefined);
   });
@@ -61,6 +66,20 @@ describe('ErrorBoundary', () => {
       expect.objectContaining({ message: 'render crashed' }),
       expect.stringContaining('Bomb'),
     );
+  });
+
+  it('捕获到异常时上报给 Sentry，带上组件栈', () => {
+    renderAt('/crash');
+
+    expect(Sentry.captureException).toHaveBeenCalledWith(expect.objectContaining({ message: 'render crashed' }), {
+      contexts: { react: { componentStack: expect.stringContaining('Bomb') } },
+    });
+  });
+
+  it('子组件正常时不上报', () => {
+    renderAt('/ok');
+
+    expect(Sentry.captureException).not.toHaveBeenCalled();
   });
 
   describe('路由切换时重置', () => {

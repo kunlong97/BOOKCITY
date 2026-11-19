@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     react(),
     visualizer({
-      open: true, // 构建后自动打开浏览器
+      open: !process.env.CI && !process.env.VERCEL, // 本地构建后自动打开浏览器；CI 和 Vercel 上没有浏览器，不打开
       gzipSize: true, // 显示 gzip 体积
       brotliSize: true,
       filename: 'dist/stats.html',
@@ -27,7 +27,9 @@ export default defineConfig({
     }),
   ],
   build: {
-    sourcemap: true, // ← 加这一段
+    // 生成 Source Map 给 Sentry 上传（上传后 sentryVitePlugin 会删掉 .map 文件）。
+    // 用 'hidden' 而不是 true：JS 里不写 sourceMappingURL 注释，浏览器不会去请求已经删掉的 .map 文件
+    sourcemap: 'hidden',
   },
   resolve: {
     alias: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import Button from '@/bases/button';
 import ErrorBlock from '@/bases/error-block';
 import { hardNavigate } from '@/utils/navigation';
@@ -32,6 +33,9 @@ class ErrorBoundaryImpl extends React.Component<IErrorBoundaryProps, IErrorBound
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error('Uncaught render error:', error, info.componentStack);
+    // 被 Error Boundary 接住的渲染错误不会冒泡到全局，Sentry 的全局监听收不到，必须在这里手动上报；
+    // 带上组件栈，在 Sentry 里能看到是哪个组件渲染时出的错
+    Sentry.captureException(error, { contexts: { react: { componentStack: info.componentStack ?? '' } } });
   }
 
   private onBackHome = () => {

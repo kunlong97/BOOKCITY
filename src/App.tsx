@@ -5,9 +5,6 @@ import { Analytics } from '@vercel/analytics/react';
 import AppRouter from '@/routers';
 import store from '@/store/store';
 import { Provider } from 'react-redux';
-import { initSentry } from './sentry';
-
-initSentry();
 
 const App: React.FC = () => {
   return (
