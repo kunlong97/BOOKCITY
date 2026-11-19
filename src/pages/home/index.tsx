@@ -35,6 +35,13 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Header />
+      <button
+        onClick={() => {
+          throw new Error('This is your first error!');
+        }}
+      >
+        Break the world
+      </button>
       <Space direction="vertical" gap={px2rem(20)}>
         {data?.banner?.length && (
           <Swiper autoplay loop style={{ '--border-radius': px2rem(12), '--height': px2rem(200) }}>
