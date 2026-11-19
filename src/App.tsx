@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import AppRouter from '@/routers';
 import store from '@/store/store';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <AppRouter />
       </BrowserRouter>
+      <Analytics />
     </Provider>
   );
 };
