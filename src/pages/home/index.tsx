@@ -35,6 +35,13 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Header />
+      <button
+        onClick={() => {
+          throw new Error('测试 Sentry 报错');
+        }}
+      >
+        触发测试错误
+      </button>
       <Space direction="vertical" gap={px2rem(20)}>
         {data?.banner?.length && (
           <Swiper autoplay loop style={{ '--border-radius': px2rem(12), '--height': px2rem(200) }}>

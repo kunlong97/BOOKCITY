@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { sentryVitePlugin } from '@sentry/vite-plugin';
 
 // 接口服务（json-server）的地址。日常开发默认 3002；E2E 测试会通过 API_TARGET 指向它自己启动的那一份
 const apiTarget = process.env.API_TARGET || 'http://localhost:3002';
@@ -16,7 +17,18 @@ export default defineConfig({
       filename: 'dist/stats.html',
       template: 'treemap', // 想看清单用 list，看占比用 treemap
     }),
+    sentryVitePlugin({
+      org: 'kunlong',
+      project: 'book-city',
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      sourcemaps: {
+        filesToDeleteAfterUpload: ['./dist/**/*.map'],
+      },
+    }),
   ],
+  build: {
+    sourcemap: true, // ← 加这一段
+  },
   resolve: {
     alias: {
       '@': '/src',
