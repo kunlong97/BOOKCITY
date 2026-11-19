@@ -4,7 +4,7 @@
   padding: 16px 0;
   box-sizing: border-box;
   height: 100vh;
-  width: 80vw;
+  width: 8rem; // 手机上等于 80vw；电脑上按内容区宽度（10rem）算，不会随浏览器变宽
   background-color: #222;
   font-size: var(--ygm-font-size-m);
   display: flex;

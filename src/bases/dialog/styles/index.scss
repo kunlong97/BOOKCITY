@@ -2,7 +2,7 @@ $class-prefix-dialog: 'ygm-dialog';
 
 .#{$class-prefix-dialog} {
   --z-index: 1000;
-  --max-width: 75vw;
+  --max-width: 7.5rem; // 手机上等于 75vw；电脑上按内容区宽度（10rem）算，不会随浏览器变宽
   --min-width: 280px;
   --border-radius: var(--ygm-radius-xxxl);
   --background-color: var(--ygm-color-background);

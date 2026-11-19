@@ -3,8 +3,9 @@
   position: fixed;
   box-sizing: border-box;
   bottom: 0;
-  left: 0;
-  right: 0;
+  // 电脑上贴着居中的内容区边缘，--app-inset 定义在 base.scss
+  left: var(--app-inset);
+  right: var(--app-inset);
   background-color: var(--ygm-color-background);
   padding: 12px 16px;
   justify-content: space-between;

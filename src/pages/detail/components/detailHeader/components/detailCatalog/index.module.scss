@@ -30,7 +30,7 @@
   }
 
   .popup {
-    width: 80vw;
+    width: 8rem; // 手机上等于 80vw；电脑上按内容区宽度（10rem）算，不会随浏览器变宽
     overflow-y: 'auto';
   }
 }

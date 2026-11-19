@@ -13,26 +13,28 @@ $class-prefix-popup: 'ygm-popup';
     z-index: calc(var(--z-index) + 10);
   }
 
+  // 左右位置用 --app-inset（定义在 base.scss）：手机上贴着屏幕边缘，
+  // 电脑上贴着居中的内容区边缘，不会横跨整个浏览器
   &-left {
     height: 100%;
     top: 0;
-    left: 0;
+    left: var(--app-inset);
   }
 
   &-bottom {
-    width: 100%;
     bottom: 0;
-    left: 0;
+    left: var(--app-inset);
+    right: var(--app-inset);
   }
   &-top {
-    width: 100%;
     top: 0;
-    left: 0;
+    left: var(--app-inset);
+    right: var(--app-inset);
   }
 
   &-right {
     height: 100%;
     top: 0;
-    right: 0;
+    right: var(--app-inset);
   }
 }

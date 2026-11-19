@@ -9,8 +9,42 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  // 内容区最大宽度：375px 的设计稿对应 10rem；rem 最大 50px，所以电脑上内容最宽 500px
+  --app-max-width: 10rem;
+  // 固定定位元素到屏幕左右边缘的距离：手机上是 0，电脑上是两侧空出来的宽度。
+  // 用 100% 而不是 100vw：在 fixed 元素上 100% 指不含滚动条的视口宽度，算出来更准。
+  // 不要写成 max(0px, ...)：构建时 0px 会被压缩成没有单位的 0，而 CSS 数学函数里 0 不能和长度混用，
+  // 整个表达式会失效，left / right 退回成 auto
+  --app-inset: calc((100% - min(100%, var(--app-max-width))) / 2);
+}
+
 html {
-  font-size: calc(100vw / 375 * 37.5); // 基准1rem = 37.5px => 100vw / 375 = 1rem/37.5
+  // 手机上 1rem = 屏幕宽度的 1/10（375px 宽时 1rem = 37.5px）；
+  // 屏幕宽于 500px 后固定为 50px，不再跟着屏幕变大，配合 #root 的 max-width 在电脑上居中显示
+  font-size: min(10vw, 50px);
+}
+
+#root {
+  max-width: var(--app-max-width);
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+// 电脑上两侧显示浅灰背景，让中间手机宽度的内容区更清楚
+@media screen and (min-width: 500px) {
+  html,
+  body {
+    background-color: #f2f3f5;
+    // 电脑上的滚动条会占掉右侧约 15px：#root 按去掉滚动条后的宽度居中，固定定位元素却按整个窗口宽度定位，
+    // 两者会差半个滚动条宽。左侧也留出同样宽的空位，让内容区和固定元素的中线对齐
+    scrollbar-gutter: stable both-edges;
+  }
+
+  #root {
+    box-shadow: 0 0 24px rgb(0 0 0 / 8%);
+  }
 }
 
 a {
@@ -33,10 +67,4 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-@media screen and (min-width: 750px) {
-  html {
-    font-size: 50px;
-  }
 }
