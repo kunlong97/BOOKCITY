@@ -1,14 +1,17 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('../fonts/icomoon.eot?w8xhq1');
+  // 只保留 woff2（现代浏览器都用它）和 woff（兜底）。
+  // woff2 只有约 2.4 KB，小于 Vite 的内联阈值（assetsInlineLimit，默认 4 KB），构建时会以 base64
+  // 直接写进 CSS：字体随 CSS 一起到达，不需要单独请求，也就不需要 preload。
+  // 如果以后字体变大超过 4 KB，会变成单独的文件，那时再考虑在 index.html 里加 preload。
+  // 不加 ?w8xhq1 之类的版本号：构建后的文件名自带 hash
   src:
-    url('../fonts/icomoon.eot?w8xhq1#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?w8xhq1') format('truetype'),
-    url('../fonts/icomoon.woff?w8xhq1') format('woff'),
-    url('../fonts/icomoon.svg?w8xhq1#icomoon') format('svg');
+    url('../fonts/icomoon.woff2') format('woff2'),
+    url('../fonts/icomoon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  // 字体没下载完时先用后备字体显示，不再把图标隐藏最长 3 秒
+  font-display: swap;
 }
 
 [class^='icon-'],
