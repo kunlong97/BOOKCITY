@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './components/header';
 import styles from './index.module.scss';
 import Loading from '@/components/loading';
@@ -24,6 +25,9 @@ import useHomeData from './hooks/useHomeData';
  */
 export default function Home() {
   const { data, loading, error } = useHomeData();
+  // 第一张轮播图下载完（或失败）之前，后面几张先不下载，避免和首屏图片抢带宽
+  const [firstBannerDone, setFirstBannerDone] = useState(false);
+  const onFirstBannerDone = () => setFirstBannerDone(true);
 
   if (error) {
     return <ErrorBlock />;
@@ -41,7 +45,19 @@ export default function Home() {
             {data.banner.map((item, index) => {
               return (
                 <Swiper.Item key={index}>
-                  <Image src={item.src} alt={item.alt} fit="cover" lazy={false} />
+                  {/*
+                    第一张直接加载（地址在 index.html 里已经预加载过）。
+                    后面几张懒加载：第一张加载完后再开始下载；如果在那之前就被划到了，
+                    Image 的懒加载会在它进入可见区域时立刻下载
+                  */}
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fit="cover"
+                    lazy={index > 0 && !firstBannerDone}
+                    onLoad={index === 0 ? onFirstBannerDone : undefined}
+                    onError={index === 0 ? onFirstBannerDone : undefined}
+                  />
                 </Swiper.Item>
               );
             })}

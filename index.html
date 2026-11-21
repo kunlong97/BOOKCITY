@@ -16,6 +16,17 @@
         });
         // 先挂一个空的错误处理，避免请求失败时控制台报“未处理的 rejection”；失败后由 useHomeData 重新请求
         window.__HOME_DATA__.catch(function () {});
+
+        // 预加载第一张轮播图（首页的 LCP 元素）。图片地址本来写在接口数据里，要等 JS 下载、执行完，
+        // 轮播图渲染出 <img> 才开始下载；这里提前请求，等 <img> 渲染出来时图片已经在缓存里了。
+        // 地址写死在这里：后台换了第一张 banner 时要同步修改，否则只是白白多下载一张图，不影响页面显示。
+        // 只在首页加，所以放在这个 if 里，没有直接写成 <link> 标签。
+        var bannerPreload = document.createElement('link');
+        bannerPreload.rel = 'preload';
+        bannerPreload.as = 'image';
+        bannerPreload.href = '/images/banner1.webp';
+        bannerPreload.fetchPriority = 'high';
+        document.head.appendChild(bannerPreload);
       }
     </script>
   </head>

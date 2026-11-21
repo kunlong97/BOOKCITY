@@ -48,6 +48,35 @@ describe('首页', () => {
       expect(document.querySelectorAll('.ygm-swiper-page-indicator-dot')).toHaveLength(homeData.banner.length);
     });
 
+    describe('轮播图的加载顺序', () => {
+      const bannerSrcs = () =>
+        (Array.from(document.querySelectorAll('.ygm-swiper-item img')) as HTMLImageElement[]).map((img) =>
+          img.getAttribute('src'),
+        );
+      const isPlaceholder = (src: string | null) => src?.startsWith('data:');
+
+      it('第一张直接加载，后面几张先显示占位图', async () => {
+        mockApi();
+        await openHome();
+
+        const [first, ...rest] = bannerSrcs();
+        expect(first).toBe(homeData.banner[0].src);
+        expect(rest.length).toBeGreaterThan(0);
+        rest.forEach((src) => expect(isPlaceholder(src)).toBe(true));
+      });
+
+      it.each(['load', 'error'] as const)('第一张图 %s 之后，后面几张开始加载', async (event) => {
+        mockApi();
+        await openHome();
+
+        const firstImg = document.querySelector('.ygm-swiper-item img') as HTMLImageElement;
+        if (event === 'load') fireEvent.load(firstImg);
+        else fireEvent.error(firstImg);
+
+        expect(bannerSrcs()).toEqual(homeData.banner.map((item) => item.src));
+      });
+    });
+
     it('显示四个分类入口', async () => {
       mockApi();
       await openHome();
